@@ -8,7 +8,7 @@ A modern, responsive corporate conglomerate website for **ESSAAR Group of Compan
 
 ## 🏢 Group Subsidiaries
 
-1. **Prateesh Engineering Enterprises** — Industrial Engineering, Heavy Fabrication, Piping, Structural Steel & Turnkey Project Solutions (SIPCOT, Cuddalore).
+1. **Prateesh Engineering Enterprises** — Industrial Engineering, Heavy Fabrication, Piping, Structural Steel & Engineering, Project Execution & Industrial Solutions (SIPCOT, Cuddalore).
 2. **SRS Cranes & Equipments Services** — Heavy Lifting Solutions, Mobile Crane Rental (5–500 Tonnes Capacity) & Project Logistics.
 3. **Grace Gases & Company** — Industrial, Medical & Speciality Gas Manufacturing, Cylinder Testing & Filling.
 4. **Best Air Products** — Industrial & Medical Gas Distribution, Liquid Oxygen/Nitrogen/Argon & Bulk Supply Logistics.

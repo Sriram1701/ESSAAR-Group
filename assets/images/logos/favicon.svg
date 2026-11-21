@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="favBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#040D1A" />
+      <stop offset="100%" stop-color="#0B2344" />
+    </linearGradient>
+    <linearGradient id="favGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#C9A34E" />
+      <stop offset="50%" stop-color="#EED596" />
+      <stop offset="100%" stop-color="#B88F3A" />
+    </linearGradient>
+    <linearGradient id="favMidGold" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D4AF37" />
+      <stop offset="100%" stop-color="#F3DFAB" />
+    </linearGradient>
+  </defs>
+
+  <!-- Rounded Premium Navy Badge -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#favBg)" stroke="#C9A34E" stroke-width="1.5" />
+
+  <!-- Geometric E Monogram -->
+  <g transform="translate(1, 0)">
+    <!-- Vertical Spine in Crisp Platinum -->
+    <rect x="15" y="14" width="7" height="36" rx="2" fill="#FFFFFF" />
+    <!-- Gold Hairline on Spine -->
+    <rect x="20.5" y="16" width="1.5" height="32" rx="0.75" fill="#C9A34E" opacity="0.8" />
+
+    <!-- Top Bar -->
+    <path d="M 24 14 L 46 14 A 2 2 0 0 1 48 16 L 48 20 A 2 2 0 0 1 46 22 L 24 22 A 1 1 0 0 1 23 21 L 23 15 A 1 1 0 0 1 24 14 Z" fill="url(#favGold)" />
+
+    <!-- Middle Bar -->
+    <path d="M 24 28.5 L 39 28.5 A 2 2 0 0 1 41 30.5 L 41 34.5 A 2 2 0 0 1 39 36.5 L 24 36.5 A 1 1 0 0 1 23 35.5 L 23 29.5 A 1 1 0 0 1 24 28.5 Z" fill="url(#favMidGold)" />
+
+    <!-- Bottom Bar -->
+    <path d="M 24 43 L 46 43 A 2 2 0 0 1 48 45 L 48 49 A 2 2 0 0 1 46 51 L 24 51 A 1 1 0 0 1 23 50 L 23 44 A 1 1 0 0 1 24 43 Z" fill="url(#favGold)" />
+  </g>
+</svg>
