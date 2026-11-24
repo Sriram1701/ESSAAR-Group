@@ -545,7 +545,8 @@ p:last-child {
 }
 
 .brand-text-block {
-  display: none; /* Wordmark, subgroup and tagline are cleanly integrated in the vector logo */
+  display: flex;
+  flex-direction: column;
 }
 
 .brand-title {
