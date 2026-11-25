@@ -15,7 +15,367 @@
   <meta property="og:image" content="assets/images/logos/best-air-logo.jpg">
 
   <link rel="icon" type="image/jpeg" href="assets/images/logos/best-air-logo.jpg">
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=5.0">
+  <!-- Company Page Specific Styles (Embedded to prevent stale browser cache) -->
+  <style>
+    /* Exact Reference Angled Hero */
+    .company-exact-hero {
+      position: relative;
+      background-color: #06152B;
+      min-height: 520px;
+      overflow: hidden;
+      border-bottom: 3px solid #D5A642;
+      display: flex;
+      align-items: center;
+    }
+    .company-exact-hero-bg {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('assets/images/gallery/gas-filling-facility.jpg');
+      background-size: cover;
+      background-position: center right;
+      z-index: 1;
+    }
+    .company-exact-hero-bg {
+      filter: brightness(0.35) contrast(1.1);
+    }
+    .company-exact-hero-bg::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, rgba(6, 21, 43, 0.45) 0%, rgba(6, 21, 43, 0.65) 100%);
+    }
+    .company-exact-hero-gold-line {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #D5A642;
+      clip-path: polygon(0 0, 52.4% 0, 42.4% 100%, 0 100%);
+      z-index: 2;
+    }
+    .company-exact-hero-navy-shape {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #06152B;
+      clip-path: polygon(0 0, 52% 0, 42% 100%, 0 100%);
+      z-index: 3;
+    }
+    .company-exact-hero-container {
+      position: relative;
+      z-index: 4;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      align-items: center;
+      gap: 2rem;
+      padding-top: 4.5rem;
+      padding-bottom: 4.5rem;
+      width: 100%;
+    }
+    .company-exact-hero-left {
+      max-width: 580px;
+    }
+    .company-exact-breadcrumb {
+      font-size: 0.82rem;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 1.5rem;
+    }
+    .company-exact-breadcrumb a {
+      color: rgba(255, 255, 255, 0.75);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .company-exact-breadcrumb a:hover {
+      color: #D5A642;
+    }
+    .company-exact-breadcrumb .crumb-sep {
+      color: #D5A642;
+      margin: 0 0.5rem;
+      font-size: 1rem;
+      line-height: 1;
+    }
+    .company-exact-breadcrumb .crumb-current {
+      color: #FFFFFF;
+      font-weight: 600;
+    }
+    .company-exact-category {
+      color: #D5A642;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .company-exact-category .category-dash {
+      font-weight: 800;
+    }
+    .company-exact-title {
+      margin-bottom: 1.15rem;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .company-exact-title .exact-title-white {
+      display: block;
+      color: #FFFFFF;
+      font-size: clamp(2.4rem, 4.5vw, 3.5rem);
+      font-weight: 800;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 0.25rem;
+    }
+    .company-exact-title .exact-title-gold {
+      display: block;
+      color: #D5A642;
+      font-size: clamp(2.1rem, 3.8vw, 3.1rem);
+      font-weight: 800;
+      line-height: 1.1;
+    }
+    .company-exact-subrule {
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #CAD7E8;
+      margin-bottom: 1.25rem;
+    }
+    .company-exact-desc {
+      font-size: 1rem;
+      line-height: 1.65;
+      color: #CAD7E8;
+      margin-bottom: 2rem;
+      max-width: 500px;
+    }
+    .company-exact-buttons {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .btn-exact-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #D5A642;
+      color: #06152B;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 14px rgba(213, 166, 66, 0.35);
+      border: 1px solid #D5A642;
+    }
+    .btn-exact-gold:hover {
+      background: #E2B755;
+      color: #06152B;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(213, 166, 66, 0.5);
+    }
+    .btn-exact-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: transparent;
+      color: #FFFFFF;
+      font-weight: 600;
+      font-size: 0.95rem;
+      padding: 0.85rem 1.75rem;
+      border-radius: 6px;
+      text-decoration: none;
+      border: 1px solid rgba(213, 166, 66, 0.7);
+      transition: all 0.25s ease;
+    }
+    .btn-exact-outline:hover {
+      background: rgba(213, 166, 66, 0.15);
+      border-color: #D5A642;
+      color: #FFFFFF;
+      transform: translateY(-2px);
+    }
+    .company-exact-hero-right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-left: 2rem;
+    }
+    .company-exact-hero-right {
+      position: relative;
+    }
+    .company-exact-hero-right::before {
+      content: "";
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 40%, rgba(255, 255, 255, 0.35) 60%, rgba(255, 255, 255, 0) 75%);
+      filter: blur(14px);
+      z-index: 0;
+      pointer-events: none;
+    }
+    .company-exact-hero-logo {
+      max-width: 360px;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      position: relative;
+      z-index: 1;
+      filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 15px rgba(255, 255, 255, 0.6));
+      transition: transform 0.3s ease;
+    }
+    .company-exact-hero-logo:hover {
+      transform: scale(1.03);
+    }
+
+    /* Bottom Info Bar */
+    .company-bottom-bar-section {
+      padding: 2.5rem 0 3.5rem;
+      background: transparent;
+    }
+    .company-bottom-bar {
+      background: #06152B;
+      border: 1px solid rgba(213, 166, 66, 0.25);
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      box-shadow: 0 10px 30px rgba(5, 19, 38, 0.15);
+    }
+    .bottom-bar-block {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      flex: 1;
+    }
+    .bottom-bar-icon {
+      color: #D5A642;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .bottom-bar-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+    }
+    .bottom-bar-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #D5A642;
+    }
+    .bottom-bar-val {
+      font-size: 0.85rem;
+      color: #FFFFFF;
+      line-height: 1.45;
+    }
+    .bottom-bar-val a {
+      color: #FFFFFF;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .bottom-bar-val a:hover {
+      color: #D5A642;
+    }
+    .bottom-bar-action {
+      flex-shrink: 0;
+    }
+    .bottom-bar-action .btn-exact-gold {
+      padding: 0.7rem 1.35rem;
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 1200px) {
+      .company-bottom-bar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+    }
+    @media (max-width: 991px) {
+      .company-exact-hero-gold-line,
+      .company-exact-hero-navy-shape {
+        display: none;
+      }
+      .company-exact-hero {
+        background: #06152B;
+      }
+      .company-exact-hero-bg {
+        opacity: 0.25;
+      }
+      .company-exact-hero-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+      }
+      .company-exact-hero-right {
+        justify-content: flex-start;
+        padding-left: 0;
+      }
+    .company-exact-hero-right {
+      position: relative;
+    }
+    .company-exact-hero-right::before {
+      content: "";
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 40%, rgba(255, 255, 255, 0.35) 60%, rgba(255, 255, 255, 0) 75%);
+      filter: blur(14px);
+      z-index: 0;
+      pointer-events: none;
+    }
+      .company-exact-hero-logo {
+        max-width: 280px;
+      }
+    }
+    @media (max-width: 767px) {
+      .company-exact-hero-container {
+        padding-top: 3.5rem;
+        padding-bottom: 3.5rem;
+      }
+      .company-exact-title .exact-title-white {
+        font-size: 2.2rem;
+      }
+      .company-exact-title .exact-title-gold {
+        font-size: 1.95rem;
+      }
+      .company-exact-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .company-exact-buttons .btn {
+        width: 100%;
+        justify-content: center;
+      }
+      .company-bottom-bar {
+        grid-template-columns: 1fr;
+        padding: 1.25rem 1.25rem;
+        gap: 1.25rem;
+      }
+      .bottom-bar-action {
+        width: 100%;
+      }
+      .bottom-bar-action .btn-exact-gold {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -174,69 +534,114 @@
     </nav>
   </aside>
 
-  <!-- Company Specific Hero Banner -->
-  <section class="company-hero-banner">
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <span class="breadcrumb-separator">/</span>
-        <a href="companies.html">Our Companies</a>
-        <span class="breadcrumb-separator">/</span>
-        <span class="breadcrumb-current">Best Air Products</span>
+    <!-- Company Specific Hero Banner (Exact Match to Reference Design) -->
+  <section class="company-exact-hero">
+    <!-- Industrial Background on Right -->
+    <div class="company-exact-hero-bg"></div>
+
+    <!-- Diagonal Gold Divider Line -->
+    <div class="company-exact-hero-gold-line"></div>
+
+    <!-- Diagonal Solid Navy Shape -->
+    <div class="company-exact-hero-navy-shape"></div>
+
+    <!-- Hero Content Layer -->
+    <div class="container company-exact-hero-container">
+      <!-- Left Column: Company Info -->
+      <div class="company-exact-hero-left">
+        <div class="company-exact-breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="crumb-sep">&rsaquo;</span>
+          <a href="companies.html">Our Companies</a>
+          <span class="crumb-sep">&rsaquo;</span>
+          <span class="crumb-current">Best Air Products</span>
+        </div>
+
+        <div class="company-exact-category">
+          <span class="category-dash">—</span> COMPANY 04
+        </div>
+
+        <h1 class="company-exact-title">
+          <span class="exact-title-white">BEST AIR</span>
+          <span class="exact-title-gold">Products</span>
+        </h1>
+
+        <div class="company-exact-subrule">
+          GAS FILLING AGENCY &nbsp;|&nbsp; INDUSTRIAL &amp; MEDICAL GAS DISTRIBUTION
+        </div>
+
+        <p class="company-exact-desc">
+          Specialized industrial and medical gas filling agency delivering reliable, safe, and cost-effective cylinder distribution across Puducherry and eastern Tamil Nadu from Tirumalairayan Pattinam.
+        </p>
+
+        <div class="company-exact-buttons">
+          <a href="https://www.bestairproducts.com/" class="btn btn-exact-gold" target="_blank" rel="noopener noreferrer">
+            <span>View Company Website</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+          <a href="#contact-unit" class="btn btn-exact-outline">
+            <span>Enquire Supply Contract</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+          </a>
+        </div>
       </div>
 
-      <div class="company-hero-grid">
-        <div>
-          <div class="company-hero-header">
-            <img src="assets/images/logos/best-air-logo.jpg" alt="Best Air Products Logo" class="company-hero-logo">
-            <div>
-              <span class="badge badge-navy" style="margin-bottom: 0.35rem;">Company 04 • Gas Distribution Agency</span>
-              <h1 class="company-hero-title">Best Air Products</h1>
-              <div class="company-hero-subtitle">Industrial &amp; Medical Gas Filling Agency &amp; Distribution</div>
-            </div>
-          </div>
-          <p style="color: #CAD7E8; font-size: 1.1rem; line-height: 1.7; margin-bottom: 1.5rem;">
-            Best Air Products is a specialized industrial and medical gas filling agency focused on delivering reliable, safe, and cost-effective gas distribution across Puducherry and eastern Tamil Nadu from its facility in Tirumalairayan Pattinam.
-          </p>
+      <!-- Right Column: Seamless Transparent Logo Showcase -->
+      <div class="company-exact-hero-right">
+        <img src="assets/images/logos/best-air-logo-transparent.png" alt="BEST AIR Products Logo" class="company-exact-hero-logo">
+      </div>
+    </div>
+  </section>
 
-          <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-            <a href="#gases-range" class="btn btn-primary btn-lg">
-              <span>View Product Gases</span>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </a>
-            <a href="#contact-unit" class="btn btn-outline-white btn-lg">
-              <span>Enquire Supply Contract</span>
-            </a>
+  <!-- Company Information Bar (4 Horizontal Blocks) -->
+  <section class="company-bottom-bar-section">
+    <div class="container">
+      <div class="company-bottom-bar">
+        <div class="bottom-bar-block">
+          <div class="bottom-bar-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
           </div>
-
-          <div class="company-hero-meta">
-            <div class="company-meta-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="5" width="10" height="16" rx="3"></rect><path d="M10 2h4v3h-4z"></path></svg>
-              <div>Role: <strong>Filling Agency &amp; Bulk Distribution</strong></div>
-            </div>
-            <div class="company-meta-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <div>Location: <strong>Tirumalairayan Pattinam, Puducherry</strong></div>
-            </div>
-            <div class="company-meta-item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-              <div>Standard: <strong>Safety &amp; Compliance Certified</strong></div>
-            </div>
+          <div class="bottom-bar-info">
+            <span class="bottom-bar-label">Core Focus</span>
+            <span class="bottom-bar-val">Gas Cylinder Filling, Exchange & Bulk Distribution</span>
           </div>
         </div>
 
-        <div>
-          <div class="company-hero-card">
-            <h4>Distribution Hub</h4>
-            <p style="font-size: 0.88rem; color: #CBD5E1; line-height: 1.6; margin-bottom: 1.25rem;">
-              Equipped for rapid turnaround cylinder exchanges, manifold filling systems, and scheduled institutional deliveries to manufacturing plants, hospitals, and technical laboratories.
-            </p>
-            <div style="border-top: 1px solid rgba(255, 255, 255, 0.15); padding-top: 1rem; font-size: 0.85rem; display: flex; flex-direction: column; gap: 0.6rem;">
-              <div><strong>Facility Address:</strong> VR5J+5WM Best Air, Tirumalairayan Pattinam, Puducherry - 609606</div>
-              <div><strong>Products:</strong> Oxygen, Nitrogen, Argon, CO2, Shielding Gases</div>
-              <div><strong>Dispatch Contacts:</strong> +91 95970 00189 / +91 80722 54360</div>
-            </div>
+        <div class="bottom-bar-block">
+          <div class="bottom-bar-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
           </div>
+          <div class="bottom-bar-info">
+            <span class="bottom-bar-label">Location</span>
+            <span class="bottom-bar-val">VR5J+5WM Best Air, Tirumalairayan Pattinam, Puducherry - 609606</span>
+          </div>
+        </div>
+
+        <div class="bottom-bar-block">
+          <div class="bottom-bar-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          </div>
+          <div class="bottom-bar-info">
+            <span class="bottom-bar-label">Operational Standard</span>
+            <span class="bottom-bar-val">Safety & Compliance Certified</span>
+          </div>
+        </div>
+
+        <div class="bottom-bar-block">
+          <div class="bottom-bar-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          </div>
+          <div class="bottom-bar-info">
+            <span class="bottom-bar-label">Direct Contact</span>
+            <span class="bottom-bar-val"><a href="tel:+919597000189">+91 95970 00189</a> / <a href="tel:+918072254360">+91 80722 54360</a></span>
+          </div>
+        </div>
+
+        <div class="bottom-bar-action">
+          <a href="https://www.bestairproducts.com/" class="btn btn-exact-gold" target="_blank" rel="noopener noreferrer">
+            <span>View Company Website</span>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
         </div>
       </div>
     </div>

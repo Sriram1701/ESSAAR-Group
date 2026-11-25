@@ -245,18 +245,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       }
     });
-
-    // Auto-expand first FAQ item for immediate preview
-    const firstFaq = faqItems[0];
-    if (firstFaq) {
-      const firstBtn = firstFaq.querySelector('.faq-question');
-      const firstAns = firstFaq.querySelector('.faq-answer');
-      if (firstBtn && firstAns) {
-        firstFaq.classList.add('active');
-        firstAns.style.maxHeight = firstAns.scrollHeight + 'px';
-        firstBtn.setAttribute('aria-expanded', 'true');
-      }
-    }
   }
 
   // --- Smooth scroll for anchor links ---
