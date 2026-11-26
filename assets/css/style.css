@@ -5550,9 +5550,10 @@ textarea.form-control {
   box-shadow: 0 12px 28px rgba(8, 23, 44, 0.2);
 }
 
-.about-card-top {
+.about-card-box .about-card-top {
   display: flex;
   align-items: center;
+  justify-content: flex-start !important;
   gap: 0.85rem;
   margin-bottom: 0.85rem;
 }
@@ -5820,7 +5821,7 @@ textarea.form-control {
   opacity: 1;
 }
 
-.about-card-top {
+.about-company-card .about-card-top {
   display: flex;
   justify-content: space-between;
   align-items: center;
