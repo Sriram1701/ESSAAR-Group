@@ -34,7 +34,7 @@
       right: 0;
       width: 100%;
       height: 100%;
-      background-image: url('assets/images/gallery/roy-diagnostics-mri.jpg');
+      background-image: url('assets/images/gallery/roy-diagnostics-building.jpg');
       background-size: cover;
       background-position: center right;
       z-index: 1;
@@ -58,7 +58,7 @@
       width: 100%;
       height: 100%;
       background: #D5A642;
-      clip-path: polygon(0 0, 52.4% 0, 42.4% 100%, 0 100%);
+      clip-path: polygon(0 0, 60.4% 0, 50.4% 100%, 0 100%);
       z-index: 2;
     }
     .company-exact-hero-navy-shape {
@@ -68,7 +68,7 @@
       width: 100%;
       height: 100%;
       background: #06152B;
-      clip-path: polygon(0 0, 52% 0, 42% 100%, 0 100%);
+      clip-path: polygon(0 0, 60% 0, 50% 100%, 0 100%);
       z-index: 3;
     }
     .company-exact-hero-container {
@@ -161,8 +161,8 @@
     .company-exact-buttons {
       display: flex;
       align-items: center;
-      gap: 1.25rem;
-      flex-wrap: wrap;
+      gap: 0.85rem;
+      flex-wrap: nowrap;
     }
     .btn-exact-gold {
       display: inline-flex;
@@ -178,6 +178,7 @@
       transition: all 0.25s ease;
       box-shadow: 0 4px 14px rgba(213, 166, 66, 0.35);
       border: 1px solid #D5A642;
+      white-space: nowrap;
     }
     .btn-exact-gold:hover {
       background: #E2B755;
@@ -198,6 +199,7 @@
       text-decoration: none;
       border: 1px solid rgba(213, 166, 66, 0.7);
       transition: all 0.25s ease;
+      white-space: nowrap;
     }
     .btn-exact-outline:hover {
       background: rgba(213, 166, 66, 0.15);
@@ -250,26 +252,36 @@
       border-radius: 16px;
       padding: 1.5rem 2rem;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 1.5rem;
       box-shadow: 0 10px 30px rgba(5, 19, 38, 0.15);
     }
     .bottom-bar-block {
       display: flex;
-      align-items: flex-start;
-      gap: 0.85rem;
+      flex-direction: column;
+      gap: 0.35rem;
       flex: 1;
+      min-width: 0;
+    }
+    .bottom-bar-header {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      min-height: 22px;
     }
     .bottom-bar-icon {
       color: #D5A642;
       flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .bottom-bar-info {
       display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+    }
+    .bottom-bar-icon svg {
+      width: 20px;
+      height: 20px;
     }
     .bottom-bar-label {
       font-size: 0.72rem;
@@ -277,11 +289,14 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: #D5A642;
+      line-height: 1.2;
+      white-space: nowrap;
     }
     .bottom-bar-val {
       font-size: 0.85rem;
       color: #FFFFFF;
       line-height: 1.45;
+      padding-left: calc(20px + 0.55rem);
     }
     .bottom-bar-val a {
       color: #FFFFFF;
@@ -293,17 +308,42 @@
     }
     .bottom-bar-action {
       flex-shrink: 0;
+      align-self: center;
     }
     .bottom-bar-action .btn-exact-gold {
-      padding: 0.7rem 1.35rem;
+      padding: 0.75rem 1.4rem;
       font-size: 0.88rem;
+      white-space: nowrap;
     }
 
     @media (max-width: 1200px) {
+      .company-exact-hero-gold-line {
+        clip-path: polygon(0 0, 64.4% 0, 54.4% 100%, 0 100%);
+      }
+      .company-exact-hero-navy-shape {
+        clip-path: polygon(0 0, 64% 0, 54% 100%, 0 100%);
+      }
+      .company-exact-hero-left {
+        max-width: 560px;
+      }
+      .company-exact-buttons {
+        gap: 0.85rem;
+      }
+      .btn-exact-gold,
+      .btn-exact-outline {
+        padding: 0.8rem 1.4rem;
+        font-size: 0.9rem;
+      white-space: nowrap;
+      }
       .company-bottom-bar {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
+        align-items: start;
+      }
+      .bottom-bar-action {
+        grid-column: span 2;
+        justify-self: start;
       }
     }
     @media (max-width: 991px) {
@@ -371,6 +411,20 @@
         width: 100%;
       }
       .bottom-bar-action .btn-exact-gold {
+        width: 100%;
+        justify-content: center;
+      white-space: nowrap;
+      }
+    }
+  
+    @media (max-width: 576px) {
+      .company-exact-buttons {
+        flex-wrap: wrap !important;
+        flex-direction: column;
+        width: 100%;
+      }
+      .btn-exact-gold,
+      .btn-exact-outline {
         width: 100%;
         justify-content: center;
       }
@@ -502,13 +556,13 @@
       <a href="companies.html" class="drawer-link">Our Companies Overview</a>
       
             <div class="drawer-companies-title">Group Subsidiaries</div>
-      <a href="company-prateesh-engineering.html" class="drawer-sublink">01. Prateesh Engineering</a>
-      <a href="company-srs-cranes.html" class="drawer-sublink">02. SRS Cranes &amp; Equipments</a>
-      <a href="company-grace-gases.html" class="drawer-sublink">03. Grace Gases &amp; Co.</a>
-      <a href="company-best-air-products.html" class="drawer-sublink">04. Best Air Products</a>
-      <a href="company-essaar-engineering.html" class="drawer-sublink">05. ESSAAR Engineering &amp; Co.</a>
-      <a href="company-roy-diagnostics.html" class="drawer-sublink">06. Roy Diagnostics</a>
-      <a href="company-jj-industrial.html" class="drawer-sublink">07. JJ Industrial HR Services</a>
+      <a href="company-prateesh-engineering.html" class="drawer-sublink">Prateesh Engineering</a>
+      <a href="company-srs-cranes.html" class="drawer-sublink">SRS Cranes &amp; Equipments</a>
+      <a href="company-grace-gases.html" class="drawer-sublink">Grace Gases &amp; Co.</a>
+      <a href="company-best-air-products.html" class="drawer-sublink">Best Air Products</a>
+      <a href="company-essaar-engineering.html" class="drawer-sublink">ESSAAR Engineering &amp; Co.</a>
+      <a href="company-roy-diagnostics.html" class="drawer-sublink">Roy Diagnostics</a>
+      <a href="company-jj-industrial.html" class="drawer-sublink">JJ Industrial HR Services</a>
       
       <a href="industries.html" class="drawer-link">Industries We Serve</a>
       <a href="projects-gallery.html" class="drawer-link">Projects &amp; Gallery</a>
@@ -602,43 +656,43 @@
     <div class="container">
       <div class="company-bottom-bar">
         <div class="bottom-bar-block">
-          <div class="bottom-bar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+          <div class="bottom-bar-header">
+            <div class="bottom-bar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+            </div>
+            <span class="bottom-bar-label">CORE FOCUS</span>
           </div>
-          <div class="bottom-bar-info">
-            <span class="bottom-bar-label">Core Focus</span>
-            <span class="bottom-bar-val">Fetal Medicine, 1.5T MRI, 32-Slice CT & Ultrasound</span>
-          </div>
+          <div class="bottom-bar-val">Fetal Medicine, 1.5T MRI, 32-Slice CT &amp; Ultrasound</div>
         </div>
 
         <div class="bottom-bar-block">
-          <div class="bottom-bar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <div class="bottom-bar-header">
+            <div class="bottom-bar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <span class="bottom-bar-label">LOCATION</span>
           </div>
-          <div class="bottom-bar-info">
-            <span class="bottom-bar-label">Location</span>
-            <span class="bottom-bar-val">No. 2, N. Kavarai St, Alpet, Manjakuppam, Cuddalore – 607001</span>
-          </div>
+          <div class="bottom-bar-val">No. 2, N. Kavarai St, Alpet, Manjakuppam, Cuddalore – 607001</div>
         </div>
 
         <div class="bottom-bar-block">
-          <div class="bottom-bar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          <div class="bottom-bar-header">
+            <div class="bottom-bar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            </div>
+            <span class="bottom-bar-label">HEALTHCARE STANDARDS</span>
           </div>
-          <div class="bottom-bar-info">
-            <span class="bottom-bar-label">Healthcare Standards</span>
-            <span class="bottom-bar-val">PCPNDT Compliant & Certified</span>
-          </div>
+          <div class="bottom-bar-val">PCPNDT Compliant &amp; Certified</div>
         </div>
 
         <div class="bottom-bar-block">
-          <div class="bottom-bar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <div class="bottom-bar-header">
+            <div class="bottom-bar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <span class="bottom-bar-label">DIRECT CONTACT</span>
           </div>
-          <div class="bottom-bar-info">
-            <span class="bottom-bar-label">Direct Contact</span>
-            <span class="bottom-bar-val"><a href="tel:+919597000189">+91 95970 00189</a> / info.roydiagnostics@gmail.com</span>
-          </div>
+          <div class="bottom-bar-val"><a href="tel:+919597000189">+91 95970 00189</a> / info.roydiagnostics@gmail.com</div>
         </div>
 
         <div class="bottom-bar-action">
@@ -651,14 +705,58 @@
     </div>
   </section>
 
+  <!-- Centre Facility & Infrastructure Showcase -->
+  <section class="section" style="background: var(--white); padding: 4.5rem 0 3.5rem;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 3.5rem; align-items: center;">
+        <div style="position: relative; border-radius: 14px; overflow: hidden; box-shadow: 0 16px 36px rgba(5, 19, 38, 0.12); border: 1px solid #E2E8F0;">
+          <img src="assets/images/gallery/roy-diagnostics-building.jpg" alt="Roy Diagnostics Fetal &amp; Imaging Centre Building" style="width: 100%; height: auto; display: block; object-fit: cover;">
+          <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(180deg, transparent 0%, rgba(5, 19, 38, 0.92) 100%); padding: 1.5rem; color: #FFFFFF;">
+            <span style="color: #D5A642; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.25rem;">State-of-the-Art Diagnostic Centre</span>
+            <strong style="font-size: 1.15rem; font-family: var(--font-heading);">ROY DIAGNOSTICS — Fetal &amp; Imaging Centre</strong>
+          </div>
+        </div>
+        <div>
+          <span class="section-label">Modern Infrastructure</span>
+          <h2 class="section-title" style="font-size: 2rem; margin-bottom: 1.25rem;">Comprehensive Diagnostic Facility in Cuddalore</h2>
+          <p style="color: #4A5568; line-height: 1.7; margin-bottom: 1.25rem;">
+            Designed and engineered to premier clinical healthcare standards, the multi-level ROY DIAGNOSTICS facility integrates advanced radiological imaging, comprehensive maternal-fetal medicine suites, digital screening, and fully automated clinical pathology services under one roof.
+          </p>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.75rem;">
+            <div style="padding: 0.85rem 1rem; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px;">
+              <strong style="color: var(--navy-primary); display: block; font-size: 0.9rem;">1.5T MRI &amp; 32-Slice CT</strong>
+              <span style="font-size: 0.8rem; color: #64748B;">High-resolution cross-sectional imaging</span>
+            </div>
+            <div style="padding: 0.85rem 1rem; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px;">
+              <strong style="color: var(--navy-primary); display: block; font-size: 0.9rem;">Fetal &amp; 4D Ultrasound</strong>
+              <span style="font-size: 0.8rem; color: #64748B;">Specialized maternal sonography</span>
+            </div>
+            <div style="padding: 0.85rem 1rem; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px;">
+              <strong style="color: var(--navy-primary); display: block; font-size: 0.9rem;">Digital X-Ray &amp; Mammogram</strong>
+              <span style="font-size: 0.8rem; color: #64748B;">Low-dose precision screening</span>
+            </div>
+            <div style="padding: 0.85rem 1rem; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px;">
+              <strong style="color: var(--navy-primary); display: block; font-size: 0.9rem;">Pathology &amp; Lab Services</strong>
+              <span style="font-size: 0.8rem; color: #64748B;">Automated clinical biochemistry</span>
+            </div>
+          </div>
+          <a href="https://www.roydiagnostics.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            <span>Explore Official Website</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Proposed Diagnostic Services -->
   <section class="section" id="services" style="background: var(--white);">
     <div class="container">
       <div class="section-header text-center">
         <span class="section-label">Medical Technology</span>
         <h2 class="section-title">Proposed Diagnostic Imaging Services</h2>
-        <p class="section-subtitle">
-          ROY DIAGNOSTICS is actively developing modern diagnostic infrastructure to serve patients, clinicians, and hospitals across Cuddalore and surrounding districts. All listed equipment and modalities are planned for clinical commissioning upon regulatory approvals.
+        <p class="section-subtitle" style="max-width: 860px;">
+          ROY DIAGNOSTICS is developing modern diagnostic infrastructure across Cuddalore and surrounding districts,<br>with all listed equipment and modalities planned for clinical commissioning upon regulatory approvals.
         </p>
       </div>
 
@@ -736,26 +834,6 @@
           </p>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- Regulatory & PCPNDT Compliance Notice -->
-  <section class="section" style="background: #F8FAFC; padding: 3.5rem 0;">
-    <div class="container">
-      <div style="background: #FFFFFF; border: 1px solid #E2E8F0; border-left: 5px solid var(--gold-premium); border-radius: 8px; padding: 2rem 2.25rem; box-shadow: 0 4px 14px rgba(8, 26, 51, 0.04);">
-        <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#C9A34E" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="M12 8v4"></path><path d="M12 16h.01"></path></svg>
-          <h4 style="font-family: var(--font-heading); font-size: 1.15rem; font-weight: 800; color: var(--navy-primary); margin: 0; text-transform: uppercase; letter-spacing: 0.05em;">
-            Regulatory Compliance &amp; Operational Standards
-          </h4>
-        </div>
-        <p style="font-size: 0.92rem; line-height: 1.7; color: #4A5568; margin-bottom: 0.75rem;">
-          <strong>Development Status:</strong> ROY DIAGNOSTICS is currently under development. All equipment descriptions, imaging modalities, and clinical services listed are proposed and planned for deployment upon completion of facility infrastructure, equipment installation, calibration, and receipt of all applicable central, state, and local regulatory approvals and licensures.
-        </p>
-        <p style="font-size: 0.92rem; line-height: 1.7; color: #4A5568; margin-bottom: 0;">
-          <strong>Statutory Compliance (PCPNDT Act):</strong> In strict adherence to the Pre-Conception and Pre-Natal Diagnostic Techniques (Prohibition of Sex Selection) Act, 1994 (PCPNDT Act) and associated rules, all ultrasound and fetal medicine diagnostic examinations will be conducted in full compliance with mandated statutory registrations, documentation, and reporting protocols. Sex determination or disclosure of the sex of the fetus is strictly prohibited by law and is not performed.
-        </p>
       </div>
     </div>
   </section>
@@ -840,45 +918,104 @@
   </section>
 
   <!-- Contact & Location Section -->
-  <section class="section" id="contact-unit" style="background: var(--navy-deep); color: var(--white); padding: 4.5rem 0;">
+  <section class="section" id="contact-unit">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center;">
-        <div>
-          <span class="badge badge-gold" style="margin-bottom: 1rem;">CENTRE LOCATION &amp; INQUIRIES</span>
-          <h2 style="font-family: var(--font-heading); font-size: 2.1rem; font-weight: 800; color: var(--white); margin-bottom: 1rem;">
-            ROY DIAGNOSTICS
-          </h2>
-          <p style="color: #CBD5E1; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
-            Institute of Fetal Medicine &amp; Advanced Imaging — A subsidiary of ESSAAR Group of Companies. For institutional collaborations, medical coordination, and diagnostic project inquiries:
-          </p>
-          <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
-            <div style="display: flex; gap: 1rem; align-items: flex-start;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A34E" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <span>No. 2, N. Kavarai Street, Alpet, Manjakuppam, Cuddalore – 607001, Tamil Nadu, India.</span>
+      <div class="contact-grid">
+        <div class="contact-info-card">
+          <div class="contact-info-header">
+            <h3>Roy Diagnostics</h3>
+            <p>Institute of Fetal Medicine &amp; Advanced Imaging — Direct communication for scan appointments, clinical reports, and institutional collaborations.</p>
+          </div>
+
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
             </div>
-            <div style="display: flex; gap: 1rem; align-items: center;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A34E" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <a href="tel:+919597000189" style="color: var(--white); text-decoration: none;">+91 95970 00189</a>
-            </div>
-            <div style="display: flex; gap: 1rem; align-items: center;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A34E" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              <a href="mailto:info.roydiagnostics@gmail.com" style="color: var(--white); text-decoration: none;">info.roydiagnostics@gmail.com</a>
+            <div class="contact-detail-body">
+              <h5>Centre Location</h5>
+              <p><a href="https://www.google.com/maps/search/?api=1&amp;query=Roy+Diagnostics,+No.+2,+N.+Kavarai+Street,+Alpet,+Manjakuppam,+Cuddalore+-+607001" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">No. 2, N. Kavarai Street, Alpet, Manjakuppam, Cuddalore – 607001, Tamil Nadu, India.</a></p>
             </div>
           </div>
+
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div class="contact-detail-body">
+              <h5>Diagnostic Infoline</h5>
+              <p>
+                <a href="tel:+919597000189">+91 95970 00189</a><br>
+                <a href="tel:+919443230189">+91 94432 30189</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div class="contact-detail-body">
+              <h5>Email Communication</h5>
+              <p><a href="mailto:info.roydiagnostics@gmail.com" style="color: inherit; text-decoration: none;">info.roydiagnostics@gmail.com</a></p>
+            </div>
+          </div>
+
           <div>
-            <a href="companies.html" class="btn btn-outline-white">
-              <span>View All Group Companies</span>
+            <a href="https://wa.me/919597000189?text=Hi%20Roy%20Diagnostics,%20I%20am%20inquiring%20about%20fetal%20imaging%20and%20diagnostic%20services" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%;">
+              <span>WhatsApp Diagnostic Inquiry</span>
             </a>
           </div>
         </div>
 
-        <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 2.25rem; text-align: center;">
-          <img src="assets/images/logos/roy-diagnostics-logo.jpg" alt="Roy Diagnostics Logo" style="max-height: 90px; width: auto; margin-bottom: 1.25rem; border-radius: 8px; background: #FFFFFF; padding: 8px 16px;">
-          <h4 style="font-family: var(--font-heading); color: var(--white); font-size: 1.15rem; margin-bottom: 0.5rem;">ESSAAR Group Healthcare Network</h4>
-          <p style="font-size: 0.9rem; color: #94A3B8; margin-bottom: 1.5rem; line-height: 1.6;">
-            Connected with Grace Gases &amp; Best Air Products for uninterrupted medical oxygen and life-support gas infrastructure across Tamil Nadu &amp; Puducherry.
-          </p>
-          <a href="contact.html" class="btn btn-gold" style="width: 100%;">Connect With ESSAAR Group</a>
+        <div class="contact-form-card">
+          <h3 class="contact-form-title">Book Scan / Diagnostic Inquiry</h3>
+          <p class="contact-form-subtitle">Submit your clinical or scan requirement for priority scheduling &amp; appointment coordination.</p>
+
+          <form class="essaar-contact-form">
+            <input type="hidden" name="company" value="Roy Diagnostics">
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label class="form-label">Full Name / Patient Name *</label>
+                <input type="text" name="name" class="form-control" placeholder="e.g. Dr. Ramesh / Patient Name" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Contact Number *</label>
+                <input type="tel" name="phone" class="form-control" placeholder="+91 98765 43210" required>
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <input type="email" name="email" class="form-control" placeholder="contact@email.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Diagnostic Service</label>
+                <select name="service" class="form-control">
+                  <option value="Fetal Medicine &amp; Anomaly Scan">Fetal Medicine &amp; Anomaly Scan</option>
+                  <option value="3T MRI Scan">3T MRI Scan</option>
+                  <option value="High-Resolution CT Scan">High-Resolution CT Scan</option>
+                  <option value="Digital X-Ray &amp; Mammography">Digital X-Ray &amp; Mammography</option>
+                  <option value="Ultrasound &amp; Doppler Study">Ultrasound &amp; Doppler Study</option>
+                  <option value="Pathology &amp; Clinical Lab Services">Pathology &amp; Clinical Lab Services</option>
+                  <option value="Corporate / Institutional Health Checkup">Corporate / Institutional Health Checkup</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Doctor Referral / Clinical Notes *</label>
+              <textarea name="message" class="form-control" placeholder="Specify referring doctor, required scan details, preferred appointment date/time..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              <span>Submit Diagnostic Inquiry</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+
+            <div class="form-feedback"></div>
+          </form>
         </div>
       </div>
     </div>
@@ -889,7 +1026,13 @@
     <div class="container">
       <div class="footer-top">
         <div>
-          <img src="assets/images/logos/essaar-group-logo.jpg" alt="ESSAAR Group of Companies" class="footer-brand-logo">
+          <a href="index.html" class="footer-brand-wrap" aria-label="ESSAAR Group of Companies Homepage">
+            <img src="assets/images/logos/essaar-group-logo.jpg" alt="ESSAAR Group of Companies Logo" class="footer-brand-logo">
+            <div class="footer-brand-text">
+              <span class="footer-brand-title">ESSAAR GROUP</span>
+              <span class="footer-brand-subtitle">OF COMPANIES</span>
+            </div>
+          </a>
           <p class="footer-about">
             ESSAAR Group of Companies brings together specialized expertise in industrial engineering, crane rental, medical &amp; industrial gases, healthcare diagnostic imaging, and industrial HR management across South India.
           </p>
@@ -911,13 +1054,13 @@
         <div>
           <h4 class="footer-heading">Group Companies</h4>
           <ul class="footer-links">
-            <li><a href="company-prateesh-engineering.html">01. Prateesh Engineering Enterprises</a></li>
-            <li><a href="company-srs-cranes.html">02. SRS Cranes &amp; Equipments</a></li>
-            <li><a href="company-grace-gases.html">03. Grace Gases &amp; Company</a></li>
-            <li><a href="company-best-air-products.html">04. Best Air Products</a></li>
-            <li><a href="company-essaar-engineering.html">05. ESSAAR Engineering &amp; Co.</a></li>
-            <li><a href="company-roy-diagnostics.html">06. Roy Diagnostics</a></li>
-            <li><a href="company-jj-industrial.html">07. JJ Industrial HR Services</a></li>
+            <li><a href="company-prateesh-engineering.html">Prateesh Engineering Enterprises</a></li>
+            <li><a href="company-srs-cranes.html">SRS Cranes &amp; Equipments</a></li>
+            <li><a href="company-grace-gases.html">Grace Gases &amp; Company</a></li>
+            <li><a href="company-best-air-products.html">Best Air Products</a></li>
+            <li><a href="company-essaar-engineering.html">ESSAAR Engineering &amp; Co.</a></li>
+            <li><a href="company-roy-diagnostics.html">Roy Diagnostics</a></li>
+            <li><a href="company-jj-industrial.html">JJ Industrial HR Services</a></li>
           </ul>
         </div>
 
@@ -926,15 +1069,15 @@
           <div class="footer-contact-list">
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <span>No. 223, Prateesh, Pachayankuppam, Chidambaram Main Road, Cuddalore - 607005, Tamil Nadu.</span>
+              <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Essaar+Plaza,+No-4/653,+Major+Mukund+Varadharajan+Rd,+United+Colony,+Medavakkam,+Tamil+Nadu+-+600100" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Essaar Plaza, No-4/653, Major Mukund Varadharajan Rd, United Colony, Medavakkam, Tamil Nadu - 600100.</a></span>
             </div>
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <span>+91 95970 00189 / +91 80722 54360</span>
+              <span><a href="tel:+919597000189" style="color: inherit; text-decoration: none;">+91 95970 00189</a> / <a href="tel:+919443230189" style="color: inherit; text-decoration: none;">+91 94432 30189</a></span>
             </div>
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              <span>info.roydiagnostics@gmail.com</span>
+              <span><a href="mailto:info.roydiagnostics@gmail.com" style="color: inherit; text-decoration: none;">info.roydiagnostics@gmail.com</a></span>
             </div>
           </div>
         </div>
@@ -947,7 +1090,7 @@
         <div class="footer-bottom-links">
           <a href="contact.html">Privacy Policy</a>
           <a href="contact.html">Terms &amp; Conditions</a>
-          <a href="sitemap.xml">Sitemap</a>
+          <a href="https://wa.me/917845391712?text=Hi%20Sriram,%20I%20found%20you%20in%20Roy%20Diagnostics%20Website" target="_blank" rel="noopener noreferrer" class="developer-credit">Developed by <span class="developer-name">Sri Web Squad</span></a>
         </div>
       </div>
     </div>

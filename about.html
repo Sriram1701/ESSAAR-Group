@@ -18,6 +18,7 @@
   <link rel="stylesheet" href="assets/css/style.css?v=5.0">
   <!-- About Page Specific Styles (Embedded to prevent stale browser cache) -->
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
     .about-hero-v2 {
       position: relative;
       background-color: #051326;
@@ -340,137 +341,296 @@
       line-height: 1.55;
       margin: 0;
     }
-    .about-founders-v2 {
-      padding: 5.5rem 0 4.5rem;
+        .about-founders-v2 {
+      padding: 5rem 0 5rem;
       background: #FFFFFF;
     }
-    .about-founders-v2-grid {
-      display: grid;
-      grid-template-columns: 1.1fr 1fr;
-      gap: 3.5rem;
-      align-items: center;
-      margin-bottom: 4rem;
-    }
-    .about-founders-story-col p {
-      font-size: 0.95rem;
-      line-height: 1.75;
-      color: #475569;
-      margin-bottom: 1.25rem;
-    }
-    .about-founders-cards-col {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.25rem;
-    }
-    .about-founder-v2-card {
-      background: #F8FAFC;
-      border: 1px solid #E2E8F0;
-      border-radius: 12px;
-      padding: 2rem 1.5rem;
+    /* Faith Banner matching reference card */
+    .about-faith-banner-v2 {
       position: relative;
-      display: flex;
-      flex-direction: column;
+      background: linear-gradient(180deg, #051326 0%, #081B34 100%);
+      border: 1px solid rgba(213, 166, 66, 0.35);
+      border-radius: 12px;
+      padding: 2.25rem 2rem 2rem;
+      text-align: center;
+      margin-bottom: 3.5rem;
+      box-shadow: 0 10px 30px rgba(5, 19, 38, 0.12);
     }
-    .about-founder-v2-card::before {
-      content: "“";
+    .faith-bracket {
       position: absolute;
-      top: 10px;
-      left: 18px;
-      font-size: 3rem;
-      font-family: serif;
-      color: rgba(201, 163, 78, 0.25);
-      line-height: 1;
+      width: 14px;
+      height: 14px;
+      border-color: #D5A642;
+      border-style: solid;
+      pointer-events: none;
     }
-    .about-founder-tag {
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+    .faith-bracket.top-left {
+      top: 12px;
+      left: 14px;
+      border-width: 1.5px 0 0 1.5px;
+    }
+    .faith-bracket.top-right {
+      top: 12px;
+      right: 14px;
+      border-width: 1.5px 1.5px 0 0;
+    }
+    .faith-bracket.bottom-left {
+      bottom: 12px;
+      left: 14px;
+      border-width: 0 0 1.5px 1.5px;
+    }
+    .faith-bracket.bottom-right {
+      bottom: 12px;
+      right: 14px;
+      border-width: 0 1.5px 1.5px 0;
+    }
+    .faith-banner-lead {
       color: #D5A642;
-      margin-bottom: 0.75rem;
-      margin-top: 0.5rem;
-    }
-    .about-founder-v2-name {
-      font-size: 1.15rem;
+      font-size: 0.8rem;
       font-weight: 800;
-      color: #051326;
-      margin-bottom: 0.75rem;
-      line-height: 1.3;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      margin-bottom: 0.65rem;
     }
-    .about-founder-v2-bio {
-      font-size: 0.82rem;
-      color: #64748B;
-      line-height: 1.55;
-      margin: 0;
+    .faith-banner-rule {
+      width: 70px;
+      height: 1.5px;
+      background: #D5A642;
+      margin: 0 auto 1.15rem;
+      opacity: 0.85;
     }
-    .about-timeline-wrap {
+    .faith-banner-pillars {
+      color: #FFFFFF;
+      font-size: clamp(0.92rem, 1.6vw, 1.12rem);
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 1.15rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      max-width: 820px;
-      margin: 0 auto;
-      padding-top: 1.5rem;
-      border-top: 1px solid #E2E8F0;
+      flex-wrap: wrap;
+      gap: 0.4rem 0.8rem;
     }
-    .about-timeline-node {
+    .faith-pillar-dot {
+      color: #D5A642;
+      font-size: 0.95rem;
+    }
+    .faith-banner-sub {
+      color: #D5A642;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      opacity: 0.9;
+    }
+
+    /* Section Subtag & Heading */
+    .about-founders-kicker {
+      text-align: center;
+      color: #D5A642;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      margin-bottom: 0.65rem;
+    }
+    .about-founders-serif-title {
+      text-align: center;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(1.85rem, 3.2vw, 2.5rem);
+      font-weight: 600;
+      color: #051326;
+      margin-bottom: 3.5rem;
+      line-height: 1.25;
+    }
+
+    /* 3-Column Grid */
+    .about-founders-v2-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr 1fr;
+      gap: 2rem;
+      align-items: stretch;
+      margin-bottom: 3.5rem;
+    }
+    .about-founders-story-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .about-founders-story-col p {
+      font-size: 0.93rem;
+      line-height: 1.75;
+      color: #475569;
+      margin-bottom: 1.15rem;
+    }
+    .about-founders-story-col p:last-child {
+      margin-bottom: 0;
+    }
+    .about-dropcap {
+      float: left;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 3.25rem;
+      line-height: 0.75;
+      padding-top: 0.25rem;
+      padding-right: 0.55rem;
+      font-weight: 700;
+      color: #051326;
+    }
+
+    /* Founder Cards */
+    .about-founder-v2-card {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-top: 3px solid #D5A642;
+      border-radius: 12px;
+      padding: 1.75rem 1.6rem 1.4rem;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 20px rgba(5, 19, 38, 0.04);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .about-founder-v2-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 26px rgba(5, 19, 38, 0.08);
+    }
+    .about-card-top-row {
       display: flex;
       align-items: center;
-      gap: 0.85rem;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+    .about-monogram-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.35rem 0.65rem;
+      border: 1px solid rgba(213, 166, 66, 0.5);
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: #D5A642;
+      background: rgba(213, 166, 66, 0.05);
+      letter-spacing: 0.06em;
+    }
+    .about-quote-mark {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 2rem;
+      line-height: 1;
+      color: #D5A642;
+      opacity: 0.6;
+      font-weight: 700;
+    }
+    .about-founder-tag {
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #D5A642;
+      margin-bottom: 0.5rem;
+    }
+    .about-founder-v2-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #051326;
+      margin-bottom: 0.85rem;
+      line-height: 1.3;
+    }
+    .about-founder-v2-bio {
+      font-size: 0.86rem;
+      color: #64748B;
+      line-height: 1.6;
+      margin-bottom: 1.75rem;
+      flex-grow: 1;
+    }
+    .about-founder-card-footer {
+      border-top: 1px solid #F1F5F9;
+      padding-top: 0.85rem;
+      margin-top: auto;
+    }
+    .about-founder-footer-tag {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: #D5A642;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* Milestone Horizontal Box */
+    .about-milestone-box {
+      background: #FFFFFF;
+      border: 1px solid #E2E8F0;
+      border-radius: 14px;
+      padding: 1.6rem 2.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 4px 18px rgba(5, 19, 38, 0.03);
+    }
+    .about-milestone-node {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
       flex-shrink: 0;
     }
-    .about-timeline-circle {
+    .about-milestone-badge {
       width: 44px;
       height: 44px;
-      background: rgba(201, 163, 78, 0.12);
-      border: 1px solid #D5A642;
+      border: 1.5px solid #D5A642;
+      background: rgba(213, 166, 66, 0.08);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #D5A642;
       flex-shrink: 0;
+      transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
-    .about-timeline-info {
+    .about-milestone-box.animated .about-milestone-badge {
+      transform: scale(1.06);
+    }
+    .about-milestone-details {
       display: flex;
       flex-direction: column;
     }
-    .about-timeline-year {
-      font-size: 0.95rem;
+    .about-milestone-head {
+      font-size: 1.05rem;
       font-weight: 800;
       color: #051326;
-      line-height: 1.2;
+      line-height: 1.25;
+      font-variant-numeric: tabular-nums;
     }
-    .about-timeline-text {
-      font-size: 0.75rem;
+    .about-milestone-sub {
+      font-size: 0.8rem;
       color: #64748B;
     }
-    .about-timeline-line {
+    .about-milestone-divider {
       flex-grow: 1;
-      height: 2px;
+      height: 1.5px;
       background: #E2E8F0;
-      margin: 0 1.5rem;
-    }
-    .about-faith-banner {
-      margin-top: 3.5rem;
-      background: radial-gradient(ellipse at 50% 0%, rgba(201, 163, 78, 0.12) 0%, transparent 70%), linear-gradient(180deg, #07172C 0%, #081A33 60%, #05101E 100%);
-      border: 1px solid rgba(201, 163, 78, 0.35);
-      border-radius: 14px;
-      padding: 2.25rem 1.5rem 1.75rem;
-      box-shadow: 0 10px 30px rgba(5, 19, 38, 0.12);
+      margin: 0 2rem;
       position: relative;
       overflow: hidden;
     }
-    .about-faith-banner::before {
+    .about-milestone-divider::after {
       content: '';
       position: absolute;
       top: 0;
       left: 0;
-      right: 0;
-      height: 2px;
-      background: linear-gradient(90deg, transparent, #C9A34E, #E4C77E, #C9A34E, transparent);
+      height: 100%;
+      width: 0%;
+      background: linear-gradient(90deg, #D5A642, #E2E8F0);
+      transition: width 1.6s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .about-closing-section {
-      padding: 0 0 5rem;
+    .about-milestone-box.animated .about-milestone-divider::after {
+      width: 100%;
+    }
+.about-closing-section {
+      padding: 4.5rem 0 4.5rem;
       background: transparent;
     }
     .about-closing-box {
@@ -581,15 +741,20 @@
         grid-template-columns: 1fr;
         gap: 1.75rem;
       }
-      .about-founders-cards-col {
-        grid-template-columns: 1fr;
-      }
-      .about-timeline-wrap {
+      .about-milestone-box {
+        padding: 1.5rem;
         flex-direction: column;
         gap: 1.25rem;
         align-items: flex-start;
       }
-      .about-timeline-line {
+      .about-milestone-divider {
+        display: none;
+      }
+      .faith-banner-pillars {
+        flex-direction: column;
+        gap: 0.35rem;
+      }
+      .faith-pillar-dot {
         display: none;
       }
     }
@@ -603,11 +768,11 @@
       <div class="top-bar-info">
         <div class="top-bar-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          <a href="tel:+919597000189">+91 95970 00189</a> / <a href="tel:+918072254360">+91 80722 54360</a>
+          <a href="tel:+919597000189">+91 95970 00189</a> / <a href="tel:+919443230189">+91 94432 30189</a>
         </div>
         <div class="top-bar-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          <a href="mailto:info@essaargroup.com">info@essaargroup.com</a>
+          <a href="mailto:essaargroupofco@gmail.com">essaargroupofco@gmail.com</a>
         </div>
         <div class="top-bar-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
@@ -724,13 +889,13 @@
       <a href="companies.html" class="drawer-link">Our Companies Overview</a>
       
       <div class="drawer-companies-title">Group Subsidiaries</div>
-      <a href="company-prateesh-engineering.html" class="drawer-sublink">01. Prateesh Engineering</a>
-      <a href="company-srs-cranes.html" class="drawer-sublink">02. SRS Cranes &amp; Equipments</a>
-      <a href="company-grace-gases.html" class="drawer-sublink">03. Grace Gases &amp; Co.</a>
-      <a href="company-best-air-products.html" class="drawer-sublink">04. Best Air Products</a>
-      <a href="company-essaar-engineering.html" class="drawer-sublink">05. ESSAAR Engineering &amp; Co.</a>
-      <a href="company-roy-diagnostics.html" class="drawer-sublink">06. Roy Diagnostics</a>
-      <a href="company-jj-industrial.html" class="drawer-sublink">07. JJ Industrial HR Services</a>
+      <a href="company-prateesh-engineering.html" class="drawer-sublink">Prateesh Engineering</a>
+      <a href="company-srs-cranes.html" class="drawer-sublink">SRS Cranes &amp; Equipments</a>
+      <a href="company-grace-gases.html" class="drawer-sublink">Grace Gases &amp; Co.</a>
+      <a href="company-best-air-products.html" class="drawer-sublink">Best Air Products</a>
+      <a href="company-essaar-engineering.html" class="drawer-sublink">ESSAAR Engineering &amp; Co.</a>
+      <a href="company-roy-diagnostics.html" class="drawer-sublink">Roy Diagnostics</a>
+      <a href="company-jj-industrial.html" class="drawer-sublink">JJ Industrial HR Services</a>
       
       <a href="industries.html" class="drawer-link">Industries We Serve</a>
       <a href="projects-gallery.html" class="drawer-link">Projects &amp; Gallery</a>
@@ -747,12 +912,12 @@
         <div class="drawer-contact-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
           <div>
-            <a href="tel:+919597000189">+91 95970 00189</a> / <a href="tel:+918072254360">+91 80722 54360</a>
+            <a href="tel:+919597000189">+91 95970 00189</a> / <a href="tel:+919443230189">+91 94432 30189</a>
           </div>
         </div>
         <div class="drawer-contact-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          <a href="mailto:info@essaargroup.com">info@essaargroup.com</a>
+          <a href="mailto:essaargroupofco@gmail.com">essaargroupofco@gmail.com</a>
         </div>
         <div class="drawer-contact-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -784,100 +949,100 @@
        ========================================================================== -->
   <section class="about-founders-v2" id="founders">
     <div class="container">
-      <div class="about-subtag-center" style="margin-bottom: 0.5rem;">— OUR FOUNDERS &amp; LEGACY —</div>
-      <h2 class="about-sec-heading-center" style="margin-bottom: 3.5rem;">Rooted in Values. Building the Future.</h2>
+      <!-- Faith & Values Banner matching reference design -->
+      <div class="about-faith-banner-v2">
+        <span class="faith-bracket top-left"></span>
+        <span class="faith-bracket top-right"></span>
+        <span class="faith-bracket bottom-left"></span>
+        <span class="faith-bracket bottom-right"></span>
+
+        <div class="faith-banner-lead">PRAISE THE LORD</div>
+        <div class="faith-banner-rule"></div>
+        <div class="faith-banner-pillars">
+          <span>ROOTED IN FAITH</span>
+          <span class="faith-pillar-dot">•</span>
+          <span>BUILT ON TRUST</span>
+          <span class="faith-pillar-dot">•</span>
+          <span>GROWING FOR GENERATIONS</span>
+        </div>
+        <div class="faith-banner-sub">ESSAAR GROUP OF COMPANIES</div>
+      </div>
+
+      <div class="about-founders-kicker">— OUR FOUNDERS &amp; LEGACY —</div>
+      <h2 class="about-founders-serif-title">Rooted in Values — Building the Future</h2>
 
       <div class="about-founders-v2-grid">
-        <!-- Left: Story & Journey Paragraphs -->
+        <!-- Col 1: Story with Drop Cap -->
         <div class="about-founders-story-col">
           <p>
-            Founded in 1995 by Mr. S. Ramesh Prabakaran and Mrs. Packiabama Rameshprabakaran, ESSAAR Group was built on the pillars of faith, integrity and entrepreneurial vision.
+            <span class="about-dropcap">F</span>ounded in <strong>1995</strong> by <strong>Mr. S. Ramesh Prabakaran</strong> and <strong>Mrs. Packiabama Rameshprabakaran</strong>, ESSAAR Group was built on the enduring pillars of faith, integrity, and entrepreneurial vision.
           </p>
           <p>
-            For more than three decades, their leadership has nurtured a culture of excellence, creating opportunities, empowering people and delivering value across industries.
+            For more than three decades, their stewardship has nurtured a culture of operational excellence—creating meaningful opportunities, empowering people, and delivering lasting value across industries.
           </p>
           <p>
-            Their legacy continues to inspire the next generation as we grow with purpose and responsibility.
+            Their legacy continues to guide and inspire the next generation as we grow forward with clarity, purpose, and unwavering responsibility.
           </p>
         </div>
 
-        <!-- Right: Two Premium Founder Cards -->
-        <div class="about-founders-cards-col">
-          <!-- Founder 1 -->
-          <div class="about-founder-v2-card">
-            <div class="about-founder-tag">FOUNDER</div>
-            <h3 class="about-founder-v2-name">Mr. S. Ramesh Prabakaran</h3>
-            <p class="about-founder-v2-bio">Visionary Leader with a passion for excellence and nation building.</p>
+        <!-- Col 2: Founder Card -->
+        <div class="about-founder-v2-card">
+          <div class="about-founder-tag">FOUNDER</div>
+          <h3 class="about-founder-v2-name">Mr. S. Ramesh Prabakaran</h3>
+          <p class="about-founder-v2-bio">Visionary leader with an enduring commitment to business excellence, ethical enterprise, and nation building.</p>
+          <div class="about-founder-card-footer">
+            <span class="about-founder-footer-tag">▪ VISION &amp; STEWARDSHIP</span>
           </div>
+        </div>
 
-          <!-- Founder 2 -->
-          <div class="about-founder-v2-card">
-            <div class="about-founder-tag">CO-FOUNDER</div>
-            <h3 class="about-founder-v2-name">Mrs. Packiabama Rameshprabakaran</h3>
-            <p class="about-founder-v2-bio">Guiding Strength behind our values, people and progress.</p>
+        <!-- Col 3: Founder Card -->
+        <div class="about-founder-v2-card">
+          <div class="about-founder-tag">FOUNDER</div>
+          <h3 class="about-founder-v2-name">Mrs. Packiabama Rameshprabakaran</h3>
+          <p class="about-founder-v2-bio">Guiding strength behind our core values, people-first culture, and sustained institutional progress.</p>
+          <div class="about-founder-card-footer">
+            <span class="about-founder-footer-tag">▪ VALUES &amp; FOUNDATION</span>
           </div>
         </div>
       </div>
 
-      <!-- Horizontal Timeline -->
-      <div class="about-timeline-wrap">
+      <!-- Milestone Horizontal Timeline Card -->
+      <div class="about-milestone-box">
         <!-- Milestone 1 -->
-        <div class="about-timeline-node">
-          <div class="about-timeline-circle">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+        <div class="about-milestone-node">
+          <div class="about-milestone-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
           </div>
-          <div class="about-timeline-info">
-            <span class="about-timeline-year">1995</span>
-            <span class="about-timeline-text">Founded</span>
+          <div class="about-milestone-details">
+            <span class="about-milestone-head"><span class="milestone-counter" data-target="1995" data-start="0">1995</span></span>
+            <span class="about-milestone-sub">Founded</span>
           </div>
         </div>
 
-        <div class="about-timeline-line"></div>
+        <div class="about-milestone-divider"></div>
 
         <!-- Milestone 2 -->
-        <div class="about-timeline-node">
-          <div class="about-timeline-circle">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+        <div class="about-milestone-node">
+          <div class="about-milestone-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
           </div>
-          <div class="about-timeline-info">
-            <span class="about-timeline-year">Three Decades</span>
-            <span class="about-timeline-text">of Growth</span>
+          <div class="about-milestone-details">
+            <span class="about-milestone-head"><span class="milestone-counter" data-target="40" data-start="0">40</span>+ Years</span>
+            <span class="about-milestone-sub">Of Legacy &amp; Growth</span>
           </div>
         </div>
 
-        <div class="about-timeline-line"></div>
+        <div class="about-milestone-divider"></div>
 
         <!-- Milestone 3 -->
-        <div class="about-timeline-node">
-          <div class="about-timeline-circle">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        <div class="about-milestone-node">
+          <div class="about-milestone-badge">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
           </div>
-          <div class="about-timeline-info">
-            <span class="about-timeline-year">Present</span>
-            <span class="about-timeline-text">A Legacy That Continues</span>
+          <div class="about-milestone-details">
+            <span class="about-milestone-head">Present</span>
+            <span class="about-milestone-sub">Building for Generations</span>
           </div>
-        </div>
-      </div>
-
-      <!-- Faith & Values Banner (Praise The Lord & Rooted in Faith) -->
-      <div class="about-faith-banner">
-        <div class="founders-faith-block text-center" style="text-align: center; margin: 0 auto 1.25rem;">
-          <h3 class="faith-reverence-title" style="text-align: center;">PRAISE THE LORD</h3>
-          <div class="faith-divider-rule"></div>
-          <div class="faith-values-row">
-            <span class="faith-value-item">ROOTED IN FAITH</span>
-            <span class="faith-separator">|</span>
-            <span class="faith-value-item">BUILT ON TRUST</span>
-            <span class="faith-separator">|</span>
-            <span class="faith-value-item">GROWING FOR GENERATIONS</span>
-          </div>
-        </div>
-
-        <!-- Final Group Identity Signature -->
-        <div class="founders-signature-block text-center">
-          <span class="signature-group-name">ESSAAR GROUP OF COMPANIES</span>
-          <span class="signature-divider-dot" aria-hidden="true">•</span>
-          <span class="signature-tagline">"Rooted in Faith | Built on Trust | Growing for Generations"</span>
         </div>
       </div>
     </div>
@@ -889,19 +1054,19 @@
   <section class="about-structure-section" id="structure">
     <div class="container">
       <div class="about-subtag-center" style="margin-bottom: 0.5rem;">— CORPORATE STRUCTURE —</div>
-      <h2 class="about-sec-heading-center">Seven Specialized Companies. One Strong Foundation.</h2>
+      <h2 class="about-sec-heading-center">Several Specialized Companies — One Strong Foundation</h2>
 
       <!-- Row 1: 4 Companies -->
       <div class="about-tree-row-4">
         <!-- 01: Prateesh Engineering -->
         <div class="about-company-card">
           <span class="about-card-num">01</span>
-          <img src="assets/images/logos/prateesh-logo.jpg" alt="Prateesh Engineering Enterprises Logo" class="about-card-logo">
+          <img src="assets/images/logos/prateesh-logo-transparent.png" alt="Prateesh Engineering Enterprises Logo" class="about-card-logo">
           <h3 class="about-card-title">PRATEESH ENGINEERING ENTERPRISES</h3>
           <span class="about-card-badge">ENTERPRISES</span>
           <p class="about-card-desc">Engineering, Heavy Fabrication &amp; Industrial Project Solutions</p>
           <a href="company-prateesh-engineering.html" class="about-card-link">
-            <span>View Company Website</span>
+            <span>Explore Company Profile</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
           </a>
         </div>
@@ -909,12 +1074,12 @@
         <!-- 02: SRS Cranes -->
         <div class="about-company-card">
           <span class="about-card-num">02</span>
-          <img src="assets/images/logos/srs-cranes-logo.jpg" alt="SRS Cranes &amp; Equipments Services Logo" class="about-card-logo">
+          <img src="assets/images/logos/srs-cranes-logo-transparent.png" alt="SRS Cranes &amp; Equipments Services Logo" class="about-card-logo">
           <h3 class="about-card-title">SRS CRANES &amp; EQUIPMENTS SERVICES</h3>
           <span class="about-card-badge">SERVICES</span>
           <p class="about-card-desc">Crane Hiring &amp; Heavy Lifting Solutions (5–500 Tonnes)</p>
           <a href="company-srs-cranes.html" class="about-card-link">
-            <span>View Company Website</span>
+            <span>Explore Company Profile</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
           </a>
         </div>
@@ -922,12 +1087,12 @@
         <!-- 03: Grace Gases -->
         <div class="about-company-card">
           <span class="about-card-num">03</span>
-          <img src="assets/images/logos/grace-gases-logo.jpg" alt="Grace Gases &amp; Co. Logo" class="about-card-logo">
+          <img src="assets/images/logos/grace-gases-logo-transparent.png" alt="Grace Gases &amp; Co. Logo" class="about-card-logo">
           <h3 class="about-card-title">GRACE GASES &amp; CO.</h3>
           <span class="about-card-badge">INDUSTRIAL &amp; MEDICAL</span>
           <p class="about-card-desc">Industrial, Medical &amp; Specialty Gases Supply</p>
           <a href="company-grace-gases.html" class="about-card-link">
-            <span>View Company Website</span>
+            <span>Explore Company Profile</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
           </a>
         </div>
@@ -935,12 +1100,12 @@
         <!-- 04: Best Air Products -->
         <div class="about-company-card">
           <span class="about-card-num">04</span>
-          <img src="assets/images/logos/best-air-logo.jpg" alt="Best Air Products Logo" class="about-card-logo">
+          <img src="assets/images/logos/best-air-logo-transparent.png" alt="Best Air Products Logo" class="about-card-logo">
           <h3 class="about-card-title">BEST AIR PRODUCTS</h3>
           <span class="about-card-badge">DISTRIBUTION</span>
           <p class="about-card-desc">Industrial Gas Distribution &amp; Cylinder Fleet Logistics</p>
           <a href="company-best-air-products.html" class="about-card-link">
-            <span>View Company Website</span>
+            <span>Explore Company Profile</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
           </a>
         </div>
@@ -954,12 +1119,12 @@
         <!-- 05: ESSAAR Engineering -->
         <div class="about-company-card">
           <span class="about-card-num">05</span>
-          <img src="assets/images/logos/essaar-engineering-logo.jpg" alt="ESSAAR Engineering &amp; Company Logo" class="about-card-logo">
+          <img src="assets/images/logos/essaar-engineering-logo-transparent.png" alt="ESSAAR Engineering &amp; Company Logo" class="about-card-logo">
           <h3 class="about-card-title">ESSAAR ENGINEERING</h3>
           <span class="about-card-badge">ENGINEERING</span>
           <p class="about-card-desc">Mechanical Engineering &amp; Industrial Services</p>
           <a href="company-essaar-engineering.html" class="about-card-link">
-            <span>View Company Website</span>
+            <span>Explore Company Profile</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
           </a>
         </div>
@@ -967,12 +1132,12 @@
         <!-- 06: Roy Diagnostics -->
         <div class="about-company-card">
           <span class="about-card-num">06</span>
-          <img src="assets/images/logos/roy-diagnostics-logo.jpg" alt="Roy Diagnostics Logo" class="about-card-logo">
+          <img src="assets/images/logos/roy-diagnostics-logo-transparent.png" alt="Roy Diagnostics Logo" class="about-card-logo">
           <h3 class="about-card-title">ROY DIAGNOSTICS</h3>
           <span class="about-card-badge">HEALTHCARE DIAGNOSTICS</span>
           <p class="about-card-desc">Advanced Health Diagnostics &amp; Imaging Services</p>
           <a href="company-roy-diagnostics.html" class="about-card-link">
-            <span>View Company Website</span>
+            <span>Explore Company Profile</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
           </a>
         </div>
@@ -980,12 +1145,12 @@
         <!-- 07: JJ Industrial HR -->
         <div class="about-company-card">
           <span class="about-card-num">07</span>
-          <img src="assets/images/logos/jj-industrial-logo.png" alt="JJ Industrial HR Services Logo" class="about-card-logo" style="background: #FFFFFF; padding: 4px;">
+          <img src="assets/images/logos/jj-industrial-logo-transparent.png" alt="JJ Industrial HR Services Logo" class="about-card-logo">
           <h3 class="about-card-title">JJ INDUSTRIAL HR SERVICES</h3>
           <span class="about-card-badge">HR CONSULTANCY</span>
           <p class="about-card-desc">Industrial Manpower Solutions &amp; HR Consultancy</p>
           <a href="company-jj-industrial.html" class="about-card-link">
-            <span>View Company Website</span>
+            <span>Explore Company Profile</span>
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
           </a>
         </div>
@@ -1071,7 +1236,7 @@
     <div class="container">
       <div class="about-closing-box">
         <div class="about-closing-left">
-          <h2 class="about-closing-title">Stronger Together. Built to Last.</h2>
+          <h2 class="about-closing-title">Stronger Together — Built to Last</h2>
           <p class="about-closing-sub">Partner with ESSAAR Group for dependable solutions, lasting relationships and mutual growth.</p>
         </div>
         <div class="about-closing-btn">
@@ -1088,7 +1253,13 @@
     <div class="container">
       <div class="footer-top">
         <div>
-          <img src="assets/images/logos/essaar-group-logo.jpg" alt="ESSAAR Group of Companies" class="footer-brand-logo">
+          <a href="index.html" class="footer-brand-wrap" aria-label="ESSAAR Group of Companies Homepage">
+            <img src="assets/images/logos/essaar-group-logo.jpg" alt="ESSAAR Group of Companies Logo" class="footer-brand-logo">
+            <div class="footer-brand-text">
+              <span class="footer-brand-title">ESSAAR GROUP</span>
+              <span class="footer-brand-subtitle">OF COMPANIES</span>
+            </div>
+          </a>
           <p class="footer-about">
             ESSAAR Group of Companies brings together specialized expertise in industrial engineering, crane rental, medical &amp; industrial gases, and engineering, project execution &amp; industrial solutions across South India.
           </p>
@@ -1110,13 +1281,13 @@
         <div>
           <h4 class="footer-heading">Group Companies</h4>
           <ul class="footer-links">
-            <li><a href="company-prateesh-engineering.html">01. Prateesh Engineering Enterprises</a></li>
-            <li><a href="company-srs-cranes.html">02. SRS Cranes &amp; Equipments</a></li>
-            <li><a href="company-grace-gases.html">03. Grace Gases &amp; Company</a></li>
-            <li><a href="company-best-air-products.html">04. Best Air Products</a></li>
-            <li><a href="company-essaar-engineering.html">05. ESSAAR Engineering &amp; Co.</a></li>
-            <li><a href="company-roy-diagnostics.html">06. Roy Diagnostics</a></li>
-            <li><a href="company-jj-industrial.html">07. JJ Industrial HR Services</a></li>
+            <li><a href="company-prateesh-engineering.html">Prateesh Engineering Enterprises</a></li>
+            <li><a href="company-srs-cranes.html">SRS Cranes &amp; Equipments</a></li>
+            <li><a href="company-grace-gases.html">Grace Gases &amp; Company</a></li>
+            <li><a href="company-best-air-products.html">Best Air Products</a></li>
+            <li><a href="company-essaar-engineering.html">ESSAAR Engineering &amp; Co.</a></li>
+            <li><a href="company-roy-diagnostics.html">Roy Diagnostics</a></li>
+            <li><a href="company-jj-industrial.html">JJ Industrial HR Services</a></li>
           </ul>
         </div>
 
@@ -1125,15 +1296,15 @@
           <div class="footer-contact-list">
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <span>No. 223, Prateesh, Pachayankuppam, Chidambaram Main Rd, Cuddalore - 607005.</span>
+              <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Essaar+Plaza,+No-4/653,+Major+Mukund+Varadharajan+Rd,+United+Colony,+Medavakkam,+Tamil+Nadu+-+600100" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Essaar Plaza, No-4/653, Major Mukund Varadharajan Rd, United Colony, Medavakkam, Tamil Nadu - 600100.</a></span>
             </div>
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <span>+91 95970 00189 / +91 80722 54360</span>
+              <span><a href="tel:+919597000189" style="color: inherit; text-decoration: none;">+91 95970 00189</a> / <a href="tel:+919443230189" style="color: inherit; text-decoration: none;">+91 94432 30189</a></span>
             </div>
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              <span>info@essaargroup.com</span>
+              <span><a href="mailto:essaargroupofco@gmail.com" style="color: inherit; text-decoration: none;">essaargroupofco@gmail.com</a></span>
             </div>
           </div>
         </div>
@@ -1146,7 +1317,7 @@
         <div class="footer-bottom-links">
           <a href="contact.html">Privacy Policy</a>
           <a href="contact.html">Terms &amp; Conditions</a>
-          <a href="sitemap.xml">Sitemap</a>
+          <a href="https://wa.me/917845391712?text=Hi%20Sriram,%20I%20found%20you%20in%20ESSAAR%20Group%20Website" target="_blank" rel="noopener noreferrer" class="developer-credit">Developed by <span class="developer-name">Sri Web Squad</span></a>
         </div>
       </div>
     </div>

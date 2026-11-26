@@ -34,7 +34,7 @@
       right: 0;
       width: 100%;
       height: 100%;
-      background-image: url('assets/images/gallery/heavy-equipment-erection.jpg');
+      background-image: url('assets/images/gallery/srs-cranes-tower-erection.jpg');
       background-size: cover;
       background-position: center right;
       z-index: 1;
@@ -58,7 +58,7 @@
       width: 100%;
       height: 100%;
       background: #D5A642;
-      clip-path: polygon(0 0, 52.4% 0, 42.4% 100%, 0 100%);
+      clip-path: polygon(0 0, 60.4% 0, 50.4% 100%, 0 100%);
       z-index: 2;
     }
     .company-exact-hero-navy-shape {
@@ -68,7 +68,7 @@
       width: 100%;
       height: 100%;
       background: #06152B;
-      clip-path: polygon(0 0, 52% 0, 42% 100%, 0 100%);
+      clip-path: polygon(0 0, 60% 0, 50% 100%, 0 100%);
       z-index: 3;
     }
     .company-exact-hero-container {
@@ -161,8 +161,8 @@
     .company-exact-buttons {
       display: flex;
       align-items: center;
-      gap: 1.25rem;
-      flex-wrap: wrap;
+      gap: 0.85rem;
+      flex-wrap: nowrap;
     }
     .btn-exact-gold {
       display: inline-flex;
@@ -178,6 +178,7 @@
       transition: all 0.25s ease;
       box-shadow: 0 4px 14px rgba(213, 166, 66, 0.35);
       border: 1px solid #D5A642;
+      white-space: nowrap;
     }
     .btn-exact-gold:hover {
       background: #E2B755;
@@ -198,6 +199,7 @@
       text-decoration: none;
       border: 1px solid rgba(213, 166, 66, 0.7);
       transition: all 0.25s ease;
+      white-space: nowrap;
     }
     .btn-exact-outline:hover {
       background: rgba(213, 166, 66, 0.15);
@@ -250,26 +252,36 @@
       border-radius: 16px;
       padding: 1.5rem 2rem;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 1.5rem;
       box-shadow: 0 10px 30px rgba(5, 19, 38, 0.15);
     }
     .bottom-bar-block {
       display: flex;
-      align-items: flex-start;
-      gap: 0.85rem;
+      flex-direction: column;
+      gap: 0.35rem;
       flex: 1;
+      min-width: 0;
+    }
+    .bottom-bar-header {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      min-height: 22px;
     }
     .bottom-bar-icon {
       color: #D5A642;
       flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .bottom-bar-info {
       display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+    }
+    .bottom-bar-icon svg {
+      width: 20px;
+      height: 20px;
     }
     .bottom-bar-label {
       font-size: 0.72rem;
@@ -277,11 +289,14 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: #D5A642;
+      line-height: 1.2;
+      white-space: nowrap;
     }
     .bottom-bar-val {
       font-size: 0.85rem;
       color: #FFFFFF;
       line-height: 1.45;
+      padding-left: calc(20px + 0.55rem);
     }
     .bottom-bar-val a {
       color: #FFFFFF;
@@ -293,17 +308,42 @@
     }
     .bottom-bar-action {
       flex-shrink: 0;
+      align-self: center;
     }
     .bottom-bar-action .btn-exact-gold {
-      padding: 0.7rem 1.35rem;
+      padding: 0.75rem 1.4rem;
       font-size: 0.88rem;
+      white-space: nowrap;
     }
 
     @media (max-width: 1200px) {
+      .company-exact-hero-gold-line {
+        clip-path: polygon(0 0, 64.4% 0, 54.4% 100%, 0 100%);
+      }
+      .company-exact-hero-navy-shape {
+        clip-path: polygon(0 0, 64% 0, 54% 100%, 0 100%);
+      }
+      .company-exact-hero-left {
+        max-width: 560px;
+      }
+      .company-exact-buttons {
+        gap: 0.85rem;
+      }
+      .btn-exact-gold,
+      .btn-exact-outline {
+        padding: 0.8rem 1.4rem;
+        font-size: 0.9rem;
+      white-space: nowrap;
+      }
       .company-bottom-bar {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
+        align-items: start;
+      }
+      .bottom-bar-action {
+        grid-column: span 2;
+        justify-self: start;
       }
     }
     @media (max-width: 991px) {
@@ -373,6 +413,20 @@
       .bottom-bar-action .btn-exact-gold {
         width: 100%;
         justify-content: center;
+      white-space: nowrap;
+      }
+    }
+  
+    @media (max-width: 576px) {
+      .company-exact-buttons {
+        flex-wrap: wrap !important;
+        flex-direction: column;
+        width: 100%;
+      }
+      .btn-exact-gold,
+      .btn-exact-outline {
+        width: 100%;
+        justify-content: center;
       }
     }
   </style>
@@ -385,7 +439,7 @@
       <div class="top-bar-info">
         <div class="top-bar-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          <a href="tel:+919597000189">+91 95970 00189</a> / <a href="tel:+918072254360">+91 80722 54360</a>
+          <a href="tel:+919597000189">+91 95970 00189</a> / <a href="tel:+919443230189">+91 94432 30189</a>
         </div>
         <div class="top-bar-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -501,13 +555,13 @@
       <a href="companies.html" class="drawer-link">Our Companies Overview</a>
       
             <div class="drawer-companies-title">Group Subsidiaries</div>
-      <a href="company-prateesh-engineering.html" class="drawer-sublink">01. Prateesh Engineering</a>
-      <a href="company-srs-cranes.html" class="drawer-sublink">02. SRS Cranes &amp; Equipments</a>
-      <a href="company-grace-gases.html" class="drawer-sublink">03. Grace Gases &amp; Co.</a>
-      <a href="company-best-air-products.html" class="drawer-sublink">04. Best Air Products</a>
-      <a href="company-essaar-engineering.html" class="drawer-sublink">05. ESSAAR Engineering &amp; Co.</a>
-      <a href="company-roy-diagnostics.html" class="drawer-sublink">06. Roy Diagnostics</a>
-      <a href="company-jj-industrial.html" class="drawer-sublink">07. JJ Industrial HR Services</a>
+      <a href="company-prateesh-engineering.html" class="drawer-sublink">Prateesh Engineering</a>
+      <a href="company-srs-cranes.html" class="drawer-sublink">SRS Cranes &amp; Equipments</a>
+      <a href="company-grace-gases.html" class="drawer-sublink">Grace Gases &amp; Co.</a>
+      <a href="company-best-air-products.html" class="drawer-sublink">Best Air Products</a>
+      <a href="company-essaar-engineering.html" class="drawer-sublink">ESSAAR Engineering &amp; Co.</a>
+      <a href="company-roy-diagnostics.html" class="drawer-sublink">Roy Diagnostics</a>
+      <a href="company-jj-industrial.html" class="drawer-sublink">JJ Industrial HR Services</a>
       
       <a href="industries.html" class="drawer-link">Industries We Serve</a>
       <a href="projects-gallery.html" class="drawer-link">Projects &amp; Gallery</a>
@@ -522,12 +576,12 @@
         <div class="drawer-contact-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
           <div>
-            <a href="tel:+919597000189">+91 95970 00189</a> / <a href="tel:+918072254360">+91 80722 54360</a>
+            <a href="tel:+919597000189">+91 95970 00189</a> / <a href="tel:+919443230189">+91 94432 30189</a>
           </div>
         </div>
         <div class="drawer-contact-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          <a href="mailto:info@essaargroup.com">info@essaargroup.com</a>
+          <a href="mailto:essaargroupofco@gmail.com">essaargroupofco@gmail.com</a>
         </div>
         <div class="drawer-contact-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -601,43 +655,43 @@
     <div class="container">
       <div class="company-bottom-bar">
         <div class="bottom-bar-block">
-          <div class="bottom-bar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+          <div class="bottom-bar-header">
+            <div class="bottom-bar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+            </div>
+            <span class="bottom-bar-label">CORE FOCUS</span>
           </div>
-          <div class="bottom-bar-info">
-            <span class="bottom-bar-label">Core Focus</span>
-            <span class="bottom-bar-val">Hydraulic & Mobile Crane Fleet (5 to 500 Tonnes)</span>
-          </div>
+          <div class="bottom-bar-val">Hydraulic &amp; Mobile Crane Fleet (5 to 500 Tonnes)</div>
         </div>
 
         <div class="bottom-bar-block">
-          <div class="bottom-bar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <div class="bottom-bar-header">
+            <div class="bottom-bar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <span class="bottom-bar-label">LOCATION</span>
           </div>
-          <div class="bottom-bar-info">
-            <span class="bottom-bar-label">Location</span>
-            <span class="bottom-bar-val">SIPCOT Industrial Area, Cuddalore - 607005, Tamil Nadu</span>
-          </div>
+          <div class="bottom-bar-val">SIPCOT Industrial Area, Cuddalore - 607005, Tamil Nadu</div>
         </div>
 
         <div class="bottom-bar-block">
-          <div class="bottom-bar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          <div class="bottom-bar-header">
+            <div class="bottom-bar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            </div>
+            <span class="bottom-bar-label">GSTIN NUMBER</span>
           </div>
-          <div class="bottom-bar-info">
-            <span class="bottom-bar-label">GSTIN Number</span>
-            <span class="bottom-bar-val">33AJGPP3252L2Z2</span>
-          </div>
+          <div class="bottom-bar-val">33AJGPP3252L2Z2</div>
         </div>
 
         <div class="bottom-bar-block">
-          <div class="bottom-bar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <div class="bottom-bar-header">
+            <div class="bottom-bar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <span class="bottom-bar-label">DIRECT CONTACT</span>
           </div>
-          <div class="bottom-bar-info">
-            <span class="bottom-bar-label">Direct Contact</span>
-            <span class="bottom-bar-val"><a href="tel:+919597000189">+91 95970 00189</a> / <a href="tel:+918072254360">+91 80722 54360</a></span>
-          </div>
+          <div class="bottom-bar-val"><a href="tel:+919597000189">+91 95970 00189</a> / <a href="tel:+919443230189">+91 94432 30189</a></div>
         </div>
 
         <div class="bottom-bar-action">
@@ -680,9 +734,9 @@
         </div>
 
         <div>
-          <img src="assets/images/gallery/heavy-equipment-erection.jpg" alt="SRS Cranes Heavy Lifting Operation" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-xl);">
+          <img src="assets/images/gallery/srs-cranes-equipment-yard.jpg" alt="SRS Cranes Heavy Equipment Yard in SIPCOT Cuddalore" style="width: 100%; aspect-ratio: 4 / 3; max-height: 440px; object-fit: cover; object-position: center bottom; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); display: block;">
           <div style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 0.75rem;">
-            Industrial Equipment Erection and Heavy Lifting by SRS Cranes
+            1-Acre Heavy Equipment Yard with Kato, ACE, and Tadano Mobile Fleet in SIPCOT Cuddalore
           </div>
         </div>
       </div>
@@ -777,7 +831,16 @@
       <div class="services-grid">
         <div class="service-card">
           <div class="service-card-icon">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18"></path><path d="M21 10h-6V4"></path><path d="M12 12v6"></path><circle cx="12" cy="19" r="2"></circle></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M2 21h20"></path>
+              <path d="M6 21V4"></path>
+              <path d="M6 6h15"></path>
+              <path d="M2 8l4-2"></path>
+              <path d="M6 4l15 2"></path>
+              <path d="M17 6v7"></path>
+              <path d="M15 13h4"></path>
+              <path d="M17 13v3a2 2 0 0 1-2 2"></path>
+            </svg>
           </div>
           <h3 class="service-card-title">Crane Rental &amp; Hiring</h3>
           <p class="service-card-desc">
@@ -891,7 +954,6 @@
       <div class="contact-grid">
         <div class="contact-info-card">
           <div class="contact-info-header">
-            <span class="badge badge-gold" style="margin-bottom: 0.5rem;">Heavy Lifting Division</span>
             <h3>SRS Cranes &amp; Equipments Services</h3>
             <p>Direct communication for equipment availability, site surveys, and rental quotation.</p>
           </div>
@@ -924,7 +986,7 @@
               <h5>Direct Dispatch Contacts</h5>
               <p>
                 <a href="tel:+919597000189">+91 95970 00189</a><br>
-                <a href="tel:+918072254360">+91 80722 54360</a>
+                <a href="tel:+919443230189">+91 94432 30189</a>
               </p>
             </div>
           </div>
@@ -995,7 +1057,13 @@
     <div class="container">
       <div class="footer-top">
         <div>
-          <img src="assets/images/logos/essaar-group-logo.jpg" alt="ESSAAR Group of Companies" class="footer-brand-logo">
+          <a href="index.html" class="footer-brand-wrap" aria-label="ESSAAR Group of Companies Homepage">
+            <img src="assets/images/logos/essaar-group-logo.jpg" alt="ESSAAR Group of Companies Logo" class="footer-brand-logo">
+            <div class="footer-brand-text">
+              <span class="footer-brand-title">ESSAAR GROUP</span>
+              <span class="footer-brand-subtitle">OF COMPANIES</span>
+            </div>
+          </a>
           <p class="footer-about">
             ESSAAR Group of Companies brings together specialized expertise in industrial engineering, crane rental, medical &amp; industrial gases, and engineering, project execution &amp; industrial solutions across South India.
           </p>
@@ -1017,13 +1085,13 @@
         <div>
           <h4 class="footer-heading">Group Companies</h4>
           <ul class="footer-links">
-            <li><a href="company-prateesh-engineering.html">01. Prateesh Engineering Enterprises</a></li>
-            <li><a href="company-srs-cranes.html">02. SRS Cranes &amp; Equipments</a></li>
-            <li><a href="company-grace-gases.html">03. Grace Gases &amp; Company</a></li>
-            <li><a href="company-best-air-products.html">04. Best Air Products</a></li>
-            <li><a href="company-essaar-engineering.html">05. ESSAAR Engineering &amp; Co.</a></li>
-            <li><a href="company-roy-diagnostics.html">06. Roy Diagnostics</a></li>
-            <li><a href="company-jj-industrial.html">07. JJ Industrial HR Services</a></li>
+            <li><a href="company-prateesh-engineering.html">Prateesh Engineering Enterprises</a></li>
+            <li><a href="company-srs-cranes.html">SRS Cranes &amp; Equipments</a></li>
+            <li><a href="company-grace-gases.html">Grace Gases &amp; Company</a></li>
+            <li><a href="company-best-air-products.html">Best Air Products</a></li>
+            <li><a href="company-essaar-engineering.html">ESSAAR Engineering &amp; Co.</a></li>
+            <li><a href="company-roy-diagnostics.html">Roy Diagnostics</a></li>
+            <li><a href="company-jj-industrial.html">JJ Industrial HR Services</a></li>
           </ul>
         </div>
 
@@ -1032,11 +1100,11 @@
           <div class="footer-contact-list">
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <span>SIPCOT Industrial Area, Cuddalore - 607005, Tamil Nadu.</span>
+              <span><a href="https://www.google.com/maps/search/?api=1&amp;query=SIPCOT+Industrial+Area,+Cuddalore+-+607005,+Tamil+Nadu." target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">SIPCOT Industrial Area, Cuddalore - 607005, Tamil Nadu.</a></span>
             </div>
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <span>+91 95970 00189 / +91 80722 54360</span>
+              <span><a href="tel:+919597000189" style="color: inherit; text-decoration: none;">+91 95970 00189</a> / <a href="tel:+919443230189" style="color: inherit; text-decoration: none;">+91 94432 30189</a></span>
             </div>
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
@@ -1053,7 +1121,7 @@
         <div class="footer-bottom-links">
           <a href="contact.html">Privacy Policy</a>
           <a href="contact.html">Terms &amp; Conditions</a>
-          <a href="sitemap.xml">Sitemap</a>
+          <a href="https://wa.me/917845391712?text=Hi%20Sriram,%20I%20found%20you%20in%20SRS%20Cranes%20Website" target="_blank" rel="noopener noreferrer" class="developer-credit">Developed by <span class="developer-name">Sri Web Squad</span></a>
         </div>
       </div>
     </div>

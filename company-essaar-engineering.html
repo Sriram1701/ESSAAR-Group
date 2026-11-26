@@ -58,7 +58,7 @@
       width: 100%;
       height: 100%;
       background: #D5A642;
-      clip-path: polygon(0 0, 52.4% 0, 42.4% 100%, 0 100%);
+      clip-path: polygon(0 0, 60.4% 0, 50.4% 100%, 0 100%);
       z-index: 2;
     }
     .company-exact-hero-navy-shape {
@@ -68,7 +68,7 @@
       width: 100%;
       height: 100%;
       background: #06152B;
-      clip-path: polygon(0 0, 52% 0, 42% 100%, 0 100%);
+      clip-path: polygon(0 0, 60% 0, 50% 100%, 0 100%);
       z-index: 3;
     }
     .company-exact-hero-container {
@@ -161,8 +161,8 @@
     .company-exact-buttons {
       display: flex;
       align-items: center;
-      gap: 1.25rem;
-      flex-wrap: wrap;
+      gap: 0.85rem;
+      flex-wrap: nowrap;
     }
     .btn-exact-gold {
       display: inline-flex;
@@ -178,6 +178,7 @@
       transition: all 0.25s ease;
       box-shadow: 0 4px 14px rgba(213, 166, 66, 0.35);
       border: 1px solid #D5A642;
+      white-space: nowrap;
     }
     .btn-exact-gold:hover {
       background: #E2B755;
@@ -198,6 +199,7 @@
       text-decoration: none;
       border: 1px solid rgba(213, 166, 66, 0.7);
       transition: all 0.25s ease;
+      white-space: nowrap;
     }
     .btn-exact-outline:hover {
       background: rgba(213, 166, 66, 0.15);
@@ -337,7 +339,7 @@
       margin: 0;
     }
     .company-bottom-bar-section {
-      padding: 0 0 3.5rem;
+      padding: 2.5rem 0 3.5rem;
       background: transparent;
     }
     .company-bottom-bar {
@@ -346,26 +348,36 @@
       border-radius: 16px;
       padding: 1.5rem 2rem;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 1.5rem;
       box-shadow: 0 10px 30px rgba(5, 19, 38, 0.15);
     }
     .bottom-bar-block {
       display: flex;
-      align-items: flex-start;
-      gap: 0.85rem;
+      flex-direction: column;
+      gap: 0.35rem;
       flex: 1;
+      min-width: 0;
+    }
+    .bottom-bar-header {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      min-height: 22px;
     }
     .bottom-bar-icon {
       color: #D5A642;
       flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .bottom-bar-info {
       display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+    }
+    .bottom-bar-icon svg {
+      width: 20px;
+      height: 20px;
     }
     .bottom-bar-label {
       font-size: 0.72rem;
@@ -373,11 +385,14 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: #D5A642;
+      line-height: 1.2;
+      white-space: nowrap;
     }
     .bottom-bar-val {
       font-size: 0.85rem;
       color: #FFFFFF;
       line-height: 1.45;
+      padding-left: calc(20px + 0.55rem);
     }
     .bottom-bar-val a {
       color: #FFFFFF;
@@ -389,10 +404,13 @@
     }
     .bottom-bar-action {
       flex-shrink: 0;
+      align-self: center;
     }
-    .bottom-bar-action .btn-exact-gold {
-      padding: 0.7rem 1.35rem;
+    .bottom-bar-action .btn-exact-gold,
+    .bottom-bar-action .btn-hero-gold {
+      padding: 0.75rem 1.4rem;
       font-size: 0.88rem;
+      white-space: nowrap;
     }
 
     /* Responsive */
@@ -404,6 +422,11 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
+        align-items: start;
+      }
+      .bottom-bar-action {
+        grid-column: span 2;
+        justify-self: start;
       }
     }
     @media (max-width: 991px) {
@@ -480,6 +503,20 @@
       .bottom-bar-action .btn-exact-gold {
         width: 100%;
         justify-content: center;
+      white-space: nowrap;
+      }
+    }
+  
+    @media (max-width: 576px) {
+      .company-exact-buttons {
+        flex-wrap: wrap !important;
+        flex-direction: column;
+        width: 100%;
+      }
+      .btn-exact-gold,
+      .btn-exact-outline {
+        width: 100%;
+        justify-content: center;
       }
     }
   </style>
@@ -492,7 +529,7 @@
       <div class="top-bar-info">
         <div class="top-bar-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          <a href="tel:+919597000189">+91 95970 00189</a> / <a href="tel:+918072254360">+91 80722 54360</a>
+          <a href="tel:+919597000189">+91 95970 00189</a> / <a href="tel:+919443230189">+91 94432 30189</a>
         </div>
         <div class="top-bar-item">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -608,13 +645,13 @@
       <a href="companies.html" class="drawer-link">Our Companies Overview</a>
       
             <div class="drawer-companies-title">Group Subsidiaries</div>
-      <a href="company-prateesh-engineering.html" class="drawer-sublink">01. Prateesh Engineering</a>
-      <a href="company-srs-cranes.html" class="drawer-sublink">02. SRS Cranes &amp; Equipments</a>
-      <a href="company-grace-gases.html" class="drawer-sublink">03. Grace Gases &amp; Co.</a>
-      <a href="company-best-air-products.html" class="drawer-sublink">04. Best Air Products</a>
-      <a href="company-essaar-engineering.html" class="drawer-sublink">05. ESSAAR Engineering &amp; Co.</a>
-      <a href="company-roy-diagnostics.html" class="drawer-sublink">06. Roy Diagnostics</a>
-      <a href="company-jj-industrial.html" class="drawer-sublink">07. JJ Industrial HR Services</a>
+      <a href="company-prateesh-engineering.html" class="drawer-sublink">Prateesh Engineering</a>
+      <a href="company-srs-cranes.html" class="drawer-sublink">SRS Cranes &amp; Equipments</a>
+      <a href="company-grace-gases.html" class="drawer-sublink">Grace Gases &amp; Co.</a>
+      <a href="company-best-air-products.html" class="drawer-sublink">Best Air Products</a>
+      <a href="company-essaar-engineering.html" class="drawer-sublink">ESSAAR Engineering &amp; Co.</a>
+      <a href="company-roy-diagnostics.html" class="drawer-sublink">Roy Diagnostics</a>
+      <a href="company-jj-industrial.html" class="drawer-sublink">JJ Industrial HR Services</a>
       
       <a href="industries.html" class="drawer-link">Industries We Serve</a>
       <a href="projects-gallery.html" class="drawer-link">Projects &amp; Gallery</a>
@@ -629,12 +666,12 @@
         <div class="drawer-contact-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
           <div>
-            <a href="tel:+919597000189">+91 95970 00189</a> / <a href="tel:+918072254360">+91 80722 54360</a>
+            <a href="tel:+919597000189">+91 95970 00189</a> / <a href="tel:+919443230189">+91 94432 30189</a>
           </div>
         </div>
         <div class="drawer-contact-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-          <a href="mailto:info@essaargroup.com">info@essaargroup.com</a>
+          <a href="mailto:essaargroupofco@gmail.com">essaargroupofco@gmail.com</a>
         </div>
         <div class="drawer-contact-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -703,6 +740,65 @@
     </div>
   </section>
 
+  <!-- Corporate Credential Bar -->
+  <section class="company-bottom-bar-section">
+    <div class="container">
+      <div class="company-bottom-bar">
+        <!-- 01. CORE FOCUS -->
+        <div class="bottom-bar-block">
+          <div class="bottom-bar-header">
+            <div class="bottom-bar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+            </div>
+            <span class="bottom-bar-label">CORE FOCUS</span>
+          </div>
+          <div class="bottom-bar-val">Plant Equipment Erection, Piping &amp; Industrial Overhauls</div>
+        </div>
+
+        <!-- 02. LOCATION -->
+        <div class="bottom-bar-block">
+          <div class="bottom-bar-header">
+            <div class="bottom-bar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <span class="bottom-bar-label">LOCATION</span>
+          </div>
+          <div class="bottom-bar-val">No. 223, Prateesh, Pachayankuppam, Chidambaram Main Road, Cuddalore - 607005, Tamil Nadu</div>
+        </div>
+
+        <!-- 03. GSTIN NUMBER -->
+        <div class="bottom-bar-block">
+          <div class="bottom-bar-header">
+            <div class="bottom-bar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            </div>
+            <span class="bottom-bar-label">GSTIN NUMBER</span>
+          </div>
+          <div class="bottom-bar-val" style="letter-spacing: 0.05em; font-weight: 700;">33ACQPR6213E1ZM</div>
+        </div>
+
+        <!-- 04. DIRECT CONTACT -->
+        <div class="bottom-bar-block">
+          <div class="bottom-bar-header">
+            <div class="bottom-bar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <span class="bottom-bar-label">DIRECT CONTACT</span>
+          </div>
+          <div class="bottom-bar-val"><a href="tel:+919597000189">+91 95970 00189</a> / <a href="tel:+919443230189">+91 94432 30189</a></div>
+        </div>
+
+        <!-- Action Button -->
+        <div class="bottom-bar-action">
+          <a href="https://www.essaarengineering.com/" class="btn btn-hero-gold" target="_blank" rel="noopener noreferrer">
+            <span>View Company Website</span>
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
     <!-- Business Overview -->
   <section class="section">
     <div class="container">
@@ -733,7 +829,7 @@
         </div>
 
         <div>
-          <img src="assets/images/gallery/pipeline-erection.png" alt="ESSAAR Engineering Pipeline Erection" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-xl);">
+          <img src="assets/images/gallery/pipeline-erection.png" alt="ESSAAR Engineering Pipeline Erection" style="width: 100%; aspect-ratio: 4 / 3; max-height: 440px; object-fit: cover; object-position: center; border-radius: var(--radius-lg); box-shadow: var(--shadow-xl); display: block;">
           <div style="font-size: 0.85rem; color: var(--text-muted); text-align: center; margin-top: 0.75rem;">
             Industrial Pipeline Erection &amp; Mechanical Works by ESSAAR Engineering &amp; Company
           </div>
@@ -747,7 +843,7 @@
     <div class="container">
       <div class="section-header text-center" style="margin-bottom: 2.5rem;">
         <div class="services-subtag">— OUR SERVICES —</div>
-        <h2 class="services-headline">Engineering Solutions. Workforce Strength.</h2>
+        <h2 class="services-headline">Engineering Solutions — Workforce Strength</h2>
       </div>
 
       <div class="company-services-5grid">
@@ -755,9 +851,6 @@
         <div class="company-service-5card">
           <div class="service-5card-image-wrap">
             <img src="assets/images/gallery/welding-work.jpg" alt="Mechanical Works">
-            <div class="service-5card-badge-icon" title="Mechanical Works">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
-            </div>
           </div>
           <div class="service-5card-body">
             <h3 class="service-5card-title">Mechanical Works</h3>
@@ -769,9 +862,6 @@
         <div class="company-service-5card">
           <div class="service-5card-image-wrap">
             <img src="assets/images/gallery/pipe-fabrication-01.jpg" alt="Piping &amp; Installation">
-            <div class="service-5card-badge-icon" title="Piping &amp; Installation">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
-            </div>
           </div>
           <div class="service-5card-body">
             <h3 class="service-5card-title">Piping &amp; Installation</h3>
@@ -783,9 +873,6 @@
         <div class="company-service-5card">
           <div class="service-5card-image-wrap">
             <img src="assets/images/gallery/industrial-plant.jpg" alt="Shutdown &amp; Maintenance">
-            <div class="service-5card-badge-icon" title="Shutdown &amp; Maintenance">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-            </div>
           </div>
           <div class="service-5card-body">
             <h3 class="service-5card-title">Shutdown &amp; Maintenance</h3>
@@ -796,10 +883,7 @@
         <!-- 04. Manpower Supply -->
         <div class="company-service-5card">
           <div class="service-5card-image-wrap">
-            <img src="assets/images/gallery/manpower-supply.jpg" alt="Manpower Supply">
-            <div class="service-5card-badge-icon" title="Manpower Supply">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-            </div>
+            <img src="assets/images/gallery/jj-industrial-workforce.jpg" alt="Manpower Supply">
           </div>
           <div class="service-5card-body">
             <h3 class="service-5card-title">Manpower Supply</h3>
@@ -810,10 +894,7 @@
         <!-- 05. Safety & Quality -->
         <div class="company-service-5card">
           <div class="service-5card-image-wrap">
-            <img src="assets/images/gallery/jj-industrial-workforce.jpg" alt="Safety &amp; Quality">
-            <div class="service-5card-badge-icon" title="Safety &amp; Quality">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><path d="m9 12 2 2 4-4"></path></svg>
-            </div>
+            <img src="assets/images/gallery/structural-steel-fabrication.jpg" alt="Safety &amp; Quality">
           </div>
           <div class="service-5card-body">
             <h3 class="service-5card-title">Safety &amp; Quality</h3>
@@ -896,61 +977,12 @@
     </div>
   </section>
 
-  <!-- Corporate Bottom Credential Bar (Unified single-source of credentials) -->
-  <section class="company-bottom-bar-section">
-    <div class="container">
-      <div class="company-bottom-bar">
-        <!-- 01. Registered Office -->
-        <div class="bottom-bar-block">
-          <div class="bottom-bar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-          </div>
-          <div class="bottom-bar-info">
-            <div class="bottom-bar-label">Registered Office</div>
-            <div class="bottom-bar-val">No. 223, Prateesh, Pachayankuppam, Chidambaram Main Road, Cuddalore - 607005, Tamil Nadu, India</div>
-          </div>
-        </div>
-
-        <!-- 02. GSTIN Number -->
-        <div class="bottom-bar-block">
-          <div class="bottom-bar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
-          </div>
-          <div class="bottom-bar-info">
-            <div class="bottom-bar-label">GSTIN Number</div>
-            <div class="bottom-bar-val" style="letter-spacing: 0.05em; font-weight: 700;">33ACQPR6213E1ZM</div>
-          </div>
-        </div>
-
-        <!-- 03. Direct Contact -->
-        <div class="bottom-bar-block">
-          <div class="bottom-bar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-          </div>
-          <div class="bottom-bar-info">
-            <div class="bottom-bar-label">Direct Contact</div>
-            <div class="bottom-bar-val"><a href="tel:+919597000189">+91 95970 00189</a> / <a href="tel:+918072254360">+91 80722 54360</a></div>
-          </div>
-        </div>
-
-        <!-- 04. Action Button -->
-        <div class="bottom-bar-action">
-          <a href="https://www.essaarengineering.com/" class="btn btn-hero-gold" target="_blank" rel="noopener noreferrer">
-            <span>View Company Website</span>
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Contact & Enquiry Section for ESSAAR Engineering -->
   <section class="section section-grey" id="contact-unit">
     <div class="container">
       <div class="contact-grid">
         <div class="contact-info-card">
           <div class="contact-info-header">
-            <span class="badge badge-gold" style="margin-bottom: 0.5rem;">Unit Communication</span>
             <h3>ESSAAR Engineering &amp; Company</h3>
             <p>Direct communication channel for industrial mechanical works, plant erection, shutdown maintenance, and certified tradesmen deployment.</p>
           </div>
@@ -1041,7 +1073,13 @@
     <div class="container">
       <div class="footer-top">
         <div>
-          <img src="assets/images/logos/essaar-group-logo.jpg" alt="ESSAAR Group of Companies" class="footer-brand-logo">
+          <a href="index.html" class="footer-brand-wrap" aria-label="ESSAAR Group of Companies Homepage">
+            <img src="assets/images/logos/essaar-group-logo.jpg" alt="ESSAAR Group of Companies Logo" class="footer-brand-logo">
+            <div class="footer-brand-text">
+              <span class="footer-brand-title">ESSAAR GROUP</span>
+              <span class="footer-brand-subtitle">OF COMPANIES</span>
+            </div>
+          </a>
           <p class="footer-about">
             ESSAAR Group of Companies brings together specialized expertise in industrial engineering, crane rental, medical &amp; industrial gases, and engineering, project execution &amp; industrial solutions across South India.
           </p>
@@ -1063,13 +1101,13 @@
         <div>
           <h4 class="footer-heading">Group Companies</h4>
           <ul class="footer-links">
-            <li><a href="company-prateesh-engineering.html">01. Prateesh Engineering Enterprises</a></li>
-            <li><a href="company-srs-cranes.html">02. SRS Cranes &amp; Equipments</a></li>
-            <li><a href="company-grace-gases.html">03. Grace Gases &amp; Company</a></li>
-            <li><a href="company-best-air-products.html">04. Best Air Products</a></li>
-            <li><a href="company-essaar-engineering.html">05. ESSAAR Engineering &amp; Co.</a></li>
-            <li><a href="company-roy-diagnostics.html">06. Roy Diagnostics</a></li>
-            <li><a href="company-jj-industrial.html">07. JJ Industrial HR Services</a></li>
+            <li><a href="company-prateesh-engineering.html">Prateesh Engineering Enterprises</a></li>
+            <li><a href="company-srs-cranes.html">SRS Cranes &amp; Equipments</a></li>
+            <li><a href="company-grace-gases.html">Grace Gases &amp; Company</a></li>
+            <li><a href="company-best-air-products.html">Best Air Products</a></li>
+            <li><a href="company-essaar-engineering.html">ESSAAR Engineering &amp; Co.</a></li>
+            <li><a href="company-roy-diagnostics.html">Roy Diagnostics</a></li>
+            <li><a href="company-jj-industrial.html">JJ Industrial HR Services</a></li>
           </ul>
         </div>
 
@@ -1078,11 +1116,11 @@
           <div class="footer-contact-list">
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <span>No. 223, Prateesh, Pachayankuppam, Chidambaram Main Rd, Cuddalore - 607005.</span>
+              <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Essaar+Plaza,+No-4/653,+Major+Mukund+Varadharajan+Rd,+United+Colony,+Medavakkam,+Tamil+Nadu+-+600100" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Essaar Plaza, No-4/653, Major Mukund Varadharajan Rd, United Colony, Medavakkam, Tamil Nadu - 600100.</a></span>
             </div>
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <span>+91 95970 00189 / +91 80722 54360</span>
+              <span><a href="tel:+919597000189" style="color: inherit; text-decoration: none;">+91 95970 00189</a> / <a href="tel:+919443230189" style="color: inherit; text-decoration: none;">+91 94432 30189</a></span>
             </div>
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
@@ -1099,7 +1137,7 @@
         <div class="footer-bottom-links">
           <a href="contact.html">Privacy Policy</a>
           <a href="contact.html">Terms &amp; Conditions</a>
-          <a href="sitemap.xml">Sitemap</a>
+          <a href="https://wa.me/917845391712?text=Hi%20Sriram,%20I%20found%20you%20in%20ESSAAR%20Engineering%20Website" target="_blank" rel="noopener noreferrer" class="developer-credit">Developed by <span class="developer-name">Sri Web Squad</span></a>
         </div>
       </div>
     </div>

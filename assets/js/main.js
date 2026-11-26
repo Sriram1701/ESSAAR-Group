@@ -265,4 +265,77 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // --- Reusable Milestone & Stats Counter Animation Effect ---
+  function initCounterAnimation(containerSelector, itemSelector) {
+    const containers = document.querySelectorAll(containerSelector);
+    if (!containers.length) return;
+
+    containers.forEach(function (container) {
+      const counters = container.querySelectorAll(itemSelector);
+      if (!counters.length) return;
+
+      let animated = false;
+
+      function runAnimation() {
+        if (animated) return;
+        animated = true;
+        container.classList.add('animated');
+
+        counters.forEach(function (el) {
+          const rawTarget = el.getAttribute('data-target') || el.textContent.trim();
+          const target = parseInt(rawTarget, 10);
+          if (isNaN(target)) return;
+
+          const start = parseInt(el.getAttribute('data-start') || '0', 10);
+          const hasLeadingZero = el.textContent.trim().startsWith('0') && el.textContent.trim().length > 1;
+          const duration = 1800;
+          let startTime = null;
+
+          function update(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const elapsed = timestamp - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            // Smooth cubic ease-out: starts fast, lands gently
+            const easeOut = 1 - Math.pow(1 - progress, 3);
+            const current = Math.floor(start + easeOut * (target - start));
+
+            if (hasLeadingZero) {
+              el.textContent = String(current).padStart(2, '0');
+            } else {
+              el.textContent = current;
+            }
+
+            if (progress < 1) {
+              requestAnimationFrame(update);
+            } else {
+              el.textContent = hasLeadingZero ? String(target).padStart(2, '0') : target;
+            }
+          }
+
+          el.textContent = hasLeadingZero ? '00' : String(start);
+          requestAnimationFrame(update);
+        });
+      }
+
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              runAnimation();
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.15 });
+
+        observer.observe(container);
+      } else {
+        runAnimation();
+      }
+    });
+  }
+
+  // Initialize Homepage Stats and About Milestone Counters
+  initCounterAnimation('.hero-stats-editorial', '.stat-num-val');
+  initCounterAnimation('.about-milestone-box', '.milestone-counter');
+
 });

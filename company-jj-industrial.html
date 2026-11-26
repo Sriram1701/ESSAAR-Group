@@ -58,7 +58,7 @@
       width: 100%;
       height: 100%;
       background: #D5A642;
-      clip-path: polygon(0 0, 52.4% 0, 42.4% 100%, 0 100%);
+      clip-path: polygon(0 0, 60.4% 0, 50.4% 100%, 0 100%);
       z-index: 2;
     }
     .company-exact-hero-navy-shape {
@@ -68,7 +68,7 @@
       width: 100%;
       height: 100%;
       background: #06152B;
-      clip-path: polygon(0 0, 52% 0, 42% 100%, 0 100%);
+      clip-path: polygon(0 0, 60% 0, 50% 100%, 0 100%);
       z-index: 3;
     }
     .company-exact-hero-container {
@@ -83,7 +83,7 @@
       width: 100%;
     }
     .company-exact-hero-left {
-      max-width: 580px;
+      max-width: 680px;
     }
     .company-exact-breadcrumb {
       font-size: 0.82rem;
@@ -139,9 +139,14 @@
     .company-exact-title .exact-title-gold {
       display: block;
       color: #D5A642;
-      font-size: clamp(2.1rem, 3.8vw, 3.1rem);
+      font-size: clamp(1.65rem, 2.75vw, 2.5rem);
       font-weight: 800;
-      line-height: 1.1;
+      line-height: 1.15;
+    }
+    @media (min-width: 640px) {
+      .company-exact-title .exact-title-gold {
+        white-space: nowrap;
+      }
     }
     .company-exact-subrule {
       font-size: 0.82rem;
@@ -161,8 +166,8 @@
     .company-exact-buttons {
       display: flex;
       align-items: center;
-      gap: 1.25rem;
-      flex-wrap: wrap;
+      gap: 0.85rem;
+      flex-wrap: nowrap;
     }
     .btn-exact-gold {
       display: inline-flex;
@@ -178,6 +183,7 @@
       transition: all 0.25s ease;
       box-shadow: 0 4px 14px rgba(213, 166, 66, 0.35);
       border: 1px solid #D5A642;
+      white-space: nowrap;
     }
     .btn-exact-gold:hover {
       background: #E2B755;
@@ -198,6 +204,7 @@
       text-decoration: none;
       border: 1px solid rgba(213, 166, 66, 0.7);
       transition: all 0.25s ease;
+      white-space: nowrap;
     }
     .btn-exact-outline:hover {
       background: rgba(213, 166, 66, 0.15);
@@ -250,26 +257,36 @@
       border-radius: 16px;
       padding: 1.5rem 2rem;
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
       gap: 1.5rem;
       box-shadow: 0 10px 30px rgba(5, 19, 38, 0.15);
     }
     .bottom-bar-block {
       display: flex;
-      align-items: flex-start;
-      gap: 0.85rem;
+      flex-direction: column;
+      gap: 0.35rem;
       flex: 1;
+      min-width: 0;
+    }
+    .bottom-bar-header {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      min-height: 22px;
     }
     .bottom-bar-icon {
       color: #D5A642;
       flex-shrink: 0;
-      margin-top: 2px;
-    }
-    .bottom-bar-info {
       display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+    }
+    .bottom-bar-icon svg {
+      width: 20px;
+      height: 20px;
     }
     .bottom-bar-label {
       font-size: 0.72rem;
@@ -277,11 +294,14 @@
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: #D5A642;
+      line-height: 1.2;
+      white-space: nowrap;
     }
     .bottom-bar-val {
       font-size: 0.85rem;
       color: #FFFFFF;
       line-height: 1.45;
+      padding-left: calc(20px + 0.55rem);
     }
     .bottom-bar-val a {
       color: #FFFFFF;
@@ -293,17 +313,42 @@
     }
     .bottom-bar-action {
       flex-shrink: 0;
+      align-self: center;
     }
     .bottom-bar-action .btn-exact-gold {
-      padding: 0.7rem 1.35rem;
+      padding: 0.75rem 1.4rem;
       font-size: 0.88rem;
+      white-space: nowrap;
     }
 
     @media (max-width: 1200px) {
+      .company-exact-hero-gold-line {
+        clip-path: polygon(0 0, 64.4% 0, 54.4% 100%, 0 100%);
+      }
+      .company-exact-hero-navy-shape {
+        clip-path: polygon(0 0, 64% 0, 54% 100%, 0 100%);
+      }
+      .company-exact-hero-left {
+        max-width: 560px;
+      }
+      .company-exact-buttons {
+        gap: 0.85rem;
+      }
+      .btn-exact-gold,
+      .btn-exact-outline {
+        padding: 0.8rem 1.4rem;
+        font-size: 0.9rem;
+      white-space: nowrap;
+      }
       .company-bottom-bar {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
+        align-items: start;
+      }
+      .bottom-bar-action {
+        grid-column: span 2;
+        justify-self: start;
       }
     }
     @media (max-width: 991px) {
@@ -352,7 +397,7 @@
         font-size: 2.2rem;
       }
       .company-exact-title .exact-title-gold {
-        font-size: 1.95rem;
+        font-size: clamp(1.4rem, 5.2vw, 1.8rem);
       }
       .company-exact-buttons {
         flex-direction: column;
@@ -371,6 +416,20 @@
         width: 100%;
       }
       .bottom-bar-action .btn-exact-gold {
+        width: 100%;
+        justify-content: center;
+      white-space: nowrap;
+      }
+    }
+  
+    @media (max-width: 576px) {
+      .company-exact-buttons {
+        flex-wrap: wrap !important;
+        flex-direction: column;
+        width: 100%;
+      }
+      .btn-exact-gold,
+      .btn-exact-outline {
         width: 100%;
         justify-content: center;
       }
@@ -498,13 +557,13 @@
       <a href="companies.html" class="drawer-link">Our Companies Overview</a>
       
             <div class="drawer-companies-title">Group Subsidiaries</div>
-      <a href="company-prateesh-engineering.html" class="drawer-sublink">01. Prateesh Engineering</a>
-      <a href="company-srs-cranes.html" class="drawer-sublink">02. SRS Cranes &amp; Equipments</a>
-      <a href="company-grace-gases.html" class="drawer-sublink">03. Grace Gases &amp; Co.</a>
-      <a href="company-best-air-products.html" class="drawer-sublink">04. Best Air Products</a>
-      <a href="company-essaar-engineering.html" class="drawer-sublink">05. ESSAAR Engineering &amp; Co.</a>
-      <a href="company-roy-diagnostics.html" class="drawer-sublink">06. Roy Diagnostics</a>
-      <a href="company-jj-industrial.html" class="drawer-sublink">07. JJ Industrial HR Services</a>
+      <a href="company-prateesh-engineering.html" class="drawer-sublink">Prateesh Engineering</a>
+      <a href="company-srs-cranes.html" class="drawer-sublink">SRS Cranes &amp; Equipments</a>
+      <a href="company-grace-gases.html" class="drawer-sublink">Grace Gases &amp; Co.</a>
+      <a href="company-best-air-products.html" class="drawer-sublink">Best Air Products</a>
+      <a href="company-essaar-engineering.html" class="drawer-sublink">ESSAAR Engineering &amp; Co.</a>
+      <a href="company-roy-diagnostics.html" class="drawer-sublink">Roy Diagnostics</a>
+      <a href="company-jj-industrial.html" class="drawer-sublink">JJ Industrial HR Services</a>
       
       <a href="industries.html" class="drawer-link">Industries We Serve</a>
       <a href="projects-gallery.html" class="drawer-link">Projects &amp; Gallery</a>
@@ -594,43 +653,43 @@
     <div class="container">
       <div class="company-bottom-bar">
         <div class="bottom-bar-block">
-          <div class="bottom-bar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+          <div class="bottom-bar-header">
+            <div class="bottom-bar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+            </div>
+            <span class="bottom-bar-label">CORE FOCUS</span>
           </div>
-          <div class="bottom-bar-info">
-            <span class="bottom-bar-label">Core Focus</span>
-            <span class="bottom-bar-val">Skilled Tradesmen, Shutdown Crews & HR Solutions</span>
-          </div>
+          <div class="bottom-bar-val">Skilled Tradesmen, Shutdown Crews &amp; HR Solutions</div>
         </div>
 
         <div class="bottom-bar-block">
-          <div class="bottom-bar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <div class="bottom-bar-header">
+            <div class="bottom-bar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <span class="bottom-bar-label">LOCATION</span>
           </div>
-          <div class="bottom-bar-info">
-            <span class="bottom-bar-label">Location</span>
-            <span class="bottom-bar-val">No. 14, Bethel Towers, Pondy Main Rd, Alpet, Cuddalore – 607001</span>
-          </div>
+          <div class="bottom-bar-val">No. 14, Bethel Towers, Pondy Main Rd, Alpet, Cuddalore – 607001</div>
         </div>
 
         <div class="bottom-bar-block">
-          <div class="bottom-bar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          <div class="bottom-bar-header">
+            <div class="bottom-bar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            </div>
+            <span class="bottom-bar-label">LABOUR GOVERNANCE</span>
           </div>
-          <div class="bottom-bar-info">
-            <span class="bottom-bar-label">Labour Governance</span>
-            <span class="bottom-bar-val">Statutory PF, ESI & Labour Compliant</span>
-          </div>
+          <div class="bottom-bar-val">Statutory PF, ESI &amp; Labour Compliant</div>
         </div>
 
         <div class="bottom-bar-block">
-          <div class="bottom-bar-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+          <div class="bottom-bar-header">
+            <div class="bottom-bar-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <span class="bottom-bar-label">DIRECT CONTACT</span>
           </div>
-          <div class="bottom-bar-info">
-            <span class="bottom-bar-label">Direct Contact</span>
-            <span class="bottom-bar-val"><a href="tel:+919597000189">+91 95970 00189</a> / info@essaargroup.com</span>
-          </div>
+          <div class="bottom-bar-val"><a href="tel:+919597000189">+91 95970 00189</a> / essaargroupofco@gmail.com</div>
         </div>
 
         <div class="bottom-bar-action">
@@ -717,13 +776,13 @@
         </div>
 
         <!-- 6. Synergy with ESSAAR Group -->
-        <div class="service-card" style="background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-corp) 100%); color: var(--white); border-radius: var(--radius-lg); padding: 2rem 1.75rem; box-shadow: var(--shadow-md);">
-          <div style="width: 48px; height: 48px; border-radius: 10px; background: var(--gold-premium); color: var(--navy-deep); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+        <div class="service-card" style="background: var(--white); border: 1px solid rgba(16, 43, 80, 0.1); border-radius: var(--radius-lg); padding: 2rem 1.75rem; box-shadow: var(--shadow-sm);">
+          <div style="width: 48px; height: 48px; border-radius: 10px; background: rgba(201, 154, 67, 0.1); border: 1px solid rgba(201, 154, 67, 0.3); display: flex; align-items: center; justify-content: center; color: var(--gold-premium); margin-bottom: 1.25rem;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
           </div>
-          <span style="font-size: 0.75rem; font-weight: 800; color: var(--gold-light); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.35rem;">Group Synergy</span>
-          <h3 style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; color: var(--white); margin-bottom: 0.75rem;">Integrated Project Execution</h3>
-          <p style="font-size: 0.9rem; line-height: 1.6; color: #CBD5E1; margin-bottom: 0;">
+          <span style="font-size: 0.75rem; font-weight: 800; color: var(--gold-premium); text-transform: uppercase; letter-spacing: 0.08em; display: block; margin-bottom: 0.35rem;">Group Synergy</span>
+          <h3 style="font-family: var(--font-heading); font-size: 1.2rem; font-weight: 700; color: var(--navy-primary); margin-bottom: 0.75rem;">Integrated Project Execution</h3>
+          <p style="font-size: 0.9rem; line-height: 1.6; color: #4A5568; margin-bottom: 0;">
             Seamless integration with Prateesh Engineering, SRS Cranes, and ESSAAR Engineering for combined equipment hire and certified technical workforce support.
           </p>
         </div>
@@ -842,41 +901,104 @@
   </section>
 
   <!-- Contact & Location Section -->
-  <section class="section" id="contact-unit" style="background: var(--navy-deep); color: var(--white); padding: 4.5rem 0;">
+  <section class="section" id="contact-unit">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 3rem; align-items: center;">
-        <div>
-          <span class="badge badge-gold" style="margin-bottom: 1rem;">OFFICE LOCATION &amp; CONSULTATION</span>
-          <h2 style="font-family: var(--font-heading); font-size: 2.1rem; font-weight: 800; color: var(--white); margin-bottom: 1rem;">
-            JJ INDUSTRIAL HR SERVICES &amp; CONSULTANCY
-          </h2>
-          <p style="color: #CBD5E1; font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem;">
-            Industrial Manpower Solutions | HR Consultancy | Workforce Management — An operating company of ESSAAR Group. For contract staffing, shutdown recruitment, and labour solutions:
-          </p>
-          <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2rem;">
-            <div style="display: flex; gap: 1rem; align-items: flex-start;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A34E" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <span>No. 14, Bethel Towers, Pondy Main Road, Alpet, Manjakuppam, Cuddalore – 607001, Tamil Nadu, India.</span>
+      <div class="contact-grid">
+        <div class="contact-info-card">
+          <div class="contact-info-header">
+            <h3>JJ Industrial HR Services</h3>
+            <p>Direct communication channel for industrial manpower supply, contract staffing, technical tradesmen deployment, and HR consultancy across South India.</p>
+          </div>
+
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
             </div>
-            <div style="display: flex; gap: 1rem; align-items: center;">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C9A34E" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <a href="tel:+919597000189" style="color: var(--white); text-decoration: none;">+91 95970 00189</a>
+            <div class="contact-detail-body">
+              <h5>Office Location</h5>
+              <p><a href="https://www.google.com/maps/search/?api=1&amp;query=JJ+Industrial+HR+Services,+No.+14,+Bethel+Towers,+Pondy+Main+Road,+Alpet,+Manjakuppam,+Cuddalore+-+607001" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">No. 14, Bethel Towers, Pondy Main Road, Alpet, Manjakuppam, Cuddalore – 607001, Tamil Nadu, India.</a></p>
             </div>
           </div>
+
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <div class="contact-detail-body">
+              <h5>Workforce Infoline</h5>
+              <p>
+                <a href="tel:+919597000189">+91 95970 00189</a><br>
+                <a href="tel:+919443230189">+91 94432 30189</a>
+              </p>
+            </div>
+          </div>
+
+          <div class="contact-detail-item">
+            <div class="contact-detail-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <div class="contact-detail-body">
+              <h5>Email Communication</h5>
+              <p><a href="mailto:essaargroupofco@gmail.com" style="color: inherit; text-decoration: none;">essaargroupofco@gmail.com</a></p>
+            </div>
+          </div>
+
           <div>
-            <a href="companies.html" class="btn btn-outline-white">
-              <span>View All Group Companies</span>
+            <a href="https://wa.me/919597000189?text=Hi%20JJ%20Industrial%20HR%20Services,%20I%20am%20inquiring%20about%20manpower%20and%20workforce%20solutions" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp" style="width: 100%;">
+              <span>WhatsApp Workforce Inquiry</span>
             </a>
           </div>
         </div>
 
-        <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 2.25rem; text-align: center;">
-          <img src="assets/images/logos/jj-industrial-logo.png" alt="JJ Industrial Logo" style="max-height: 90px; width: auto; margin-bottom: 1.25rem; border-radius: 8px; background: #FFFFFF; padding: 8px 16px;">
-          <h4 style="font-family: var(--font-heading); color: var(--white); font-size: 1.15rem; margin-bottom: 0.5rem;">ESSAAR Group Workforce Network</h4>
-          <p style="font-size: 0.9rem; color: #94A3B8; margin-bottom: 1.5rem; line-height: 1.6;">
-            Providing comprehensive technical manpower coordination across engineering fabrication, crane lifting, and mechanical plant maintenance throughout Tamil Nadu &amp; Puducherry.
-          </p>
-          <a href="contact.html" class="btn btn-gold" style="width: 100%;">Connect With ESSAAR Group</a>
+        <div class="contact-form-card">
+          <h3 class="contact-form-title">Request Workforce / Manpower Solutions</h3>
+          <p class="contact-form-subtitle">Submit your technical staffing or industrial recruitment requirement for immediate deployment.</p>
+
+          <form class="essaar-contact-form">
+            <input type="hidden" name="company" value="JJ Industrial HR Services">
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label class="form-label">Full Name / Enterprise *</label>
+                <input type="text" name="name" class="form-control" placeholder="e.g. L&amp;T Construction / Client Name" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Contact Number *</label>
+                <input type="tel" name="phone" class="form-control" placeholder="+91 98765 43210" required>
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <input type="email" name="email" class="form-control" placeholder="contact@company.com">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Workforce Requirement</label>
+                <select name="service" class="form-control">
+                  <option value="Contract Technical Manpower">Contract Technical Manpower</option>
+                  <option value="Certified Welders &amp; Riggers (6G/TIG/ARC)">Certified Welders &amp; Riggers (6G/TIG/ARC)</option>
+                  <option value="Plant Shutdown Maintenance Workforce">Plant Shutdown Maintenance Workforce</option>
+                  <option value="Heavy Equipment &amp; Crane Operators">Heavy Equipment &amp; Crane Operators</option>
+                  <option value="Industrial Safety Officers &amp; Supervisors">Industrial Safety Officers &amp; Supervisors</option>
+                  <option value="Semi-Skilled &amp; Skilled Tradesmen">Semi-Skilled &amp; Skilled Tradesmen</option>
+                  <option value="Long-term Industrial Staffing">Long-term Industrial Staffing</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Deployment Details &amp; Quantity *</label>
+              <textarea name="message" class="form-control" placeholder="Specify plant/site location, trades required, number of personnel, and deployment duration..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              <span>Submit Manpower Request</span>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </button>
+
+            <div class="form-feedback"></div>
+          </form>
         </div>
       </div>
     </div>
@@ -887,7 +1009,13 @@
     <div class="container">
       <div class="footer-top">
         <div>
-          <img src="assets/images/logos/essaar-group-logo.jpg" alt="ESSAAR Group of Companies" class="footer-brand-logo">
+          <a href="index.html" class="footer-brand-wrap" aria-label="ESSAAR Group of Companies Homepage">
+            <img src="assets/images/logos/essaar-group-logo.jpg" alt="ESSAAR Group of Companies Logo" class="footer-brand-logo">
+            <div class="footer-brand-text">
+              <span class="footer-brand-title">ESSAAR GROUP</span>
+              <span class="footer-brand-subtitle">OF COMPANIES</span>
+            </div>
+          </a>
           <p class="footer-about">
             ESSAAR Group of Companies brings together specialized expertise in industrial engineering, crane rental, medical &amp; industrial gases, healthcare diagnostic imaging, and industrial HR management across South India.
           </p>
@@ -909,13 +1037,13 @@
         <div>
           <h4 class="footer-heading">Group Companies</h4>
           <ul class="footer-links">
-            <li><a href="company-prateesh-engineering.html">01. Prateesh Engineering Enterprises</a></li>
-            <li><a href="company-srs-cranes.html">02. SRS Cranes &amp; Equipments</a></li>
-            <li><a href="company-grace-gases.html">03. Grace Gases &amp; Company</a></li>
-            <li><a href="company-best-air-products.html">04. Best Air Products</a></li>
-            <li><a href="company-essaar-engineering.html">05. ESSAAR Engineering &amp; Co.</a></li>
-            <li><a href="company-roy-diagnostics.html">06. Roy Diagnostics</a></li>
-            <li><a href="company-jj-industrial.html">07. JJ Industrial HR Services</a></li>
+            <li><a href="company-prateesh-engineering.html">Prateesh Engineering Enterprises</a></li>
+            <li><a href="company-srs-cranes.html">SRS Cranes &amp; Equipments</a></li>
+            <li><a href="company-grace-gases.html">Grace Gases &amp; Company</a></li>
+            <li><a href="company-best-air-products.html">Best Air Products</a></li>
+            <li><a href="company-essaar-engineering.html">ESSAAR Engineering &amp; Co.</a></li>
+            <li><a href="company-roy-diagnostics.html">Roy Diagnostics</a></li>
+            <li><a href="company-jj-industrial.html">JJ Industrial HR Services</a></li>
           </ul>
         </div>
 
@@ -924,15 +1052,15 @@
           <div class="footer-contact-list">
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              <span>No. 223, Prateesh, Pachayankuppam, Chidambaram Main Road, Cuddalore - 607005, Tamil Nadu.</span>
+              <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Essaar+Plaza,+No-4/653,+Major+Mukund+Varadharajan+Rd,+United+Colony,+Medavakkam,+Tamil+Nadu+-+600100" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Essaar Plaza, No-4/653, Major Mukund Varadharajan Rd, United Colony, Medavakkam, Tamil Nadu - 600100.</a></span>
             </div>
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <span>+91 95970 00189 / +91 80722 54360</span>
+              <span><a href="tel:+919597000189" style="color: inherit; text-decoration: none;">+91 95970 00189</a> / <a href="tel:+919443230189" style="color: inherit; text-decoration: none;">+91 94432 30189</a></span>
             </div>
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              <span>info@essaargroup.com</span>
+              <span><a href="mailto:essaargroupofco@gmail.com" style="color: inherit; text-decoration: none;">essaargroupofco@gmail.com</a></span>
             </div>
           </div>
         </div>
@@ -945,7 +1073,7 @@
         <div class="footer-bottom-links">
           <a href="contact.html">Privacy Policy</a>
           <a href="contact.html">Terms &amp; Conditions</a>
-          <a href="sitemap.xml">Sitemap</a>
+          <a href="https://wa.me/917845391712?text=Hi%20Sriram,%20I%20found%20you%20in%20JJ%20Industrial%20HR%20Services%20Website" target="_blank" rel="noopener noreferrer" class="developer-credit">Developed by <span class="developer-name">Sri Web Squad</span></a>
         </div>
       </div>
     </div>

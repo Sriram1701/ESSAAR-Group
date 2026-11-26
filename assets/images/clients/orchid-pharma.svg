@@ -1,0 +1,20 @@
+<svg width="220" height="50" viewBox="0 0 220 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Stylized Orchid Blooming Petals -->
+  <g transform="translate(6, 4)">
+    <!-- Top Petal (Royal Purple) -->
+    <path d="M19 2 C24 8, 26 15, 19 23 C12 15, 14 8, 19 2 Z" fill="#7A2279"/>
+    <!-- Left Petal (Magenta) -->
+    <path d="M7 16 C14 15, 19 20, 17 28 C9 26, 6 21, 7 16 Z" fill="#B32468"/>
+    <!-- Right Petal (Fuchsia) -->
+    <path d="M31 16 C32 21, 29 26, 21 28 C19 20, 24 15, 31 16 Z" fill="#992672"/>
+    <!-- Bottom Left Petal (Healthcare Green) -->
+    <path d="M11 27 C16 26, 20 30, 16 38 C11 36, 9 31, 11 27 Z" fill="#3D9B42"/>
+    <!-- Bottom Right Petal (Lime Green) -->
+    <path d="M27 27 C29 31, 27 36, 22 38 C18 30, 22 26, 27 27 Z" fill="#6CB33F"/>
+    <!-- Center Core -->
+    <circle cx="19" cy="24" r="3" fill="#F8A51D"/>
+  </g>
+  <!-- OrchidPharma Corporate Typography -->
+  <text x="54" y="27" font-family="'Plus Jakarta Sans', 'Outfit', Arial, sans-serif" font-size="20" font-weight="800" fill="#0D2B45" letter-spacing="-0.3">Orchid<tspan font-weight="600" fill="#3D9B42">Pharma</tspan></text>
+  <text x="55" y="39" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="8.5" font-weight="700" fill="#64748B" letter-spacing="1.5">HEALTHCARE &amp; PHARMACEUTICALS</text>
+</svg>
