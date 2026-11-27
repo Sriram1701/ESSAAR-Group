@@ -195,7 +195,7 @@
         <!-- Left Info Card -->
         <div class="contact-info-card">
           <div class="contact-info-header">
-            <h3 class="single-line headquarters-title" style="white-space: nowrap;">ESSAAR Group Headquarters</h3>
+            <h3 class="headquarters-title">ESSAAR Group Headquarters</h3>
             <p>Our centralized coordination team ensures quick turnaround on tenders, heavy lift studies, gas supply contracts, and workforce mobilization.</p>
           </div>
 
@@ -226,7 +226,7 @@
             <div class="contact-detail-body">
               <h5>Direct Telephone &amp; Mobiles</h5>
               <p>
-                <a href="tel:+919597000189">+91 95970 00189</a> (Sriram)<br>
+                <a href="tel:+919597000189">+91 95970 00189</a><br>
                 <a href="tel:+919443230189">+91 94432 30189</a><br>
                 Landline: <a href="tel:+04142237189">04142 237189</a>
               </p>
@@ -257,8 +257,8 @@
 
           <form class="essaar-contact-form">
             <div class="form-group">
-              <label class="form-label">Select Target Operating Company *</label>
-              <select name="company" class="form-control" required>
+              <label class="form-label" for="contact-company-select">Select Target Operating Company *</label>
+              <select id="contact-company-select" name="company" class="form-control" aria-label="Select Target Operating Company" required>
                 <option value="Prateesh Engineering Enterprises">Prateesh Engineering Enterprises (Fabrication &amp; Tanks)</option>
                 <option value="SRS Cranes & Equipments Services">SRS Cranes &amp; Equipments Services (Heavy Lifting)</option>
                 <option value="Grace Gases & Company">Grace Gases &amp; Company (Industrial &amp; Medical Gases)</option>
@@ -287,8 +287,8 @@
                 <input type="email" name="email" class="form-control" placeholder="name@company.com">
               </div>
               <div class="form-group">
-                <label class="form-label">Service Required</label>
-                <select name="service" class="form-control">
+                <label class="form-label" for="contact-service-select">Service Required</label>
+                <select id="contact-service-select" name="service" class="form-control" aria-label="Service Required">
                   <option value="Tanks & Pressure Vessels">Storage Tanks &amp; Pressure Vessels</option>
                   <option value="Heavy Structural Fabrication">Heavy Structural Steel Fabrication</option>
                   <option value="Industrial Piping & Ducting">Industrial Piping &amp; Ducting</option>
@@ -308,7 +308,7 @@
               <textarea name="message" class="form-control" placeholder="Provide dimensions, tonnage, project location, expected timeline, or technical specifications..." required></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+            <button type="submit" class="btn btn-primary btn-lg btn-single-line" style="width: 100%;">
               <span>Transmit Enquiry to ESSAAR Group</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </button>
@@ -335,10 +335,10 @@
       <div class="capabilities-grid">
         <!-- 01 -->
         <div class="capability-card">
-          <div class="capability-logo-wrap" style="height: 54px; display: flex; align-items: center; justify-content: flex-start; margin-bottom: 1rem;">
-            <img src="assets/images/logos/prateesh-logo-transparent.png" alt="Prateesh Engineering Enterprises Logo" style="max-height: 48px; max-width: 160px; object-fit: contain;">
+          <div class="capability-header-row">
+            <img src="assets/images/logos/prateesh-logo-transparent.png" alt="Prateesh Engineering Enterprises Logo" class="capability-header-logo" loading="lazy" decoding="async">
+            <h4 class="capability-company-name">Prateesh Engineering</h4>
           </div>
-          <span class="badge badge-gold" style="margin-bottom: 0.5rem; align-self: flex-start;">01 • Prateesh Engineering</span>
           <h3 class="capability-title">SIPCOT Fabrication Works</h3>
           <p class="capability-text">
             <strong>Works:</strong> 223/2B, Chidambaram Main Road, SIPCOT, Cuddalore - 607005.<br>
@@ -352,10 +352,10 @@
 
         <!-- 02 -->
         <div class="capability-card">
-          <div class="capability-logo-wrap" style="height: 54px; display: flex; align-items: center; justify-content: flex-start; margin-bottom: 1rem;">
-            <img src="assets/images/logos/srs-cranes-logo-transparent.png" alt="SRS Cranes &amp; Equipments Logo" style="max-height: 48px; max-width: 160px; object-fit: contain;">
+          <div class="capability-header-row">
+            <img src="assets/images/logos/srs-cranes-logo-transparent.png" alt="SRS Cranes &amp; Equipments Logo" class="capability-header-logo" loading="lazy" decoding="async">
+            <h4 class="capability-company-name">SRS Cranes</h4>
           </div>
-          <span class="badge badge-gold" style="margin-bottom: 0.5rem; align-self: flex-start;">02 • SRS Cranes</span>
           <h3 class="capability-title">Heavy Equipment Yard</h3>
           <p class="capability-text">
             <strong>Location:</strong> SIPCOT Industrial Area, Cuddalore - 607005.<br>
@@ -370,10 +370,10 @@
 
         <!-- 03 -->
         <div class="capability-card">
-          <div class="capability-logo-wrap" style="height: 54px; display: flex; align-items: center; justify-content: flex-start; margin-bottom: 1rem;">
-            <img src="assets/images/logos/grace-gases-logo-transparent.png" alt="Grace Gases &amp; Company Logo" style="max-height: 48px; max-width: 160px; object-fit: contain;">
+          <div class="capability-header-row">
+            <img src="assets/images/logos/grace-gases-logo-transparent.png" alt="Grace Gases &amp; Company Logo" class="capability-header-logo" loading="lazy" decoding="async">
+            <h4 class="capability-company-name">Grace Gases</h4>
           </div>
-          <span class="badge badge-navy" style="margin-bottom: 0.5rem; align-self: flex-start;">03 • Grace Gases</span>
           <h3 class="capability-title">Industrial &amp; Medical Gases</h3>
           <p class="capability-text">
             <strong>Location:</strong> Plot No. 1–5, Virudhachalam–Cuddalore Road, Nanbargal Nagar, Kannarapettai, Cuddalore - 607005.<br>
@@ -387,10 +387,10 @@
 
         <!-- 04 -->
         <div class="capability-card">
-          <div class="capability-logo-wrap" style="height: 54px; display: flex; align-items: center; justify-content: flex-start; margin-bottom: 1rem;">
-            <img src="assets/images/logos/best-air-logo-transparent.png" alt="Best Air Products Logo" style="max-height: 48px; max-width: 160px; object-fit: contain;">
+          <div class="capability-header-row">
+            <img src="assets/images/logos/best-air-logo-transparent.png" alt="Best Air Products Logo" class="capability-header-logo" loading="lazy" decoding="async">
+            <h4 class="capability-company-name">Best Air Products</h4>
           </div>
-          <span class="badge badge-navy" style="margin-bottom: 0.5rem; align-self: flex-start;">04 • Best Air Products</span>
           <h3 class="capability-title">Gas Filling Agency</h3>
           <p class="capability-text">
             <strong>Address:</strong> VR5J+5WM Best Air, Tirumalairayan Pattinam, Puducherry - 609606.<br>
@@ -404,10 +404,10 @@
 
         <!-- 05 -->
         <div class="capability-card">
-          <div class="capability-logo-wrap" style="height: 54px; display: flex; align-items: center; justify-content: flex-start; margin-bottom: 1rem;">
-            <img src="assets/images/logos/essaar-engineering-logo-transparent.png" alt="ESSAAR Engineering &amp; Company Logo" style="max-height: 48px; max-width: 160px; object-fit: contain;">
+          <div class="capability-header-row">
+            <img src="assets/images/logos/essaar-engineering-logo-transparent.png" alt="ESSAAR Engineering &amp; Company Logo" class="capability-header-logo" loading="lazy" decoding="async">
+            <h4 class="capability-company-name">ESSAAR Engineering</h4>
           </div>
-          <span class="badge badge-gold" style="margin-bottom: 0.5rem; align-self: flex-start;">05 • ESSAAR Engineering</span>
           <h3 class="capability-title">Mechanical &amp; Manpower Base</h3>
           <p class="capability-text">
             <strong>Address:</strong> No. 223, Prateesh, Pachayankuppam, Chidambaram Main Rd, Cuddalore - 607005.<br>
@@ -422,10 +422,10 @@
 
         <!-- 06 -->
         <div class="capability-card">
-          <div class="capability-logo-wrap" style="height: 54px; display: flex; align-items: center; justify-content: flex-start; margin-bottom: 1rem;">
-            <img src="assets/images/logos/roy-diagnostics-logo-transparent.png" alt="Roy Diagnostics Logo" style="max-height: 48px; max-width: 160px; object-fit: contain;">
+          <div class="capability-header-row">
+            <img src="assets/images/logos/roy-diagnostics-logo-transparent.png" alt="Roy Diagnostics Logo" class="capability-header-logo" loading="lazy" decoding="async">
+            <h4 class="capability-company-name">Roy Diagnostics</h4>
           </div>
-          <span class="badge badge-gold" style="margin-bottom: 0.5rem; align-self: flex-start;">06 • Roy Diagnostics</span>
           <h3 class="capability-title">Healthcare &amp; Imaging Centre</h3>
           <p class="capability-text">
             <strong>Location:</strong> Cuddalore, Tamil Nadu.<br>
@@ -439,10 +439,10 @@
 
         <!-- 07 -->
         <div class="capability-card">
-          <div class="capability-logo-wrap" style="height: 54px; display: flex; align-items: center; justify-content: flex-start; margin-bottom: 1rem;">
-            <img src="assets/images/logos/jj-industrial-logo-transparent.png" alt="JJ Industrial HR Services Logo" style="max-height: 48px; max-width: 160px; object-fit: contain;">
+          <div class="capability-header-row">
+            <img src="assets/images/logos/jj-industrial-logo-transparent.png" alt="JJ Industrial HR Services Logo" class="capability-header-logo" loading="lazy" decoding="async">
+            <h4 class="capability-company-name">JJ Industrial HR</h4>
           </div>
-          <span class="badge badge-gold" style="margin-bottom: 0.5rem; align-self: flex-start;">07 • JJ Industrial HR</span>
           <h3 class="capability-title">Manpower &amp; HR Consultancy</h3>
           <p class="capability-text">
             <strong>Location:</strong> Cuddalore, Tamil Nadu.<br>
@@ -455,11 +455,11 @@
         </div>
 
         <!-- 08. Corporate Synergy -->
-        <div class="capability-card" style="background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-corp) 100%); color: var(--white);">
-          <div class="capability-logo-wrap" style="height: 54px; display: flex; align-items: center; justify-content: flex-start; margin-bottom: 1rem;">
-            <img src="assets/images/logos/essaar-group-logo-light.svg" alt="ESSAAR Group of Companies Logo" style="max-height: 46px; max-width: 160px; object-fit: contain;">
+        <div class="capability-card capability-card-synergy" style="background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy-corp) 100%); color: var(--white);">
+          <div class="capability-header-row">
+            <img src="assets/images/logos/essaar-group-logo.jpg" alt="ESSAAR Group of Companies Logo" class="capability-header-logo capability-synergy-logo" style="background: #ffffff; padding: 3px 6px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.18); width: 52px; height: 38px; object-fit: contain;" loading="lazy" decoding="async">
+            <h4 class="capability-company-name">Corporate Synergy</h4>
           </div>
-          <span class="badge badge-white" style="margin-bottom: 0.5rem; align-self: flex-start;">Corporate Synergy</span>
           <h3 class="capability-title" style="color: var(--white);">Need Multi-Unit Support?</h3>
           <p class="capability-text" style="color: #CAD7E8;">
             For large industrial projects requiring structural fabrication, crane lifting, and on-site welding gas manifolds, ESSAAR Group provides a single point of coordination.
@@ -530,6 +530,22 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
               <span><a href="mailto:essaargroupofco@gmail.com" style="color: inherit; text-decoration: none;">essaargroupofco@gmail.com</a></span>
             </div>
+            <div class="footer-contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"></path></svg>
+              <span><a href="https://wa.me/919597000189?text=Hi%20ESSAAR%20Group,%20I%20have%20an%20enquiry" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">+91 95970 00189 (WhatsApp)</a></span>
+            </div>
+          </div>
+          <!-- Quick Connect Buttons: Theme-Matched Circular Icons -->
+          <div class="footer-contact-actions">
+            <a href="tel:+919597000189" class="footer-contact-icon-btn" aria-label="Call ESSAAR Group" title="Call Us">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </a>
+            <a href="mailto:essaargroupofco@gmail.com" class="footer-contact-icon-btn" aria-label="Email ESSAAR Group" title="Send Email">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </a>
+            <a href="https://wa.me/919597000189?text=Hi%20ESSAAR%20Group,%20I%20have%20an%20enquiry" target="_blank" rel="noopener noreferrer" class="footer-contact-icon-btn" aria-label="WhatsApp ESSAAR Group" title="WhatsApp Us">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"></path></svg>
+            </a>
           </div>
         </div>
       </div>

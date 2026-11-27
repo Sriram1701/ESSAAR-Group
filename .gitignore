@@ -7,4 +7,5 @@ Thumbs.db
 vendor/
 .agent/
 .gemini/
+scratch/
 

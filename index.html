@@ -193,15 +193,23 @@
   </aside>
 
   <!-- Section 2: Hero Section -->
-  <section class="hero">
-    <div class="container">
+  <section class="hero" id="hero">
+    <!-- Hero Background Slider (Rotating Photos) -->
+    <div class="hero-bg-slider" aria-hidden="true">
+      <div class="hero-bg-slide active" style="background-image: url('assets/images/hero/hero-bg-1.jpg');"></div>
+      <div class="hero-bg-slide" style="background-image: url('assets/images/hero/hero-bg-3.jpg');"></div>
+      <div class="hero-bg-overlay"></div>
+    </div>
+
+    <div class="container hero-container">
       <div class="hero-content">
         <h1 class="hero-title">
           <span class="hero-title-main">Powering Industrial Progress</span>
           <span class="hero-title-gold">Built on Decades of Trust</span>
         </h1>
         <p class="hero-desc">
-          A multi-disciplinary industrial group uniting specialized capabilities across industrial engineering, heavy crane lifting, medical &amp; industrial gases, healthcare diagnostics, certified industrial workforce solutions and turnkey project execution across Tamil Nadu and Puducherry, India.
+          <span class="desktop-only">A multi-disciplinary industrial group uniting specialized capabilities across industrial engineering, heavy crane lifting, medical &amp; industrial gases, healthcare diagnostics, certified industrial workforce solutions and turnkey project execution across Tamil Nadu and Puducherry, India.</span>
+          <span class="mobile-only">A multi-disciplinary industrial group delivering engineering, heavy lifting, industrial gases, and turnkey solutions across Tamil Nadu &amp; Puducherry.</span>
         </p>
         <div class="hero-actions">
           <a href="#companies" class="btn btn-primary btn-lg">
@@ -214,10 +222,25 @@
         </div>
       </div>
 
-      <!-- Homepage Key Statistics Section / Editorial Corporate Layout -->
+      <!-- Homepage Key Statistics Section / 2x2 Layout -->
       <div class="hero-stats-editorial" aria-label="ESSAAR Group Corporate Statistics">
         <!-- 01: Specialized Companies -->
         <div class="editorial-stat-col">
+          <div class="editorial-stat-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="2" width="16" height="20" rx="2" ry="2"></rect>
+              <line x1="9" y1="22" x2="9" y2="22.01"></line>
+              <line x1="15" y1="22" x2="15" y2="22.01"></line>
+              <line x1="9" y1="6" x2="9" y2="6.01"></line>
+              <line x1="15" y1="6" x2="15" y2="6.01"></line>
+              <line x1="9" y1="10" x2="9" y2="10.01"></line>
+              <line x1="15" y1="10" x2="15" y2="10.01"></line>
+              <line x1="9" y1="14" x2="9" y2="14.01"></line>
+              <line x1="15" y1="14" x2="15" y2="14.01"></line>
+              <line x1="9" y1="18" x2="9" y2="18.01"></line>
+              <line x1="15" y1="18" x2="15" y2="18.01"></line>
+            </svg>
+          </div>
           <div class="editorial-stat-num">
             <span class="stat-num-val" data-target="7">07</span>
           </div>
@@ -227,6 +250,12 @@
 
         <!-- 02: Years of Experience -->
         <div class="editorial-stat-col">
+          <div class="editorial-stat-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="6"></circle>
+              <polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline>
+            </svg>
+          </div>
           <div class="editorial-stat-num">
             <span class="stat-num-val" data-target="40">40</span><span class="stat-unit">+</span>
           </div>
@@ -236,6 +265,12 @@
 
         <!-- 03: Industries & Clients Served -->
         <div class="editorial-stat-col">
+          <div class="editorial-stat-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+            </svg>
+          </div>
           <div class="editorial-stat-num">
             <span class="stat-num-val" data-target="300">300</span><span class="stat-unit">+</span>
           </div>
@@ -245,6 +280,14 @@
 
         <!-- 04: Industrial Workforce -->
         <div class="editorial-stat-col editorial-stat-col-last">
+          <div class="editorial-stat-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
           <div class="editorial-stat-num">
             <span class="stat-num-val" data-target="1000">1000</span><span class="stat-unit">+</span>
           </div>
@@ -270,93 +313,93 @@
         <div class="marquee-track marquee-track-left">
           <!-- Set 1 -->
           <div class="client-logo-card" title="Tamilnadu Petroproducts Limited (TPL)">
-            <img src="assets/images/clients/tpl.svg" alt="Tamilnadu Petroproducts Limited">
+            <img src="assets/images/clients/tpl.svg" alt="Tamilnadu Petroproducts Limited" loading="lazy" decoding="async">
             <span>TPL</span>
           </div>
           <div class="client-logo-card" title="Manali Petrochemicals Limited (MPL)">
-            <img src="assets/images/clients/manali-petrochem.jpg" alt="Manali Petrochemicals Limited">
+            <img src="assets/images/clients/manali-petrochem.jpg" alt="Manali Petrochemicals Limited" loading="lazy" decoding="async">
             <span>Manali Petrochem</span>
           </div>
           <div class="client-logo-card" title="Asian Paints Limited">
-            <img src="assets/images/clients/asian-paints.svg" alt="Asian Paints">
+            <img src="assets/images/clients/asian-paints.svg" alt="Asian Paints" loading="lazy" decoding="async">
             <span>Asian Paints</span>
           </div>
           <div class="client-logo-card" title="DFE Pharma">
-            <img src="assets/images/clients/dfe-pharma.svg" alt="DFE Pharma">
+            <img src="assets/images/clients/dfe-pharma.svg" alt="DFE Pharma" loading="lazy" decoding="async">
             <span>DFE Pharma</span>
           </div>
           <div class="client-logo-card" title="Tagros Chemicals India Private Limited">
-            <img src="assets/images/clients/tagros-chemicals.svg" alt="Tagros Chemicals">
+            <img src="assets/images/clients/tagros-chemicals.svg" alt="Tagros Chemicals" loading="lazy" decoding="async">
             <span>Tagros Chemicals</span>
           </div>
           <div class="client-logo-card" title="Tanfac Industries Limited">
-            <img src="assets/images/clients/tanfac-industries.svg" alt="Tanfac Industries">
+            <img src="assets/images/clients/tanfac-industries.svg" alt="Tanfac Industries" loading="lazy" decoding="async">
             <span>Tanfac Industries</span>
           </div>
           <div class="client-logo-card" title="Tata Chemicals Limited">
-            <img src="assets/images/clients/tata-chemicals.svg" alt="Tata Chemicals">
+            <img src="assets/images/clients/tata-chemicals.svg" alt="Tata Chemicals" loading="lazy" decoding="async">
             <span>Tata Chemicals</span>
           </div>
           <div class="client-logo-card" title="Larsen &amp; Toubro Limited">
-            <img src="assets/images/clients/l-and-t.jpg" alt="Larsen &amp; Toubro">
+            <img src="assets/images/clients/l-and-t.jpg" alt="Larsen &amp; Toubro" loading="lazy" decoding="async">
             <span>Larsen &amp; Toubro</span>
           </div>
           <div class="client-logo-card" title="Chemplast Sanmar Limited">
-            <img src="assets/images/clients/chemplast.jpg" alt="Chemplast Sanmar">
+            <img src="assets/images/clients/chemplast.jpg" alt="Chemplast Sanmar" loading="lazy" decoding="async">
             <span>Chemplast Sanmar</span>
           </div>
           <div class="client-logo-card" title="Tata Steel Limited">
-            <img src="assets/images/clients/tata-steel.jpg" alt="Tata Steel">
+            <img src="assets/images/clients/tata-steel.jpg" alt="Tata Steel" loading="lazy" decoding="async">
             <span>Tata Steel</span>
           </div>
           <div class="client-logo-card" title="Hyundai Motor Company">
-            <img src="assets/images/clients/hyundai.png" alt="Hyundai">
+            <img src="assets/images/clients/hyundai.png" alt="Hyundai" loading="lazy" decoding="async">
             <span>Hyundai</span>
           </div>
 
           <!-- Set 1 Duplicate for Seamless Infinite Continuous Loop -->
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/tpl.svg" alt="Tamilnadu Petroproducts Limited">
+            <img src="assets/images/clients/tpl.svg" alt="Tamilnadu Petroproducts Limited" loading="lazy" decoding="async">
             <span>TPL</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/manali-petrochem.jpg" alt="Manali Petrochemicals Limited">
+            <img src="assets/images/clients/manali-petrochem.jpg" alt="Manali Petrochemicals Limited" loading="lazy" decoding="async">
             <span>Manali Petrochem</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/asian-paints.svg" alt="Asian Paints">
+            <img src="assets/images/clients/asian-paints.svg" alt="Asian Paints" loading="lazy" decoding="async">
             <span>Asian Paints</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/dfe-pharma.svg" alt="DFE Pharma">
+            <img src="assets/images/clients/dfe-pharma.svg" alt="DFE Pharma" loading="lazy" decoding="async">
             <span>DFE Pharma</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/tagros-chemicals.svg" alt="Tagros Chemicals">
+            <img src="assets/images/clients/tagros-chemicals.svg" alt="Tagros Chemicals" loading="lazy" decoding="async">
             <span>Tagros Chemicals</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/tanfac-industries.svg" alt="Tanfac Industries">
+            <img src="assets/images/clients/tanfac-industries.svg" alt="Tanfac Industries" loading="lazy" decoding="async">
             <span>Tanfac Industries</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/tata-chemicals.svg" alt="Tata Chemicals">
+            <img src="assets/images/clients/tata-chemicals.svg" alt="Tata Chemicals" loading="lazy" decoding="async">
             <span>Tata Chemicals</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/l-and-t.jpg" alt="Larsen &amp; Toubro">
+            <img src="assets/images/clients/l-and-t.jpg" alt="Larsen &amp; Toubro" loading="lazy" decoding="async">
             <span>Larsen &amp; Toubro</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/chemplast.jpg" alt="Chemplast Sanmar">
+            <img src="assets/images/clients/chemplast.jpg" alt="Chemplast Sanmar" loading="lazy" decoding="async">
             <span>Chemplast Sanmar</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/tata-steel.jpg" alt="Tata Steel">
+            <img src="assets/images/clients/tata-steel.jpg" alt="Tata Steel" loading="lazy" decoding="async">
             <span>Tata Steel</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/hyundai.png" alt="Hyundai">
+            <img src="assets/images/clients/hyundai.png" alt="Hyundai" loading="lazy" decoding="async">
             <span>Hyundai</span>
           </div>
         </div>
@@ -367,101 +410,101 @@
         <div class="marquee-track marquee-track-right">
           <!-- Set 2 -->
           <div class="client-logo-card" title="Orchid Pharma Limited">
-            <img src="assets/images/clients/orchid-pharma.svg" alt="Orchid Pharma">
+            <img src="assets/images/clients/orchid-pharma.svg" alt="Orchid Pharma" loading="lazy" decoding="async">
             <span>Orchid Pharma</span>
           </div>
           <div class="client-logo-card" title="Solara Active Pharma Sciences">
-            <img src="assets/images/clients/solara.png" alt="Solara Active Pharma">
+            <img src="assets/images/clients/solara.png" alt="Solara Active Pharma" loading="lazy" decoding="async">
             <span>Solara Active Pharma</span>
           </div>
           <div class="client-logo-card" title="NLC India Limited (Neyveli Lignite Corporation)">
-            <img src="assets/images/clients/nlc-india.svg" alt="NLC India">
+            <img src="assets/images/clients/nlc-india.svg" alt="NLC India" loading="lazy" decoding="async">
             <span>NLC India</span>
           </div>
           <div class="client-logo-card" title="Suzlon Energy Limited">
-            <img src="assets/images/clients/suzlon.svg" alt="Suzlon Energy">
+            <img src="assets/images/clients/suzlon.svg" alt="Suzlon Energy" loading="lazy" decoding="async">
             <span>Suzlon Energy</span>
           </div>
           <div class="client-logo-card" title="Coromandel International Limited">
-            <img src="assets/images/clients/coromandel.png" alt="Coromandel International">
+            <img src="assets/images/clients/coromandel.png" alt="Coromandel International" loading="lazy" decoding="async">
             <span>Coromandel</span>
           </div>
           <div class="client-logo-card" title="Pioneer Jellice India Private Limited">
-            <img src="assets/images/clients/pioneer-jellice.jpg" alt="Pioneer Jellice">
+            <img src="assets/images/clients/pioneer-jellice.jpg" alt="Pioneer Jellice" loading="lazy" decoding="async">
             <span>Pioneer Jellice</span>
           </div>
           <div class="client-logo-card" title="Arkema Peroxides India Private Limited">
-            <img src="assets/images/clients/arkema.svg" alt="Arkema Peroxides">
+            <img src="assets/images/clients/arkema.svg" alt="Arkema Peroxides" loading="lazy" decoding="async">
             <span>Arkema</span>
           </div>
           <div class="client-logo-card" title="Saint-Gobain India">
-            <img src="assets/images/clients/saint-gobain.png" alt="Saint-Gobain">
+            <img src="assets/images/clients/saint-gobain.png" alt="Saint-Gobain" loading="lazy" decoding="async">
             <span>Saint-Gobain</span>
           </div>
           <div class="client-logo-card" title="The Ramco Cements Limited">
-            <img src="assets/images/clients/ramco.jpg" alt="Ramco Cements">
+            <img src="assets/images/clients/ramco.jpg" alt="Ramco Cements" loading="lazy" decoding="async">
             <span>Ramco Cements</span>
           </div>
           <div class="client-logo-card" title="Steel Authority of India Limited">
-            <img src="assets/images/clients/sail.png" alt="SAIL">
+            <img src="assets/images/clients/sail.png" alt="SAIL" loading="lazy" decoding="async">
             <span>SAIL</span>
           </div>
           <div class="client-logo-card" title="Southern Petrochemical Industries Corporation">
-            <img src="assets/images/clients/spic.webp" alt="SPIC">
+            <img src="assets/images/clients/spic.webp" alt="SPIC" loading="lazy" decoding="async">
             <span>SPIC</span>
           </div>
           <div class="client-logo-card" title="Kansai Nerolac Paints Limited">
-            <img src="assets/images/clients/kansai.webp" alt="Kansai Nerolac">
+            <img src="assets/images/clients/kansai.webp" alt="Kansai Nerolac" loading="lazy" decoding="async">
             <span>Kansai Nerolac</span>
           </div>
 
           <!-- Set 2 Duplicate for Seamless Infinite Continuous Loop -->
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/orchid-pharma.svg" alt="Orchid Pharma">
+            <img src="assets/images/clients/orchid-pharma.svg" alt="Orchid Pharma" loading="lazy" decoding="async">
             <span>Orchid Pharma</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/solara.png" alt="Solara Active Pharma">
+            <img src="assets/images/clients/solara.png" alt="Solara Active Pharma" loading="lazy" decoding="async">
             <span>Solara Active Pharma</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/nlc-india.svg" alt="NLC India">
+            <img src="assets/images/clients/nlc-india.svg" alt="NLC India" loading="lazy" decoding="async">
             <span>NLC India</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/suzlon.svg" alt="Suzlon Energy">
+            <img src="assets/images/clients/suzlon.svg" alt="Suzlon Energy" loading="lazy" decoding="async">
             <span>Suzlon Energy</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/coromandel.png" alt="Coromandel International">
+            <img src="assets/images/clients/coromandel.png" alt="Coromandel International" loading="lazy" decoding="async">
             <span>Coromandel</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/pioneer-jellice.jpg" alt="Pioneer Jellice">
+            <img src="assets/images/clients/pioneer-jellice.jpg" alt="Pioneer Jellice" loading="lazy" decoding="async">
             <span>Pioneer Jellice</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/arkema.svg" alt="Arkema Peroxides">
+            <img src="assets/images/clients/arkema.svg" alt="Arkema Peroxides" loading="lazy" decoding="async">
             <span>Arkema</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/saint-gobain.png" alt="Saint-Gobain">
+            <img src="assets/images/clients/saint-gobain.png" alt="Saint-Gobain" loading="lazy" decoding="async">
             <span>Saint-Gobain</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/ramco.jpg" alt="Ramco Cements">
+            <img src="assets/images/clients/ramco.jpg" alt="Ramco Cements" loading="lazy" decoding="async">
             <span>Ramco Cements</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/sail.png" alt="SAIL">
+            <img src="assets/images/clients/sail.png" alt="SAIL" loading="lazy" decoding="async">
             <span>SAIL</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/spic.webp" alt="SPIC">
+            <img src="assets/images/clients/spic.webp" alt="SPIC" loading="lazy" decoding="async">
             <span>SPIC</span>
           </div>
           <div class="client-logo-card" aria-hidden="true">
-            <img src="assets/images/clients/kansai.webp" alt="Kansai Nerolac">
+            <img src="assets/images/clients/kansai.webp" alt="Kansai Nerolac" loading="lazy" decoding="async">
             <span>Kansai Nerolac</span>
           </div>
         </div>
@@ -557,6 +600,12 @@
           <div class="about-framed-photo-wrap">
             <img src="assets/images/gallery/prateesh-srs-office-facility.jpg" alt="ESSAAR Group Corporate Headquarters &amp; Operations Facility" class="about-framed-photo" loading="lazy">
           </div>
+          <div class="about-image-action">
+            <a href="about.html" class="btn btn-primary btn-about-cta">
+              <span>Learn More About Our Group</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -645,7 +694,6 @@
           <div class="ecosystem-header">
             <div class="ecosystem-header-content text-center">
               <span class="ecosystem-eyebrow">
-                <span class="ecosystem-eyebrow-dot" aria-hidden="true"></span>
                 THE ESSAAR ECOSYSTEM
               </span>
               <h3 class="ecosystem-main-title">
@@ -698,8 +746,9 @@
                   <img src="assets/images/logos/prateesh-logo-transparent.png" alt="Prateesh Engineering Enterprises Logo" class="ecosystem-card-logo" loading="lazy">
                 </div>
                 <div class="ecosystem-card-body">
-                  <span class="ecosystem-card-category">Engineering &amp; Fabrication</span>
+                  <img src="assets/images/logos/prateesh-logo-transparent.png" alt="" class="ecosystem-card-watermark" aria-hidden="true" loading="lazy" decoding="async">
                   <h4 class="ecosystem-card-name">Prateesh Engineering Enterprises</h4>
+                  <span class="ecosystem-card-category">Engineering &amp; Fabrication</span>
                   <p class="ecosystem-card-desc">
                     Heavy structural steel fabrication, pressure vessels, storage tanks, and comprehensive engineering solutions.
                   </p>
@@ -721,8 +770,9 @@
                   <img src="assets/images/logos/srs-cranes-logo-transparent.png" alt="SRS Cranes &amp; Equipments Services Logo" class="ecosystem-card-logo" loading="lazy">
                 </div>
                 <div class="ecosystem-card-body">
-                  <span class="ecosystem-card-category">Heavy Lifting &amp; Cranes</span>
+                  <img src="assets/images/logos/srs-cranes-logo-transparent.png" alt="" class="ecosystem-card-watermark" aria-hidden="true" loading="lazy" decoding="async">
                   <h4 class="ecosystem-card-name">SRS Cranes &amp; Equipments Services</h4>
+                  <span class="ecosystem-card-category">Heavy Lifting &amp; Cranes</span>
                   <p class="ecosystem-card-desc">
                     Comprehensive fleet of hydraulic mobile and crawler cranes from 5 to 500 tonnes for precision heavy lifting.
                   </p>
@@ -744,8 +794,9 @@
                   <img src="assets/images/logos/grace-gases-logo-transparent.png" alt="Grace Gases &amp; Company Logo" class="ecosystem-card-logo" loading="lazy">
                 </div>
                 <div class="ecosystem-card-body">
-                  <span class="ecosystem-card-category">Industrial &amp; Medical Gases</span>
+                  <img src="assets/images/logos/grace-gases-logo-transparent.png" alt="" class="ecosystem-card-watermark" aria-hidden="true" loading="lazy" decoding="async">
                   <h4 class="ecosystem-card-name">Grace Gases &amp; Company</h4>
+                  <span class="ecosystem-card-category">Industrial &amp; Medical Gases</span>
                   <p class="ecosystem-card-desc">
                     Manufacturing and supply of industrial, medical oxygen, dissolved acetylene, and high-purity speciality gases.
                   </p>
@@ -767,8 +818,9 @@
                   <img src="assets/images/logos/best-air-logo-transparent.png" alt="Best Air Products Logo" class="ecosystem-card-logo" loading="lazy">
                 </div>
                 <div class="ecosystem-card-body">
-                  <span class="ecosystem-card-category">Gas Filling &amp; Logistics</span>
+                  <img src="assets/images/logos/best-air-logo-transparent.png" alt="" class="ecosystem-card-watermark" aria-hidden="true" loading="lazy" decoding="async">
                   <h4 class="ecosystem-card-name">Best Air Products</h4>
+                  <span class="ecosystem-card-category">Gas Filling &amp; Logistics</span>
                   <p class="ecosystem-card-desc">
                     Authorized gas filling agency, bulk cryogenic liquid transport, and reliable regional cylinder distribution.
                   </p>
@@ -790,8 +842,9 @@
                   <img src="assets/images/logos/essaar-engineering-logo-transparent.png" alt="ESSAAR Engineering &amp; Company Logo" class="ecosystem-card-logo" loading="lazy">
                 </div>
                 <div class="ecosystem-card-body">
-                  <span class="ecosystem-card-category">Mechanical &amp; Manpower</span>
+                  <img src="assets/images/logos/essaar-engineering-logo-transparent.png" alt="" class="ecosystem-card-watermark" aria-hidden="true" loading="lazy" decoding="async">
                   <h4 class="ecosystem-card-name">ESSAAR Engineering &amp; Company</h4>
+                  <span class="ecosystem-card-category">Mechanical &amp; Manpower</span>
                   <p class="ecosystem-card-desc">
                     Plant equipment erection, equipment overhaul, shutdown engineering, and skilled technical industrial workforce.
                   </p>
@@ -813,8 +866,9 @@
                   <img src="assets/images/logos/roy-diagnostics-logo-transparent.png" alt="Roy Diagnostics Logo" class="ecosystem-card-logo" loading="lazy">
                 </div>
                 <div class="ecosystem-card-body">
-                  <span class="ecosystem-card-category">Healthcare &amp; Advanced Imaging</span>
+                  <img src="assets/images/logos/roy-diagnostics-logo-transparent.png" alt="" class="ecosystem-card-watermark" aria-hidden="true" loading="lazy" decoding="async">
                   <h4 class="ecosystem-card-name">Roy Diagnostics</h4>
+                  <span class="ecosystem-card-category">Healthcare &amp; Advanced Imaging</span>
                   <p class="ecosystem-card-desc">
                     Institute of Fetal Medicine &amp; Advanced Imaging, developing modern 1.5T MRI, 32-slice CT, ultrasound and clinical diagnostics.
                   </p>
@@ -836,8 +890,9 @@
                   <img src="assets/images/logos/jj-industrial-logo-transparent.png" alt="JJ Industrial HR Services Logo" class="ecosystem-card-logo" loading="lazy">
                 </div>
                 <div class="ecosystem-card-body">
-                  <span class="ecosystem-card-category">Manpower &amp; HR Consultancy</span>
+                  <img src="assets/images/logos/jj-industrial-logo-transparent.png" alt="" class="ecosystem-card-watermark" aria-hidden="true" loading="lazy" decoding="async">
                   <h4 class="ecosystem-card-name">JJ Industrial HR Services &amp; Consultancy</h4>
+                  <span class="ecosystem-card-category">Manpower &amp; HR Consultancy</span>
                   <p class="ecosystem-card-desc">
                     Professional industrial manpower solutions, trade-certified technicians, contract workforce management, and shutdown staffing.
                   </p>
@@ -971,9 +1026,9 @@
       <div class="commitment-box">
         <div class="commitment-grid">
           <div>
-            <h2 class="commitment-statement" style="font-size: 2.1rem; line-height: 1.3; color: var(--white); font-weight: 800; margin-bottom: 1.25rem;">
-              Building Stronger Industries <br>
-              <span style="color: var(--gold-premium);">Creating Lasting Partnerships</span>
+            <h2 class="commitment-statement commitment-heading">
+              <span class="commitment-line">Building Stronger Industries</span>
+              <span class="commitment-line-gold">Creating Lasting Partnerships</span>
             </h2>
             <p class="commitment-text" style="font-size: 1.05rem; line-height: 1.75; color: #CBD5E1; margin-bottom: 1.5rem;">
               At ESSAAR Group, we believe that true industrial progress comes from dependable expertise, strong relationships and consistent quality. Whether providing heavy lifting support, fabricating critical equipment or supplying essential gases, our focus remains on helping our clients achieve their operational goals safely and efficiently.
@@ -982,7 +1037,7 @@
               ONE GROUP. MANY STRENGTHS. ONE VISION
             </div>
             <div>
-              <a href="contact.html" class="btn btn-gold">
+              <a href="contact.html" class="btn btn-gold btn-single-line">
                 <span>Connect With ESSAAR Group</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
               </a>
@@ -991,21 +1046,27 @@
 
           <div class="commitment-badges">
             <div class="commitment-badge-item">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <div class="commitment-badge-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              </div>
               <div>
                 <strong>Quality Assurance</strong>
                 <span>Rigorous fabrication &amp; gas purity inspection</span>
               </div>
             </div>
             <div class="commitment-badge-item">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              <div class="commitment-badge-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
               <div>
                 <strong>Zero-Harm Safety Policy</strong>
                 <span>Standardized HSE protocols across heavy lift and fabrication</span>
               </div>
             </div>
             <div class="commitment-badge-item">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              <div class="commitment-badge-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg>
+              </div>
               <div>
                 <strong>On-Time Milestone Delivery</strong>
                 <span>Dependable execution on shutdown and project timelines</span>
@@ -1085,12 +1146,15 @@
       </div>
 
       <div class="text-center" style="margin-top: 3rem;">
-        <a href="projects-gallery.html" class="btn btn-primary btn-lg">
+        <a href="projects-gallery.html" class="btn btn-primary btn-lg btn-single-line">
           <span>Explore Complete Projects Portfolio</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
         </a>
       </div>
     </div>
+  </section>
+
+  <!-- Section: Why Partner with ESSAAR Group -->
   <section class="section-why-partner" id="why-partner">
     <div class="container">
       <div class="section-header text-center">
@@ -1116,6 +1180,11 @@
           <p class="why-partner-desc">
             Transparent business practices, ethical partnerships and dependable accountability.
           </p>
+          <div class="why-partner-watermark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+            </svg>
+          </div>
         </div>
 
         <!-- 02. DIVERSE BUSINESS EXPERTISE -->
@@ -1134,6 +1203,13 @@
           <p class="why-partner-desc">
             Several specialized companies providing engineering, heavy lifting, industrial gases, mechanical solutions, healthcare diagnostics and industrial workforce management.
           </p>
+          <div class="why-partner-watermark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+          </div>
         </div>
 
         <!-- 03. QUALITY & RELIABILITY -->
@@ -1151,6 +1227,12 @@
           <p class="why-partner-desc">
             Consistent service standards, dependable equipment and quality-focused execution.
           </p>
+          <div class="why-partner-watermark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 14 14"></polyline>
+            </svg>
+          </div>
         </div>
 
         <!-- 04. SAFETY & RESPONSIBILITY -->
@@ -1168,6 +1250,12 @@
           <p class="why-partner-desc">
             Safety-focused operations, responsible equipment handling and professional working practices.
           </p>
+          <div class="why-partner-watermark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+              <polyline points="22 4 12 14.01 9 11.01"></polyline>
+            </svg>
+          </div>
         </div>
 
         <!-- 05. INTEGRATED CAPABILITIES -->
@@ -1187,6 +1275,14 @@
           <p class="why-partner-desc">
             Connected business units offering coordinated support for diverse industrial and project requirements.
           </p>
+          <div class="why-partner-watermark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+              <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+              <line x1="6" y1="6" x2="6.01" y2="6"></line>
+              <line x1="6" y1="18" x2="6.01" y2="18"></line>
+            </svg>
+          </div>
         </div>
 
         <!-- 06. CUSTOMER COMMITMENT -->
@@ -1206,6 +1302,14 @@
           <p class="why-partner-desc">
             Responsive coordination, flexible service arrangements and long-term customer relationships.
           </p>
+          <div class="why-partner-watermark" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
         </div>
       </div>
     </div>
@@ -1425,7 +1529,7 @@
         <!-- FAQ Help Support Bar -->
         <div class="faq-support-bar">
           <h4>Have a specific industrial question not listed here?</h4>
-          <p>Our engineering leads, heavy lift coordinators, and technical workforce planners are on standby to discuss your project specifications.</p>
+          <p>Our engineering leads and project coordinators are on standby to assist with your requirements.</p>
           <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
             <a href="contact.html" class="btn btn-primary">
               <span>Speak With Our Technical Team</span>
@@ -1503,6 +1607,22 @@
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
               <span><a href="mailto:essaargroupofco@gmail.com" style="color: inherit; text-decoration: none;">essaargroupofco@gmail.com</a></span>
             </div>
+            <div class="footer-contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"></path></svg>
+              <span><a href="https://wa.me/919597000189?text=Hi%20ESSAAR%20Group,%20I%20have%20an%20enquiry" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">+91 95970 00189 (WhatsApp)</a></span>
+            </div>
+          </div>
+          <!-- Quick Connect Buttons: Theme-Matched Circular Icons -->
+          <div class="footer-contact-actions">
+            <a href="tel:+919597000189" class="footer-contact-icon-btn" aria-label="Call ESSAAR Group" title="Call Us">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </a>
+            <a href="mailto:essaargroupofco@gmail.com" class="footer-contact-icon-btn" aria-label="Email ESSAAR Group" title="Send Email">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </a>
+            <a href="https://wa.me/919597000189?text=Hi%20ESSAAR%20Group,%20I%20have%20an%20enquiry" target="_blank" rel="noopener noreferrer" class="footer-contact-icon-btn" aria-label="WhatsApp ESSAAR Group" title="WhatsApp Us">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"></path></svg>
+            </a>
           </div>
         </div>
       </div>

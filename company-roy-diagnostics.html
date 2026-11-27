@@ -243,8 +243,12 @@
 
     /* Bottom Info Bar */
     .company-bottom-bar-section {
-      padding: 2.5rem 0 3.5rem;
+      padding: 0 0 1.25rem;
       background: transparent;
+    }
+    .company-bottom-bar-section + .section,
+    .company-bottom-bar-section + section {
+      padding-top: 1.5rem;
     }
     .company-bottom-bar {
       background: #06152B;
@@ -361,26 +365,33 @@
         grid-template-columns: 1fr;
         gap: 3rem;
       }
-      .company-exact-hero-right {
-        justify-content: flex-start;
+            .company-exact-hero-right {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding-left: 0;
+        width: 100%;
+        margin: 1.5rem auto 0;
+        text-align: center;
+        position: relative;
       }
-    .company-exact-hero-right {
-      position: relative;
-    }
-    .company-exact-hero-right::before {
-      content: "";
-      position: absolute;
-      width: 380px;
-      height: 380px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 40%, rgba(255, 255, 255, 0.35) 60%, rgba(255, 255, 255, 0) 75%);
-      filter: blur(14px);
-      z-index: 0;
-      pointer-events: none;
-    }
+      .company-exact-hero-right::before {
+        content: "";
+        position: absolute;
+        width: min(340px, 85vw);
+        height: min(340px, 85vw);
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.85) 40%, rgba(255, 255, 255, 0.35) 60%, rgba(255, 255, 255, 0) 75%);
+        filter: blur(14px);
+        z-index: 0;
+        pointer-events: none;
+      }
       .company-exact-hero-logo {
-        max-width: 280px;
+        max-width: min(280px, 80vw);
+        margin: 0 auto;
+        display: block;
+        position: relative;
+        z-index: 1;
       }
     }
     @media (max-width: 767px) {
@@ -692,7 +703,11 @@
             </div>
             <span class="bottom-bar-label">DIRECT CONTACT</span>
           </div>
-          <div class="bottom-bar-val"><a href="tel:+919597000189">+91 95970 00189</a> / info.roydiagnostics@gmail.com</div>
+          <div class="bottom-bar-val">
+            <a href="tel:+919597000189" style="color: inherit; text-decoration: none;">+91 95970 00189</a>
+            <span class="bottom-bar-sep">/</span>
+            <a href="mailto:info.roydiagnostics@gmail.com" class="bottom-bar-email" style="color: inherit; text-decoration: none;">info.roydiagnostics@gmail.com</a>
+          </div>
         </div>
 
         <div class="bottom-bar-action">
@@ -708,9 +723,9 @@
   <!-- Centre Facility & Infrastructure Showcase -->
   <section class="section" style="background: var(--white); padding: 4.5rem 0 3.5rem;">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1.15fr 1fr; gap: 3.5rem; align-items: center;">
+      <div class="grid-2-col-asym" style="gap: 3.5rem; align-items: center;">
         <div style="position: relative; border-radius: 14px; overflow: hidden; box-shadow: 0 16px 36px rgba(5, 19, 38, 0.12); border: 1px solid #E2E8F0;">
-          <img src="assets/images/gallery/roy-diagnostics-building.jpg" alt="Roy Diagnostics Fetal &amp; Imaging Centre Building" style="width: 100%; height: auto; display: block; object-fit: cover;">
+          <img src="assets/images/gallery/roy-diagnostics-building.jpg" alt="Roy Diagnostics Fetal &amp; Imaging Centre Building" style="width: 100%; height: auto; display: block; object-fit: cover;" loading="lazy" decoding="async">
           <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(180deg, transparent 0%, rgba(5, 19, 38, 0.92) 100%); padding: 1.5rem; color: #FFFFFF;">
             <span style="color: #D5A642; font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.25rem;">State-of-the-Art Diagnostic Centre</span>
             <strong style="font-size: 1.15rem; font-family: var(--font-heading);">ROY DIAGNOSTICS — Fetal &amp; Imaging Centre</strong>
@@ -722,7 +737,7 @@
           <p style="color: #4A5568; line-height: 1.7; margin-bottom: 1.25rem;">
             Designed and engineered to premier clinical healthcare standards, the multi-level ROY DIAGNOSTICS facility integrates advanced radiological imaging, comprehensive maternal-fetal medicine suites, digital screening, and fully automated clinical pathology services under one roof.
           </p>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.75rem;">
+          <div class="grid-2-col" style="gap: 1rem; margin-bottom: 1.75rem;">
             <div style="padding: 0.85rem 1rem; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px;">
               <strong style="color: var(--navy-primary); display: block; font-size: 0.9rem;">1.5T MRI &amp; 32-Slice CT</strong>
               <span style="font-size: 0.8rem; color: #64748B;">High-resolution cross-sectional imaging</span>
@@ -760,10 +775,11 @@
         </p>
       </div>
 
-      <div class="services-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+      <div class="services-grid">
         
         <!-- Service 1: 1.5 Tesla MRI -->
         <div class="service-card" style="background: var(--white); border: 1px solid rgba(16, 43, 80, 0.1); border-radius: var(--radius-lg); padding: 2rem 1.75rem; box-shadow: var(--shadow-sm);">
+          <img src="assets/images/logos/roy-diagnostics-logo-transparent.png" alt="" class="service-card-watermark" aria-hidden="true" loading="lazy" decoding="async">
           <div style="width: 48px; height: 48px; border-radius: 10px; background: rgba(201, 154, 67, 0.1); border: 1px solid rgba(201, 154, 67, 0.3); display: flex; align-items: center; justify-content: center; color: var(--gold-premium); margin-bottom: 1.25rem;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg>
           </div>
@@ -776,6 +792,7 @@
 
         <!-- Service 2: 32-Slice CT -->
         <div class="service-card" style="background: var(--white); border: 1px solid rgba(16, 43, 80, 0.1); border-radius: var(--radius-lg); padding: 2rem 1.75rem; box-shadow: var(--shadow-sm);">
+          <img src="assets/images/logos/roy-diagnostics-logo-transparent.png" alt="" class="service-card-watermark" aria-hidden="true" loading="lazy" decoding="async">
           <div style="width: 48px; height: 48px; border-radius: 10px; background: rgba(201, 154, 67, 0.1); border: 1px solid rgba(201, 154, 67, 0.3); display: flex; align-items: center; justify-content: center; color: var(--gold-premium); margin-bottom: 1.25rem;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line></svg>
           </div>
@@ -788,6 +805,7 @@
 
         <!-- Service 3: Digital X-Ray -->
         <div class="service-card" style="background: var(--white); border: 1px solid rgba(16, 43, 80, 0.1); border-radius: var(--radius-lg); padding: 2rem 1.75rem; box-shadow: var(--shadow-sm);">
+          <img src="assets/images/logos/roy-diagnostics-logo-transparent.png" alt="" class="service-card-watermark" aria-hidden="true" loading="lazy" decoding="async">
           <div style="width: 48px; height: 48px; border-radius: 10px; background: rgba(201, 154, 67, 0.1); border: 1px solid rgba(201, 154, 67, 0.3); display: flex; align-items: center; justify-content: center; color: var(--gold-premium); margin-bottom: 1.25rem;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
           </div>
@@ -800,6 +818,7 @@
 
         <!-- Service 4: Ultrasound & Colour Doppler -->
         <div class="service-card" style="background: var(--white); border: 1px solid rgba(16, 43, 80, 0.1); border-radius: var(--radius-lg); padding: 2rem 1.75rem; box-shadow: var(--shadow-sm);">
+          <img src="assets/images/logos/roy-diagnostics-logo-transparent.png" alt="" class="service-card-watermark" aria-hidden="true" loading="lazy" decoding="async">
           <div style="width: 48px; height: 48px; border-radius: 10px; background: rgba(201, 154, 67, 0.1); border: 1px solid rgba(201, 154, 67, 0.3); display: flex; align-items: center; justify-content: center; color: var(--gold-premium); margin-bottom: 1.25rem;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
           </div>
@@ -812,6 +831,7 @@
 
         <!-- Service 5: Fetal Medicine & Women's Imaging -->
         <div class="service-card" style="background: var(--white); border: 1px solid rgba(16, 43, 80, 0.1); border-radius: var(--radius-lg); padding: 2rem 1.75rem; box-shadow: var(--shadow-sm);">
+          <img src="assets/images/logos/roy-diagnostics-logo-transparent.png" alt="" class="service-card-watermark" aria-hidden="true" loading="lazy" decoding="async">
           <div style="width: 48px; height: 48px; border-radius: 10px; background: rgba(201, 154, 67, 0.1); border: 1px solid rgba(201, 154, 67, 0.3); display: flex; align-items: center; justify-content: center; color: var(--gold-premium); margin-bottom: 1.25rem;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
           </div>
@@ -824,6 +844,7 @@
 
         <!-- Service 6: Mammography -->
         <div class="service-card" style="background: var(--white); border: 1px solid rgba(16, 43, 80, 0.1); border-radius: var(--radius-lg); padding: 2rem 1.75rem; box-shadow: var(--shadow-sm);">
+          <img src="assets/images/logos/roy-diagnostics-logo-transparent.png" alt="" class="service-card-watermark" aria-hidden="true" loading="lazy" decoding="async">
           <div style="width: 48px; height: 48px; border-radius: 10px; background: rgba(201, 154, 67, 0.1); border: 1px solid rgba(201, 154, 67, 0.3); display: flex; align-items: center; justify-content: center; color: var(--gold-premium); margin-bottom: 1.25rem;">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
           </div>
@@ -841,16 +862,16 @@
   <!-- Specialized Clinical Focus & Key Strengths -->
   <section class="section" style="background: var(--white);">
     <div class="container">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+      <div class="grid-2-col" style="gap: 3rem; align-items: start;">
         
         <!-- Specialized Focus -->
         <div>
           <span class="section-label">Clinical Scope</span>
-          <h2 class="section-title" style="font-size: 1.85rem;">Specialized Medical Focus</h2>
+          <h2 class="section-title roy-section-heading">Specialized Medical Focus</h2>
           <p style="color: #4A5568; line-height: 1.65; margin-bottom: 1.5rem;">
             ROY DIAGNOSTICS is structured to deliver dedicated diagnostic imaging support tailored to major clinical specialties:
           </p>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="grid-2-col" style="gap: 1rem;">
             <div style="padding: 1rem 1.25rem; background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px;">
               <strong style="color: var(--navy-primary); display: block; font-size: 0.95rem;">Neurology &amp; Neurosurgery</strong>
               <span style="font-size: 0.825rem; color: #64748B;">Brain, spine, stroke &amp; neurovascular</span>
@@ -881,7 +902,7 @@
         <!-- Key Strengths -->
         <div>
           <span class="section-label">Foundational Pillars</span>
-          <h2 class="section-title" style="font-size: 1.85rem;">Core Healthcare Strengths</h2>
+          <h2 class="section-title roy-section-heading">Core Healthcare Strengths</h2>
           <p style="color: #4A5568; line-height: 1.65; margin-bottom: 1.5rem;">
             Guided by ESSAAR Group's three-decade legacy of trust and operational excellence, ROY DIAGNOSTICS is established on six key institutional strengths:
           </p>
@@ -991,8 +1012,8 @@
                 <input type="email" name="email" class="form-control" placeholder="contact@email.com">
               </div>
               <div class="form-group">
-                <label class="form-label">Diagnostic Service</label>
-                <select name="service" class="form-control">
+                <label class="form-label" for="roy-service-select">Diagnostic Service</label>
+                <select id="roy-service-select" name="service" class="form-control" aria-label="Diagnostic Service">
                   <option value="Fetal Medicine &amp; Anomaly Scan">Fetal Medicine &amp; Anomaly Scan</option>
                   <option value="3T MRI Scan">3T MRI Scan</option>
                   <option value="High-Resolution CT Scan">High-Resolution CT Scan</option>
@@ -1025,6 +1046,7 @@
   <footer class="site-footer">
     <div class="container">
       <div class="footer-top">
+        <!-- Brand Col -->
         <div>
           <a href="index.html" class="footer-brand-wrap" aria-label="ESSAAR Group of Companies Homepage">
             <img src="assets/images/logos/essaar-group-logo.jpg" alt="ESSAAR Group of Companies Logo" class="footer-brand-logo">
@@ -1034,11 +1056,12 @@
             </div>
           </a>
           <p class="footer-about">
-            ESSAAR Group of Companies brings together specialized expertise in industrial engineering, crane rental, medical &amp; industrial gases, healthcare diagnostic imaging, and industrial HR management across South India.
+            ESSAAR Group of Companies brings together specialized expertise in industrial engineering, crane rental, medical &amp; industrial gases, and engineering, project execution &amp; industrial solutions across South India.
           </p>
           <div class="footer-statement">"One Group. Many Strengths. One Vision"</div>
         </div>
 
+        <!-- Quick Nav -->
         <div>
           <h4 class="footer-heading">Quick Links</h4>
           <ul class="footer-links">
@@ -1047,10 +1070,12 @@
             <li><a href="companies.html">Our Companies</a></li>
             <li><a href="industries.html">Industries We Serve</a></li>
             <li><a href="projects-gallery.html">Projects &amp; Gallery</a></li>
+            <li><a href="index.html#faq">Frequently Asked Questions</a></li>
             <li><a href="contact.html">Contact &amp; Enquiries</a></li>
           </ul>
         </div>
 
+        <!-- 5 Companies Links -->
         <div>
           <h4 class="footer-heading">Group Companies</h4>
           <ul class="footer-links">
@@ -1064,6 +1089,7 @@
           </ul>
         </div>
 
+        <!-- Contact Info -->
         <div>
           <h4 class="footer-heading">Contact Group</h4>
           <div class="footer-contact-list">
@@ -1077,12 +1103,29 @@
             </div>
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
-              <span><a href="mailto:info.roydiagnostics@gmail.com" style="color: inherit; text-decoration: none;">info.roydiagnostics@gmail.com</a></span>
+              <span><a href="mailto:essaargroupofco@gmail.com" style="color: inherit; text-decoration: none;">essaargroupofco@gmail.com</a></span>
             </div>
+            <div class="footer-contact-item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"></path></svg>
+              <span><a href="https://wa.me/919597000189?text=Hi%20ESSAAR%20Group,%20I%20have%20an%20enquiry" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">+91 95970 00189 (WhatsApp)</a></span>
+            </div>
+          </div>
+          <!-- Quick Connect Buttons: Theme-Matched Circular Icons -->
+          <div class="footer-contact-actions">
+            <a href="tel:+919597000189" class="footer-contact-icon-btn" aria-label="Call ESSAAR Group" title="Call Us">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </a>
+            <a href="mailto:essaargroupofco@gmail.com" class="footer-contact-icon-btn" aria-label="Email ESSAAR Group" title="Send Email">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </a>
+            <a href="https://wa.me/919597000189?text=Hi%20ESSAAR%20Group,%20I%20have%20an%20enquiry" target="_blank" rel="noopener noreferrer" class="footer-contact-icon-btn" aria-label="WhatsApp ESSAAR Group" title="WhatsApp Us">
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2z"></path></svg>
+            </a>
           </div>
         </div>
       </div>
 
+      <!-- Bottom bar -->
       <div class="footer-bottom">
         <div>
           &copy; <span id="year">2026</span> ESSAAR Group of Companies. All Rights Reserved. Together, We Build. Together, We Grow.
@@ -1090,7 +1133,7 @@
         <div class="footer-bottom-links">
           <a href="contact.html">Privacy Policy</a>
           <a href="contact.html">Terms &amp; Conditions</a>
-          <a href="https://wa.me/917845391712?text=Hi%20Sriram,%20I%20found%20you%20in%20Roy%20Diagnostics%20Website" target="_blank" rel="noopener noreferrer" class="developer-credit">Developed by <span class="developer-name">Sri Web Squad</span></a>
+          <a href="https://wa.me/917845391712?text=Hi%20Sriram,%20I%20found%20you%20in%20ESSAAR%20Group%20Website" target="_blank" rel="noopener noreferrer" class="developer-credit">Developed by <span class="developer-name">Sri Web Squad</span></a>
         </div>
       </div>
     </div>

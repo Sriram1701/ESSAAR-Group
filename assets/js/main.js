@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const scrollY = window.scrollY;
 
     if (header) {
-      if (scrollY > 60) {
+      if (scrollY > 30) {
         header.classList.add('scrolled');
       } else {
         header.classList.remove('scrolled');
@@ -337,5 +337,93 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initialize Homepage Stats and About Milestone Counters
   initCounterAnimation('.hero-stats-editorial', '.stat-num-val');
   initCounterAnimation('.about-milestone-box', '.milestone-counter');
+
+  // --- Hero Background Image Slideshow (3 Rotating Photos) ---
+  (function initHeroBgSlider() {
+    const slides = document.querySelectorAll('.hero-bg-slide');
+    if (!slides || slides.length <= 1) return;
+
+    let currentIndex = 0;
+    const intervalTime = 5000; // 5 seconds per slide
+
+    function nextSlide() {
+      slides[currentIndex].classList.remove('active');
+      currentIndex = (currentIndex + 1) % slides.length;
+      slides[currentIndex].classList.add('active');
+    }
+
+    let sliderTimer = setInterval(nextSlide, intervalTime);
+
+    // Pause on tab visibility change to avoid stacking transitions
+    document.addEventListener('visibilitychange', function () {
+      if (document.hidden) {
+        clearInterval(sliderTimer);
+      } else {
+        clearInterval(sliderTimer);
+        sliderTimer = setInterval(nextSlide, intervalTime);
+      }
+    });
+  })();
+
+  // --- Professional Scroll Reveal Animations (IntersectionObserver) ---
+  (function initScrollReveal() {
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return;
+    }
+
+    const targetSelectors = [
+      '.section-header',
+      '.company-card',
+      '.service-card',
+      '.company-service-5card',
+      '.industry-feature-row',
+      '.why-card',
+      '.ecosystem-card',
+      '.about-company-card',
+      '.capability-card',
+      '.contact-info-card',
+      '.contact-form-card',
+      '.gallery-item',
+      '.about-milestone-box',
+      '.about-card-box'
+    ];
+
+    const elementsToReveal = document.querySelectorAll(targetSelectors.join(', '));
+    if (!elementsToReveal.length) return;
+
+    if (!('IntersectionObserver' in window)) {
+      elementsToReveal.forEach(function (el) {
+        el.classList.add('is-revealed');
+      });
+      return;
+    }
+
+    elementsToReveal.forEach(function (el) {
+      el.classList.add('reveal-on-scroll');
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight && rect.bottom > 0) {
+        el.classList.add('is-revealed');
+      }
+    });
+
+    const revealObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      root: null,
+      rootMargin: '0px 0px -40px 0px',
+      threshold: 0.08
+    });
+
+    elementsToReveal.forEach(function (el) {
+      if (!el.classList.contains('is-revealed')) {
+        revealObserver.observe(el);
+      }
+    });
+  })();
 
 });

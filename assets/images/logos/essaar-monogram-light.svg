@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 84" width="80" height="84">
+  <defs>
+    <linearGradient id="lightSpineMono" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#CBD5E1" />
+    </linearGradient>
+    <linearGradient id="goldBarGradLightMono" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#D4AF37" />
+      <stop offset="50%" stop-color="#EED596" />
+      <stop offset="100%" stop-color="#C9A34E" />
+    </linearGradient>
+    <linearGradient id="goldBarMidLightMono" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#E5C478" />
+      <stop offset="100%" stop-color="#F3DFAB" />
+    </linearGradient>
+  </defs>
+
+  <!-- Geometric E Monogram (Light for Dark Backgrounds) -->
+  <g id="monogram-light">
+    <!-- Primary Vertical Spine -->
+    <rect x="10" y="11" width="13" height="62" rx="3" fill="url(#lightSpineMono)" />
+    <!-- Architectural Bevel Line on Spine -->
+    <rect x="21" y="14" width="2" height="56" rx="1" fill="#C9A34E" opacity="0.85" />
+    
+    <!-- Top Cantilever Bar -->
+    <path d="M 27 11 L 68 11 A 3 3 0 0 1 71 14 L 71 21 A 3 3 0 0 1 68 24 L 27 24 A 2 2 0 0 1 25 22 L 25 13 A 2 2 0 0 1 27 11 Z" fill="url(#goldBarGradLightMono)" />
+    
+    <!-- Middle Cantilever Bar -->
+    <path d="M 27 35.5 L 57 35.5 A 3 3 0 0 1 60 38.5 L 60 45.5 A 3 3 0 0 1 57 48.5 L 27 48.5 A 2 2 0 0 1 25 46.5 L 25 37.5 A 2 2 0 0 1 27 35.5 Z" fill="url(#goldBarMidLightMono)" />
+    
+    <!-- Bottom Cantilever Bar -->
+    <path d="M 27 60 L 68 60 A 3 3 0 0 1 71 63 L 71 70 A 3 3 0 0 1 68 73 L 27 73 A 2 2 0 0 1 25 71 L 25 62 A 2 2 0 0 1 27 60 Z" fill="url(#goldBarGradLightMono)" />
+    
+    <!-- Precision Connector Accent -->
+    <rect x="23" y="39.5" width="2" height="5" rx="1" fill="#C9A34E" />
+  </g>
+</svg>
