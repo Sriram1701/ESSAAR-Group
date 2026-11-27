@@ -153,14 +153,19 @@
       <a href="about.html" class="drawer-link">About Group</a>
       <a href="companies.html" class="drawer-link">Our Companies Overview</a>
       
-            <div class="drawer-companies-title">Group Subsidiaries</div>
-      <a href="company-prateesh-engineering.html" class="drawer-sublink">Prateesh Engineering</a>
-      <a href="company-srs-cranes.html" class="drawer-sublink">SRS Cranes &amp; Equipments</a>
-      <a href="company-grace-gases.html" class="drawer-sublink">Grace Gases &amp; Co.</a>
-      <a href="company-best-air-products.html" class="drawer-sublink">Best Air Products</a>
-      <a href="company-essaar-engineering.html" class="drawer-sublink">ESSAAR Engineering &amp; Co.</a>
-      <a href="company-roy-diagnostics.html" class="drawer-sublink">Roy Diagnostics</a>
-      <a href="company-jj-industrial.html" class="drawer-sublink">JJ Industrial HR Services</a>
+            <button type="button" class="drawer-dropdown-btn" aria-expanded="false" aria-controls="drawer-companies-menu">
+        <span>Group Subsidiaries</span>
+        <svg class="drawer-dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+      </button>
+      <div class="drawer-dropdown-content" id="drawer-companies-menu">
+        <a href="company-prateesh-engineering.html" class="drawer-sublink">Prateesh Engineering</a>
+              <a href="company-srs-cranes.html" class="drawer-sublink">SRS Cranes &amp; Equipments</a>
+              <a href="company-grace-gases.html" class="drawer-sublink">Grace Gases &amp; Co.</a>
+              <a href="company-best-air-products.html" class="drawer-sublink">Best Air Products</a>
+              <a href="company-essaar-engineering.html" class="drawer-sublink">ESSAAR Engineering &amp; Co.</a>
+              <a href="company-roy-diagnostics.html" class="drawer-sublink">Roy Diagnostics</a>
+              <a href="company-jj-industrial.html" class="drawer-sublink">JJ Industrial HR Services</a>
+      </div>
       
       <a href="industries.html" class="drawer-link">Industries We Serve</a>
       <a href="projects-gallery.html" class="drawer-link">Projects &amp; Gallery</a>
@@ -172,12 +177,13 @@
       </div>
 
       <!-- Reorganized Contact Info for Mobile Drawer -->
-      <div class="drawer-contact-section">
+            <div class="drawer-contact-section">
         <div class="drawer-contact-title">Direct Corporate Contact</div>
         <div class="drawer-contact-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
           <div>
-            <a href="tel:+919597000189">+91 95970 00189</a> / <a href="tel:+919443230189">+91 94432 30189</a>
+            <a href="tel:+919597000189">+91 95970 00189</a> / <a href="tel:+919443230189">+91 94432 30189</a><br>
+            <span style="font-size: 0.8rem; color: #4A5568;">Landline: <a href="tel:04142237189" style="color: inherit;">04142 237189</a></span>
           </div>
         </div>
         <div class="drawer-contact-item">
@@ -186,7 +192,7 @@
         </div>
         <div class="drawer-contact-item">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-          <span>SIPCOT, Cuddalore, TN &amp; Puducherry</span>
+          <span><a href="https://www.google.com/maps/search/?api=1&amp;query=Essaar+Plaza,+No-4/653,+Major+Mukund+Varadharajan+Rd,+United+Colony,+Medavakkam,+Tamil+Nadu+-+600100" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Essaar Plaza, No-4/653, Major Mukund Varadharajan Rd, United Colony, Medavakkam, Chennai - 600100.</a></span>
         </div>
       </div>
     </nav>
@@ -209,7 +215,7 @@
         </h1>
         <p class="hero-desc">
           <span class="desktop-only">A multi-disciplinary industrial group uniting specialized capabilities across industrial engineering, heavy crane lifting, medical &amp; industrial gases, healthcare diagnostics, certified industrial workforce solutions and turnkey project execution across Tamil Nadu and Puducherry, India.</span>
-          <span class="mobile-only">A multi-disciplinary industrial group delivering engineering, heavy lifting, industrial gases, and turnkey solutions across Tamil Nadu &amp; Puducherry.</span>
+          <span class="mobile-only">A leading industrial group delivering engineering, heavy lifting, and turnkey solutions across Tamil Nadu &amp; Puducherry, India.</span>
         </p>
         <div class="hero-actions">
           <a href="#companies" class="btn btn-primary btn-lg">
@@ -245,7 +251,6 @@
             <span class="stat-num-val" data-target="7">07</span>
           </div>
           <div class="editorial-stat-label">Specialized Companies</div>
-          <div class="editorial-stat-sub">Integrated Enterprise Network</div>
         </div>
 
         <!-- 02: Years of Experience -->
@@ -260,7 +265,6 @@
             <span class="stat-num-val" data-target="40">40</span><span class="stat-unit">+</span>
           </div>
           <div class="editorial-stat-label">Years Experience</div>
-          <div class="editorial-stat-sub">Proven Industrial Legacy</div>
         </div>
 
         <!-- 03: Industries & Clients Served -->
@@ -268,14 +272,13 @@
           <div class="editorial-stat-icon" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="3"></circle>
-              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
             </svg>
           </div>
           <div class="editorial-stat-num">
             <span class="stat-num-val" data-target="300">300</span><span class="stat-unit">+</span>
           </div>
           <div class="editorial-stat-label">Industries Served</div>
-          <div class="editorial-stat-sub">Industrial Clients &amp; Facilities</div>
         </div>
 
         <!-- 04: Industrial Workforce -->
@@ -292,7 +295,6 @@
             <span class="stat-num-val" data-target="1000">1000</span><span class="stat-unit">+</span>
           </div>
           <div class="editorial-stat-label">Skilled &amp; Unskilled Workers</div>
-          <div class="editorial-stat-sub">Industrial Workforce Network</div>
         </div>
       </div>
     </div>
@@ -684,7 +686,7 @@
   </section>
 
   <!-- Section 4: The ESSAAR Corporate Ecosystem / Our Group Companies -->
-  <section class="section section-ecosystem-outer" style="background: var(--soft-white); padding-top: 4.5rem; padding-bottom: 4.5rem;">
+  <section class="section section-ecosystem-outer" style="background: var(--soft-white);">
     <div id="companies" style="scroll-margin-top: 100px;"></div>
     <div class="container">
       <div class="ecosystem-section" id="ecosystem" aria-label="The ESSAAR Corporate Ecosystem">
@@ -859,7 +861,7 @@
               <!-- 06. Roy Diagnostics -->
               <article class="ecosystem-card">
                 <div class="ecosystem-card-media">
-                  <img src="assets/images/gallery/roy-diagnostics-building.jpg" alt="Roy Diagnostics Fetal &amp; Imaging Centre Facility Building" class="ecosystem-card-photo" loading="lazy">
+                  <img src="assets/images/gallery/roy-diagnostics-mri.jpg" alt="Roy Diagnostics Advanced 1.5T MRI Medical Scanning Facility" class="ecosystem-card-photo" loading="lazy">
                   <div class="ecosystem-card-overlay"></div>
                 </div>
                 <div class="ecosystem-card-logo-wrap">
@@ -989,7 +991,7 @@
 
                 <!-- 08. Medical Imaging & Fetal Medicine -->
         <div class="industry-card">
-          <img src="assets/images/gallery/roy-diagnostics-building.jpg" alt="Roy Diagnostics Fetal &amp; Imaging Centre" class="industry-card-bg" loading="lazy">
+          <img src="assets/images/gallery/roy-diagnostics-mri.jpg" alt="Roy Diagnostics Advanced 1.5T MRI Medical Scanning" class="industry-card-bg" loading="lazy">
           <div class="industry-card-overlay">
             <h3 class="industry-card-title">Medical Imaging &amp; Fetal Medicine</h3>
             <p class="industry-card-desc">Advanced MRI and CT diagnostic evaluations, ultrasound sonography, and specialized prenatal maternal-fetal imaging.</p>
@@ -1084,7 +1086,7 @@
       <div class="section-header text-center" style="max-width: 880px; margin: 0 auto 3.5rem;">
         <span class="section-label">PROVEN EXECUTION</span>
         <h2 class="section-title">Projects &amp; Operational Capabilities</h2>
-        <p class="section-subtitle">
+        <p class="section-subtitle" style="max-width: 860px;">
           A showcase of authentic heavy fabrication, precision lifting operations, plant piping,<br>and certified industrial projects delivered across Tamil Nadu and Puducherry, India.
         </p>
       </div>
@@ -1145,7 +1147,7 @@
         </div>
       </div>
 
-      <div class="text-center" style="margin-top: 3rem;">
+      <div class="text-center" style="margin-top: 3rem; text-align: center; display: flex; justify-content: center; align-items: center; width: 100%;">
         <a href="projects-gallery.html" class="btn btn-primary btn-lg btn-single-line">
           <span>Explore Complete Projects Portfolio</span>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -1531,7 +1533,7 @@
           <h4>Have a specific industrial question not listed here?</h4>
           <p>Our engineering leads and project coordinators are on standby to assist with your requirements.</p>
           <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-            <a href="contact.html" class="btn btn-primary">
+            <a href="contact.html" class="btn btn-primary btn-single-line">
               <span>Speak With Our Technical Team</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
             </a>
@@ -1601,7 +1603,7 @@
             </div>
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-              <span><a href="tel:+919597000189" style="color: inherit; text-decoration: none;">+91 95970 00189</a> / <a href="tel:+919443230189" style="color: inherit; text-decoration: none;">+91 94432 30189</a></span>
+              <span><a href="tel:+919597000189" style="color: inherit; text-decoration: none;">+91 95970 00189</a> / <a href="tel:+919443230189" style="color: inherit; text-decoration: none;">+91 94432 30189</a><br><small style="color: rgba(255,255,255,0.7);">Landline: <a href="tel:04142237189" style="color: inherit; text-decoration: none;">04142 237189</a></small></span>
             </div>
             <div class="footer-contact-item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>

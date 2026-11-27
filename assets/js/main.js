@@ -77,6 +77,37 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  // --- Mobile Drawer Companies Dropdown Accordion ---
+  const drawerDropdownBtn = document.querySelector('.drawer-dropdown-btn');
+  const drawerDropdownContent = document.querySelector('.drawer-dropdown-content');
+
+  if (drawerDropdownBtn && drawerDropdownContent) {
+    // If on a company page or sublink is active, default to open
+    const hasActiveSublink = drawerDropdownContent.querySelector('.drawer-sublink.active') !== null ||
+      window.location.pathname.includes('company-');
+
+    if (hasActiveSublink) {
+      drawerDropdownBtn.setAttribute('aria-expanded', 'true');
+      drawerDropdownBtn.classList.add('active');
+      drawerDropdownContent.classList.add('open');
+    }
+
+    drawerDropdownBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      const isExpanded = drawerDropdownBtn.getAttribute('aria-expanded') === 'true';
+      if (isExpanded) {
+        drawerDropdownBtn.setAttribute('aria-expanded', 'false');
+        drawerDropdownBtn.classList.remove('active');
+        drawerDropdownContent.classList.remove('open');
+      } else {
+        drawerDropdownBtn.setAttribute('aria-expanded', 'true');
+        drawerDropdownBtn.classList.add('active');
+        drawerDropdownContent.classList.add('open');
+      }
+    });
+  }
+
   // --- Gallery Filters & Lightbox ---
   const filterBtns = document.querySelectorAll('.filter-btn');
   const galleryItems = document.querySelectorAll('.gallery-item');
