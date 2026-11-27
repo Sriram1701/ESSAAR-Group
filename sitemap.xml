@@ -1,68 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://essaargroup.com/index.html</loc>
-    <lastmod>2026-11-19</lastmod>
+    <loc>https://essaargroup.com/</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://essaargroup.com/about.html</loc>
-    <lastmod>2026-11-19</lastmod>
+    <loc>https://essaargroup.com/about</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://essaargroup.com/companies.html</loc>
-    <lastmod>2026-11-19</lastmod>
+    <loc>https://essaargroup.com/companies</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://essaargroup.com/company-prateesh-engineering.html</loc>
-    <lastmod>2026-11-19</lastmod>
+    <loc>https://essaargroup.com/company-prateesh-engineering</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
-    <loc>https://essaargroup.com/company-srs-cranes.html</loc>
-    <lastmod>2026-11-19</lastmod>
+    <loc>https://essaargroup.com/company-srs-cranes</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://essaargroup.com/company-grace-gases.html</loc>
-    <lastmod>2026-11-19</lastmod>
+    <loc>https://essaargroup.com/company-grace-gases</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://essaargroup.com/company-best-air-products.html</loc>
-    <lastmod>2026-11-19</lastmod>
+    <loc>https://essaargroup.com/company-best-air-products</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://essaargroup.com/company-essaar-engineering.html</loc>
-    <lastmod>2026-11-19</lastmod>
+    <loc>https://essaargroup.com/company-essaar-engineering</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://essaargroup.com/industries.html</loc>
-    <lastmod>2026-11-19</lastmod>
+    <loc>https://essaargroup.com/company-roy-diagnostics</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://essaargroup.com/company-jj-industrial</loc>
+    <lastmod>2026-11-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://essaargroup.com/industries</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://essaargroup.com/projects-gallery.html</loc>
-    <lastmod>2026-11-19</lastmod>
+    <loc>https://essaargroup.com/projects-gallery</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
-    <loc>https://essaargroup.com/contact.html</loc>
-    <lastmod>2026-11-19</lastmod>
+    <loc>https://essaargroup.com/contact</loc>
+    <lastmod>2026-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
