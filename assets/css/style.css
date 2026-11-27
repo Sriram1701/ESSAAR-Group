@@ -569,10 +569,6 @@ p:last-child {
   transform: scale(1.02);
 }
 
-.brand-logo-wrap .brand-text-block {
-  display: none;
-}
-
 .brand-text-block {
   display: flex;
   flex-direction: column;
@@ -2895,19 +2891,14 @@ p:last-child {
 }
 
 .footer-brand-logo {
-  height: 52px;
+  height: 54px;
   width: auto;
-  max-width: 280px;
   margin-bottom: 0;
-  background: transparent;
-  padding: 0;
-  border-radius: 0;
+  background: var(--white);
+  padding: 6px 12px;
+  border-radius: var(--radius-sm);
   display: inline-block;
   object-fit: contain;
-}
-
-.footer-brand-wrap .footer-brand-text {
-  display: none;
 }
 
 .footer-brand-text {
