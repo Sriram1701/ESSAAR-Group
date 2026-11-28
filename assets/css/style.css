@@ -1389,6 +1389,23 @@ p:last-child {
   line-height: 1.7;
 }
 
+.page-hero-desc-companies {
+  max-width: 1060px;
+  font-size: clamp(0.95rem, 1.25vw, 1.05rem);
+}
+
+@media (min-width: 992px) {
+  .page-hero-desc-companies .desktop-line {
+    display: block;
+  }
+}
+
+@media (max-width: 991px) {
+  .page-hero-desc-companies .desktop-line {
+    display: inline;
+  }
+}
+
 .mobile-only {
   display: none !important;
 }
@@ -3786,6 +3803,7 @@ p:last-child {
   box-shadow: 0 4px 14px rgba(6, 19, 38, 0.04);
 }
 
+.faq-support-bar h3,
 .faq-support-bar h4 {
   font-size: 1.25rem;
   color: var(--navy-primary);
