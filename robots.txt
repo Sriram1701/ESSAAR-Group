@@ -3,4 +3,4 @@ Allow: /
 Disallow: /404
 Disallow: /404.html
 
-Sitemap: https://essaargroup.com/sitemap.xml
+Sitemap: https://essaargroupofcompanies.com/sitemap.xml

@@ -457,4 +457,88 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   })();
 
+  // --- Premium Animated Logo Intro & Navbar Logo Transition ---
+  (function initLogoIntro() {
+    const overlay = document.getElementById('logo-intro-overlay');
+    const mover = document.getElementById('logo-intro-mover');
+    const targetBrand = document.querySelector('.site-header .brand-logo-wrap');
+
+    if (!overlay || !mover || !targetBrand) {
+      if (overlay) overlay.style.display = 'none';
+      return;
+    }
+
+    // Check prefers-reduced-motion
+    if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      overlay.style.display = 'none';
+      return;
+    }
+
+    // Lock page scroll and hide real navbar logo while intro plays
+    document.body.classList.add('intro-active');
+    targetBrand.classList.add('intro-target-hidden');
+
+    let cleanedUp = false;
+    function cleanup() {
+      if (cleanedUp) return;
+      cleanedUp = true;
+      targetBrand.classList.remove('intro-target-hidden');
+      document.body.classList.remove('intro-active');
+      overlay.classList.add('is-hidden');
+      if (overlay.parentNode) {
+        overlay.parentNode.removeChild(overlay);
+      }
+    }
+
+    // Safety fallback timeout
+    const safetyTimer = setTimeout(cleanup, 2600);
+
+    // Step 1: Smooth elegant entrance in center of screen
+    requestAnimationFrame(function () {
+      setTimeout(function () {
+        mover.classList.add('is-visible');
+      }, 50);
+    });
+
+    // Step 2: Smooth transition from center upward to dock with navbar logo
+    setTimeout(function () {
+      const targetRect = targetBrand.getBoundingClientRect();
+      const moverBrand = mover.querySelector('.logo-intro-brand') || mover;
+      const moverRect = moverBrand.getBoundingClientRect();
+
+      // Current center of viewport
+      const currentCenterX = window.innerWidth / 2;
+      const currentCenterY = window.innerHeight / 2;
+
+      // Target center of navbar logo in current viewport
+      const targetCenterX = targetRect.left + (targetRect.width / 2);
+      const targetCenterY = targetRect.top + (targetRect.height / 2);
+
+      const deltaX = Math.round((targetCenterX - currentCenterX) * 100) / 100;
+      const deltaY = Math.round((targetCenterY - currentCenterY) * 100) / 100;
+
+      // Scale ratio to match target size
+      let targetScale = 1.0;
+      if (moverRect.width > 0 && targetRect.width > 0) {
+        const baseWidth = moverBrand.offsetWidth || moverRect.width;
+        targetScale = Math.round((targetRect.width / baseWidth) * 1000) / 1000;
+      }
+
+      mover.classList.add('is-gliding');
+      mover.style.transform = `translate(calc(-50% + ${deltaX}px), calc(-50% + ${deltaY}px)) scale(${targetScale})`;
+
+      // Step 3: Reveal website with smooth fade as logo glides toward navbar
+      setTimeout(function () {
+        overlay.classList.add('fade-out');
+      }, 350);
+
+      // Step 4: Seamless handoff to real navbar logo
+      setTimeout(function () {
+        clearTimeout(safetyTimer);
+        cleanup();
+      }, 880);
+
+    }, 850);
+  })();
+
 });
